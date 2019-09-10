@@ -1,3 +1,15 @@
+<<<<<<< HEAD
+require 'test_helper'
+
+class UsersControllerTest < ActionDispatch::IntegrationTest
+  test "should get show" do
+    get users_show_url
+    assert_response :success
+  end
+
+end
+||||||| merged common ancestors
+=======
 require 'test_helper'
 
 class UsersControllerTest < ActionDispatch::IntegrationTest
@@ -37,3 +49,4 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
   end
 
 end
+>>>>>>> 7e65ab69cf33f9a2b2dcf6f3d6dc962fc65dc3a5
