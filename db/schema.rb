@@ -10,7 +10,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_09_11_125514) do
+
+ActiveRecord::Schema.define(version: 2019_09_11_125818) do
+
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -46,6 +48,17 @@ ActiveRecord::Schema.define(version: 2019_09_11_125514) do
     t.string "name"
     t.decimal "latitude"
     t.decimal "longitude"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "professional_formations", force: :cascade do |t|
+    t.string "objet"
+    t.string "titre"
+    t.string "lieu"
+    t.string "contacte"
+    t.string "mail"
+    t.string "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
