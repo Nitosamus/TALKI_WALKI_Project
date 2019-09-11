@@ -1,0 +1,2 @@
+class ProfessionalFormation < ApplicationRecord
+end
