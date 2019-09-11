@@ -76,3 +76,5 @@ gem "mailjet"
 gem 'image_processing', '~> 1.2'
 gem "better_errors"
 gem "sendgrid-ruby"
+gem "omniauth-facebook"
+gem "koala"
