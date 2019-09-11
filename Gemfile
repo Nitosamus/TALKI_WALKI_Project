@@ -5,7 +5,10 @@ ruby '2.5.1'
 gem 'bundler'
 gem 'mini_racer'
 gem 'image_processing', '~> 1.2'
-
+gem 'mini_racer'
+gem 'gmaps4rails'
+gem 'koala'
+gem 'omniauth-facebook'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.3'
 # Use postgresql as the database for Active Record
