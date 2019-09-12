@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_09_10_115701) do
+ActiveRecord::Schema.define(version: 2019_09_11_130012) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -36,10 +36,46 @@ ActiveRecord::Schema.define(version: 2019_09_10_115701) do
     t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
   end
 
+  create_table "domaines", force: :cascade do |t|
+    t.string "titre"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "formation_academiques", force: :cascade do |t|
+    t.string "titre"
+    t.string "contact"
+    t.string "mail"
+    t.string "lieu"
+    t.text "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "offre_emplois", force: :cascade do |t|
+    t.string "description"
+    t.string "lieu"
+    t.string "salaire"
+    t.string "mail"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "places", force: :cascade do |t|
     t.string "name"
     t.decimal "latitude"
     t.decimal "longitude"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "professional_formations", force: :cascade do |t|
+    t.string "objet"
+    t.string "titre"
+    t.string "lieu"
+    t.string "contacte"
+    t.string "mail"
+    t.string "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

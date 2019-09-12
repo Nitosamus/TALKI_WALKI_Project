@@ -1,10 +1,10 @@
 
-<h1>Page Profil</h1>
+<h1>Mon Profil</h1>
 
 <p>Bienvenue sur la page d'ajout d'un utilisateur pour le User portant l'id : <%=@user.id%></p>
 <h3>Photo de profil</h3>
 <%if @user.image.attached?%>
-  <%= image_tag @user.image, alt: 'image' %>
+  <%= image_tag @user.image, width: "15%", alt: 'image' %>
 
 <%else%>
   <p>=== Il n'y a pas encore de photo de profil lié à cet utilisateur ===</p>
