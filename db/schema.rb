@@ -10,9 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-
-ActiveRecord::Schema.define(version: 2019_09_11_125818) do
-
+ActiveRecord::Schema.define(version: 2019_09_11_130012) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -40,6 +38,25 @@ ActiveRecord::Schema.define(version: 2019_09_11_125818) do
 
   create_table "domaines", force: :cascade do |t|
     t.string "titre"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "formation_academiques", force: :cascade do |t|
+    t.string "titre"
+    t.string "contact"
+    t.string "mail"
+    t.string "lieu"
+    t.text "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "offre_emplois", force: :cascade do |t|
+    t.string "description"
+    t.string "lieu"
+    t.string "salaire"
+    t.string "mail"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
