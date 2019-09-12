@@ -1,0 +1,27 @@
+.main-body{
+	background-image: url("tonie.png");
+	margin-top: 0px;
+}
+#h1{
+ 	font-size: 50px;
+ 	text-align: center;
+ 	color: rgb(129, 162, 0);
+ 	background-color: blue;
+ 	opacity: 3.1;
+ 	
+ }
+#para{
+	opacity: 3.1;
+	background-color: white;
+	margin: 12px 12px 12px 12px;
+	padding: 100px 100px 100px 100px;
+	
+
+}
+#log, #sign_up{
+	 color-profile: inherit;
+	 text-align: center;
+	 font-size: 2em;
+	 margin: 120px 100px 0px 800px;
+	 display: inline-block;
+}
