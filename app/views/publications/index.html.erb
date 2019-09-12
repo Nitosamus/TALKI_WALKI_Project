@@ -1,3 +1,233 @@
-<h1>Publications#index</h1>
-<p>Find me in app/views/publications/index.html.erb</p>
+<style>
+  .page {
+    background:url(https://stmed.net/sites/default/files/white-blue-wallpapers-25353-4347074.jpg);
+    background-size:cover;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
 
+  }
+  .description{
+    width: 50%;
+      height: 50%;
+      color: #fff;
+      top:50%;
+      left: 50%;
+      position: absolute;
+      transform: translate(-50%,-50%);
+      box-sizing: border-box;
+      padding: 70px 40px;
+   }
+
+/* Turn off parallax scrolling for tablets and phones. Increase the pixels if needed */
+@media only screen and (max-device-width: 1366px) {
+  .parallax {
+    background-attachment: scroll;
+  }
+}
+  /*ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+  }
+
+  li {
+    float: left;
+  }
+   */
+
+
+  .drop {
+      text-decoration: none;
+      color:rgb(0, 1, 2);
+      color: white;
+      font-size: 16px;
+   }
+
+  .dropdown {
+    display: inline-block;
+    float: right;
+    border: none;
+    background-color: rgba(0, 178, 243,0.6); 
+    color: black;
+    width: 150px;
+    height: 50px;
+    border-radius: 5px;
+
+  }
+
+  /*a:hover, .dropdown:hover .drop {
+    background-color: rgb(120, 120, 120);
+  }
+*/
+  .contenu-drop {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+
+  }
+
+  .contenu-drop a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+  }
+
+  .contenu-drop a:hover {
+    background-color:rgb(120, 120, 120);
+  }
+ 
+  .dropdown:hover .contenu-drop {
+    display: block;
+  }
+
+  .gauche ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 10%;
+    background: rgba(0,0,0,0.4);
+    position: fixed;
+    height: 100%;
+    overflow: auto;
+    font-size:25px
+  }
+
+  .gauche li a {
+    display: block;
+    color: #000;
+    padding: 8px 16px;
+    text-align: center;
+    text-decoration: none;
+  }
+
+  .gauche li a.active {
+    background-color: rgb(0, 178, 243);
+    color: white;
+  }
+
+  .gauche li a:hover:not(.active) {
+    background-color: #555;
+    color: white;
+
+  }
+
+  .button {
+  background-color: #e7e7e7;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 35px;
+  border-radius: 5px;
+  width: 350px;
+  height: 50px;
+}
+.button:hover {
+  cursor: pointer;
+  background-color: rgba(0, 178, 243, 0.5);
+}
+.desc {
+  height:160px;
+  background-color:none;
+  font-size:36px;
+  color:rgb(0, 0, 0);
+  margin-top: 300px;
+}
+
+.publicité {
+      background: rgba(0,0,0,0.4);
+      color: #fff;
+      top:50%;
+      left: 50%;
+      position: absolute;
+      transform: translate(-50%,-50%);
+      box-sizing: border-box;
+      padding: 20px 10px;
+      border-radius: 20px;
+      
+     }
+.publicité:hover {
+      transition-property: transform;
+      transition-duration: 1s;
+      transition-timing-function: ease-in;
+      transform: translateX(200px); 
+     }
+
+</style>
+<body class="page">
+   <button class="dropdown">
+          <a href="javascript:void(0)" class="drop">Pour aller loin</a>
+          <div class="contenu-drop">
+            <a href="">Connexion</a>
+            <a href="">Inscription</a>
+    </button>
+    <div class="gauche" style="display: inline-block;">
+    <ul>
+      <li><a class="active" href="">Home</a></li>
+      <li><a href="">News</a></li>
+      <li><a href="">Contact</a></li>
+      <li><a href="">About</a></li>
+    </ul>
+     </div>
+
+  <div class="publicité">
+    <h1 class="ml1">
+        <span class="text-wrapper">
+        <span class="line line1"></span>
+        <span class="letters">TALKI WALKI une site de forum pour  une exposition des job à Mada, malgré l'abondabce de chomeur actuel.</span>
+        <span class="line line2"></span>
+        </span>
+  </h1>
+  </div>
+  <div class="description">
+    <div class="desc">
+  <p>This div is just here to enable scrolling.
+  Tip: Try to remove the background-attachment property to remove the scrolling effect.</p>
+  </div>
+    <div class="bouton">
+      <p>
+        <a href="" class="button">Offre d'emploi</a>
+      </p>
+    </div>
+
+  <div class="desc">
+  <p>This div is just here to enable scrolling.
+  Tip: Try to remove the background-attachment property to remove the scrolling effect.</p>
+  </div>
+   <div class="bouton">
+     <p> <a href="" class="button">Formation professionnelle</a></p>
+    </div>
+ 
+
+  <div class="desc">
+  <p>This div is just here to enable scrolling.
+  Tip: Try to remove the background-attachment property to remove the scrolling effect.</p>
+  </div>
+      <div class="bouton">
+         <p><a href="" class="button">Formation académique</a></p>
+       </div>
+       
+
+  <div class="desc">
+  <p>This div is just here to enable scrolling.
+  Tip: Try to remove the background-attachment property to remove the scrolling effect.</p>
+  </div>
+   <div class="bouton">
+    <p><a href="" class="button">Publication recente</a></p>
+  </div>
+ 
+
+
+  </div>
+</div>
+</body>
