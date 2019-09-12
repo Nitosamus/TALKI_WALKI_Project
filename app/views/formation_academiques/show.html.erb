@@ -1,2 +1,8 @@
-<h1>FormationAcademiques#show</h1>
-<p>Find me in app/views/formation_academiques/show.html.erb</p>
+<h1><%=@formation.titre%></h1><br>
+
+Description: <%=@formation.description%> <br>
+Lieu: <%=@formation.lieu%><br>
+Mail si interréssé: <%=@formation.mail%><br>
+Domaine spécifique: <%=@formation.domaine.titre%><br>
+Contact: <%=@formation.contact%>
+</p>

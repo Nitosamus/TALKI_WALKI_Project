@@ -50,23 +50,16 @@ ActiveRecord::Schema.define(version: 2019_09_12_063501) do
     t.index ["user_id"], name: "index_commentaires_on_user_id"
   end
 
-  create_table "domaines", force: :cascade do |t|
-    t.string "titre"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "formation_academiques", force: :cascade do |t|
     t.string "titre"
     t.string "contact"
     t.string "mail"
     t.string "lieu"
     t.text "description"
-    t.bigint "domaine_id"
+    t.string "domaine"
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["domaine_id"], name: "index_formation_academiques_on_domaine_id"
     t.index ["user_id"], name: "index_formation_academiques_on_user_id"
   end
 
@@ -92,11 +85,10 @@ ActiveRecord::Schema.define(version: 2019_09_12_063501) do
     t.string "lieu"
     t.string "salaire"
     t.string "mail"
-    t.bigint "domaine_id"
+    t.string "domaine"
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["domaine_id"], name: "index_offre_emplois_on_domaine_id"
     t.index ["user_id"], name: "index_offre_emplois_on_user_id"
   end
 
@@ -115,11 +107,10 @@ ActiveRecord::Schema.define(version: 2019_09_12_063501) do
     t.string "contacte"
     t.string "mail"
     t.string "description"
-    t.bigint "domaine_id"
+    t.string "domaine"
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["domaine_id"], name: "index_professional_formations_on_domaine_id"
     t.index ["user_id"], name: "index_professional_formations_on_user_id"
   end
 

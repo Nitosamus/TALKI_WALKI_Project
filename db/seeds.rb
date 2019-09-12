@@ -12,3 +12,19 @@ Place.create!([
 { "name": "Westminster Abbey", "latitude": "51.499581", "longitude": "-0.127309"},
 { "name": "Big Ben", "latitude": "51.500792", "longitude": "-0.124613"}
 ])
+
+
+Domaine.destroy_all
+FormationAcademique.destroy_all
+User.destroy_all
+10.times do
+d= Domaine.create(titre: Faker::Commerce.unique.department)
+u= User.create(email: Faker::Internet.free_email, password: "123456", password_confirmation: "123456")
+end
+d=Domaine.all
+u=User.all
+
+10.times do
+FormationAcademique.create!(description: Faker::Lorem.paragraphs, contact: Faker::IDNumber.unique.valid, mail: Faker::Internet.free_email, titre: 
+Faker::University.name, domaine:d[rand(10)], lieu: Faker::WorldCup.team, user:u[rand(10)] )
+end
