@@ -14,3 +14,11 @@
 //= require activestorage
 //= require turbolinks
 //= require_tree .
+//= require jquery3
+//= require jquery_ujs
+//=require assets/js/jquery.matchHeight-min 
+//=require assets/js/wow.min
+//=require assets/js/animsition.min 
+//=require assets/js/jquery.parallax-scroll
+//=require assets/js/owl.carousel.min 
+//=require assets/js/jquery.cbpQTRotator.min 
