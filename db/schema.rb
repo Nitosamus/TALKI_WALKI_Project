@@ -62,12 +62,8 @@ ActiveRecord::Schema.define(version: 2019_09_12_063501) do
     t.string "mail"
     t.string "lieu"
     t.text "description"
-    t.bigint "domaine_id"
-    t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["domaine_id"], name: "index_formation_academiques_on_domaine_id"
-    t.index ["user_id"], name: "index_formation_academiques_on_user_id"
   end
 
   create_table "likes", force: :cascade do |t|
@@ -92,12 +88,8 @@ ActiveRecord::Schema.define(version: 2019_09_12_063501) do
     t.string "lieu"
     t.string "salaire"
     t.string "mail"
-    t.bigint "domaine_id"
-    t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["domaine_id"], name: "index_offre_emplois_on_domaine_id"
-    t.index ["user_id"], name: "index_offre_emplois_on_user_id"
   end
 
   create_table "places", force: :cascade do |t|
@@ -115,12 +107,8 @@ ActiveRecord::Schema.define(version: 2019_09_12_063501) do
     t.string "contacte"
     t.string "mail"
     t.string "description"
-    t.bigint "domaine_id"
-    t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["domaine_id"], name: "index_professional_formations_on_domaine_id"
-    t.index ["user_id"], name: "index_professional_formations_on_user_id"
   end
 
   create_table "reponses", force: :cascade do |t|
