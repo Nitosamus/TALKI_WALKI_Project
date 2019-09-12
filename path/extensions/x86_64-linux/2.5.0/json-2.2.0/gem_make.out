@@ -1,0 +1,13 @@
+current directory: /home/dev/Bureau/TALKI_WALKI_Project/path/gems/json-2.2.0/ext/json
+/home/dev/.rvm/rubies/ruby-2.5.1/bin/ruby -I /home/dev/.rvm/rubies/ruby-2.5.1/lib/ruby/site_ruby/2.5.0 -r ./siteconf20190911-6398-1e3vcv2.rb extconf.rb
+creating Makefile
+
+current directory: /home/dev/Bureau/TALKI_WALKI_Project/path/gems/json-2.2.0/ext/json
+make "DESTDIR=" clean
+
+current directory: /home/dev/Bureau/TALKI_WALKI_Project/path/gems/json-2.2.0/ext/json
+make "DESTDIR="
+make: rien à faire pour « all ».
+
+current directory: /home/dev/Bureau/TALKI_WALKI_Project/path/gems/json-2.2.0/ext/json
+make "DESTDIR=" install
