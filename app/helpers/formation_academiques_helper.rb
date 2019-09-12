@@ -1,0 +1,2 @@
+module FormationAcademiquesHelper
+end

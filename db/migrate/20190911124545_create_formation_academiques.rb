@@ -7,6 +7,9 @@ class CreateFormationAcademiques < ActiveRecord::Migration[5.2]
       t.string :lieu
       t.text :description
 
+      t.belongs_to :domaine
+      t.belongs_to :user
+      
       t.timestamps
     end
   end

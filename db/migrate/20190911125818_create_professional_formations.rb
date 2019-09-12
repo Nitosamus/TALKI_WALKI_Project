@@ -8,6 +8,9 @@ class CreateProfessionalFormations < ActiveRecord::Migration[5.2]
       t.string :mail
       t.string :description
 
+      t.belongs_to :domaine
+      t.belongs_to :user
+      
       t.timestamps
     end
   end

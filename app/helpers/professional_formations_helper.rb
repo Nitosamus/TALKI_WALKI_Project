@@ -1,0 +1,2 @@
+module ProfessionalFormationsHelper
+end

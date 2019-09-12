@@ -6,6 +6,9 @@ class CreateOffreEmplois < ActiveRecord::Migration[5.2]
       t.string :salaire
       t.string :mail
 
+      t.belongs_to :domaine
+      t.belongs_to :user
+
       t.timestamps
     end
   end
