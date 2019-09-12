@@ -1,4 +1,4 @@
-<head>
+
 <% provide :head_tags do %>
     <script>
     document.addEventListener("DOMContentLoaded", function(){
@@ -7,8 +7,6 @@
     </script>
 <% end %>
 	
-</head>
-
 <p>
   <strong>Name:</strong>
   <%= @place.name %>
@@ -29,10 +27,5 @@
 <p>
 <%= image_tag "https://maps.googleapis.com/maps/api/staticmap?zoom=17&size=400x300&center=#{@place.latitude},#{@place.longitude}&key=#{Rails.application.credentials.key}", alt: "Map" %>
 </p>
-<%= image_tag "https://maps.googleapis.com/maps/api/staticmap?zoom=17&size=400x300&center=51.501564
-,-0.141944&key=97a78cf182dff9635c6ba7188cfd0bf3
-", alt: "Map" %>
-</p>
-
 <%= link_to 'Edit', edit_place_path(@place) %> 
 <%= link_to 'Back', places_path %>
