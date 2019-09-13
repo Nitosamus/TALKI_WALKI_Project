@@ -19,12 +19,12 @@ Place.create!([
 
 ])
 
-10.times do
+5.times do
 	User.create!(
-		email:Faker::Internet.email, password:Faker::Internet.password(min_length: 8)
-		)
+		email:Faker::Internet.email, password: "123456", password_confirmation: "123456")
 end
-tp User.all
+u= User.all
+tp u
 
 10.times do
 	ProfessionalFormation.create(
@@ -32,7 +32,7 @@ tp User.all
 		contacte:Faker::PhoneNumber.phone_number,
 		mail:Faker::Internet.email,
 		description:Faker::Job.name, 
-		user:User.find(251),
+		user: u[rand(10)]
 		)
 end
 tp ProfessionalFormation.all
@@ -43,7 +43,7 @@ tp ProfessionalFormation.all
 		lieu:Faker::Address.street_address,
 		mail:Faker::Internet.email,
 		description:Faker::Job.name, 
-		user:User.find(255),
+		user: u[rand(10)]
 		)
 end
 tp OffreEmploi.all

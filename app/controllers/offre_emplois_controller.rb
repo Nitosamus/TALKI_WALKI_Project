@@ -1,5 +1,6 @@
 class OffreEmploisController < ApplicationController
   def create
+    @offreemploi= OffreEmploi.create(user_id: current_user.id)
     @offreemploi = OffreEmploi.create(offreemploi_params)
     redirect_to offre_emploi_path(@offreemploi.id)
   end
