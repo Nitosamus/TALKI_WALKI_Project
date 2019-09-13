@@ -3,8 +3,7 @@ class OffreEmploi < ApplicationRecord
 	has_many :commentaires
 	has_many :likes
 
-	validates :titre, presence: true
-	validates :domaine, presence: true
+	validates :salaire, presence: true
 	validates :description, presence: true
 	validates :mail, presence: true
 
