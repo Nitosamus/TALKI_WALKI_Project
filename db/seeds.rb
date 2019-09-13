@@ -17,13 +17,20 @@ Place.create!([
 { "name": "Big Ben", "latitude": "51.500792", "longitude": "-0.124613"}
 
 ])
+FormationAcademique.destroy_all
+User.destroy_all
+10.times do
+u= User.create(email: Faker::Internet.free_email, password: "123456", password_confirmation: "123456")
+end
+
+u=User.all
 
 10.times do
-	User.create!(
-		email:Faker::Internet.email, password:Faker::Internet.password(min_length: 8)
-		)
+FormationAcademique.create!(description: Faker::Lorem.paragraphs, contact: Faker::IDNumber.unique.valid, mail: Faker::Internet.free_email, titre: 
+Faker::University.name, domaine: Faker::Commerce.department, lieu: Faker::WorldCup.team, user:u[rand(10)] )
 end
-tp User.all
+
+
 
 10.times do
 	ProfessionalFormation.create(
@@ -46,5 +53,7 @@ tp ProfessionalFormation.all
 		)
 end
 tp OffreEmploi.all
+
+
 
 
