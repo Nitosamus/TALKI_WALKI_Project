@@ -4,7 +4,7 @@ class FormationAcademiquesController < ApplicationController
   end
 
   def create
-    @formation= FormationAcademique.new(titre: params[:titre], description: params[:description], lieu: params[:lieu], contact: params[:contact], mail: params[:mail])
+    @formation= FormationAcademique.new(user_id: current_user.id, titre: params[:titre], description: params[:description], lieu: params[:lieu], contact: params[:contact], mail: params[:mail], domaine:params[:domaine])
     if @formation.save
       redirect_to formation_academiques_path
     else
@@ -14,12 +14,22 @@ class FormationAcademiquesController < ApplicationController
   end
 
   def edit
+    @formation= FormationAcademique.find(params[:id])
   end
 
   def destroy
+    @formation= FormationAcademique.find(params[:id])
+    @formations= @formation.destroy
+    redirect_to formation_academiques_path
   end
 
   def update
+    @formation= FormationAcademique.find(params[:id])
+    if @formations= @formation.update(titre: params[:titre], description: params[:description], lieu: params[:lieu], contact: params[:contact], mail: params[:mail], domaine: params[:domaine])
+      redirect_to formation_academique_path(@formation.id)
+    else 
+      redirect_to edit_formation_academique_path(@formation.id)
+    end
   end
 
   def show

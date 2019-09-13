@@ -3,6 +3,9 @@
 Description: <%=@formation.description%> <br>
 Lieu: <%=@formation.lieu%><br>
 Mail si interréssé: <%=@formation.mail%><br>
-Domaine spécifique: <%=@formation.domaine.titre%><br>
+Domaine spécifique: <%=@formation.domaine%><br>
 Contact: <%=@formation.contact%>
 </p>
+<%= link_to "Home", formation_academiques_path%> <br>
+<%= link_to "Edit", edit_formation_academique_path(@formation.id)%> <br>
+<%= link_to "Delete", formation_academique_path(@formation.id), method: "delete",  data: { confirm: 'Voulez-vous vraiment supprimer?' }%>

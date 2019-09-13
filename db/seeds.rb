@@ -14,17 +14,16 @@ Place.create!([
 ])
 
 
-Domaine.destroy_all
+
 FormationAcademique.destroy_all
 User.destroy_all
 10.times do
-d= Domaine.create(titre: Faker::Commerce.unique.department)
 u= User.create(email: Faker::Internet.free_email, password: "123456", password_confirmation: "123456")
 end
-d=Domaine.all
+
 u=User.all
 
 10.times do
 FormationAcademique.create!(description: Faker::Lorem.paragraphs, contact: Faker::IDNumber.unique.valid, mail: Faker::Internet.free_email, titre: 
-Faker::University.name, domaine:d[rand(10)], lieu: Faker::WorldCup.team, user:u[rand(10)] )
+Faker::University.name, domaine: Faker::Commerce.department, lieu: Faker::WorldCup.team, user:u[rand(10)] )
 end
