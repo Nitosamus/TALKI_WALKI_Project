@@ -7,12 +7,21 @@
   <%= image_tag @user.image, width: "15%", alt: 'image' %>
 
 <%else%>
-  <p>=== Il n'y a pas encore de photo de profil lié à cet utilisateur ===</p>
+  <p>=== Vous n'avez pas encore de photo de profil ===</p>
 <%end%>
 
 
-<h3>Ajouter le profil</h3>
 <%= form_tag user_images_path(@user), multipart: true do %>
   <%= file_field_tag :image %>
   <%= submit_tag "Ajouter" %>
 <% end %>
+
+<br> <br> <h3> Mon propos </h3>
+<b> Mon nom : <b> <%=@user.last_name%> <br>
+<b> Mon prénom: </b> <%=@user.first_name%> <br>
+<b> Ville actuelle: </b> <%=@user.city%> <br>
+<b> Ma description: </b> <%=@user.description%> <br>
+<b> Ma fonction professionnelle: </b> <%=@user.function%> <br>
+<b> Contact personnel: </b> <%=@user.phone_number%> <br><br>
+
+<h4> <%=link_to "Editer mon profil", edit_user_path(@user.id)%> </h4>

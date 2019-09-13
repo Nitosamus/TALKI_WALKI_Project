@@ -67,7 +67,7 @@ gem "stripe"
 gem "letter_opener"
 gem "jquery-rails"
 gem "dotenv-rails"
-gem "mailjet"
+gem "mailjet", :git => 'https://github.com/mailjet/mailjet-gem.git'
 gem 'image_processing', '~> 1.2'
 gem "better_errors"
 gem "sendgrid-ruby"
@@ -76,3 +76,4 @@ gem "koala"
 gem 'bundler'
 gem 'gmaps4rails'
 gem 'binding_of_caller'
+

@@ -1,4 +1,5 @@
 
+
 <body class="page">
    <button class="dropdown">
           <a href="javascript:void(0)" class="drop">Pour aller loin</a>
@@ -14,6 +15,11 @@
       <li><a href="">About</a></li>
     </ul>
      </div>
+
+
+<%=link_to "Formation Academique",  formation_academiques_path%> 
+-------------------<%=link_to "Les Offres d'emploi",  offre_emplois_path%>----------------------<%=link_to "Formation professionnelle", professional_formations_path%>
+ 
 
   <div class="publicité">
     <h1 class="ml1">
@@ -66,13 +72,25 @@
 </div>
 </body>
 
-<h1 >Publications#index</h1>
-<p >Find me in app/views/publications/index.html.erb</p>
+
 <% if user_signed_in?%>
 <p>vous ête connecté </p>
-<%= link_to "logout", destroy_user_session_path, method: :delete%>
+----------<%=link_to "Mon profil Talki-Walkieur",  user_path(current_user.id) %>
+
+--------------------------------<%= link_to "logout", destroy_user_session_path, method: :delete%>
 <%else%>
 <p>vous ête déconnecté </p>
-<%=link_to  "login", new_user_session_path%> <br><br>
-<%= link_to "sign_up", new_user_registration_path%>
+------------------------------<%=link_to  "login", new_user_session_path%> <br><br>
+------------------------------<%= link_to "sign_up", new_user_registration_path%>
   <%end%>
+
+
+
+
+
+
+
+
+
+
+
