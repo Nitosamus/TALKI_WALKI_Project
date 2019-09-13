@@ -1,2 +1,7 @@
 <h1>FormationAcademiques#index</h1>
 <p>Find me in app/views/formation_academiques/index.html.erb</p>
+<%=link_to "Proposer une offre", new_formation_academique_path%>
+<%@formation.each do |f|%><br>
+Titre: <%=f.titre%>
+<%=link_to "Voir plus", formation_academique_path(f.id)%>
+<%end%> 

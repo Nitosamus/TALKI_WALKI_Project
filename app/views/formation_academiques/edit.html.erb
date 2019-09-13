@@ -1,2 +1,4 @@
-<h1>FormationAcademiques#edit</h1>
-<p>Find me in app/views/formation_academiques/edit.html.erb</p>
+<h1>Editer les informations sur ce formation:</h1>
+<%=form_tag  formation_academique_path(@formation.id), method: "put" do %>
+<%= render "layouts/form_Academique" %>
+<% end %>
