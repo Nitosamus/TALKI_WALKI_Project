@@ -25,8 +25,9 @@ class OffreEmploisController < ApplicationController
 
   def update
     @offreemploi = OffreEmploi.find(params[:id])
-    @offreemploi.update(offreemploi_params)
-    redirect_to offre_emploi_path(@offreEmploi.id)
+    if @offreemploi.update(description: params[:description], lieu: params[:lieu], salaire: params[:salaire], domaine: params[:domaine], mail: params[:mail])
+    redirect_to offre_emploi_path(@offreemploi.id)
+  end
   end
 
   def show
@@ -39,6 +40,6 @@ class OffreEmploisController < ApplicationController
    private
 
    def offreemploi_params
-    params.require(:offreemploi).permit(:description,:lieu,:salaire,:mail)
+    params.require(:offre_emploi).permit(:description,:lieu,:salaire,:mail)
    end
 end
