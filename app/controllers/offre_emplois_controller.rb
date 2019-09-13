@@ -1,8 +1,11 @@
 class OffreEmploisController < ApplicationController
   def create
-    @offreemploi= OffreEmploi.create(user_id: current_user.id)
-    @offreemploi = OffreEmploi.create(offreemploi_params)
-    redirect_to offre_emploi_path(@offreemploi.id)
+      @offreemploi = OffreEmploi.new(user_id: current_user.id,  description: params[:description], lieu: params[:lieu], salaire: params[:salaire], domaine: params[:domaine], mail: params[:mail])
+     if  @offreemploi.save
+      redirect_to offre_emplois_path
+    else
+      redirect_to edit_offre_emploi_path(@offreemploi.id)
+    end
   end
 
   def new

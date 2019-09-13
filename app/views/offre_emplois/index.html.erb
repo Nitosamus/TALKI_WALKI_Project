@@ -1,7 +1,7 @@
 <h1>OffreEmplois#index</h1>
 
 <table>
-<% @offreemplois.each do |oe| %>
+<% @offreemplois.each do |oe| %> 
 	<tr>
 		<td><%= oe.id %></td>
 	 	<td><%= oe.description %></td>
@@ -12,3 +12,4 @@
 
  <%end%>
 </table>
+<%= link_to "Proposer un nouveau emploi", new_offre_emploi_path%>
