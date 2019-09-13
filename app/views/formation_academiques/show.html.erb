@@ -1,2 +1,11 @@
-<h1>FormationAcademiques#show</h1>
-<p>Find me in app/views/formation_academiques/show.html.erb</p>
+<h1><%=@formation.titre%></h1><br>
+
+Description: <%=@formation.description%> <br>
+Lieu: <%=@formation.lieu%><br>
+Mail si interréssé: <%=@formation.mail%><br>
+Domaine spécifique: <%=@formation.domaine%><br>
+Contact: <%=@formation.contact%>
+</p>
+<%= link_to "Home", formation_academiques_path%> <br>
+<%= link_to "Edit", edit_formation_academique_path(@formation.id)%> <br>
+<%= link_to "Delete", formation_academique_path(@formation.id), method: "delete",  data: { confirm: 'Voulez-vous vraiment supprimer?' }%>

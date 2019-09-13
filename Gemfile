@@ -75,4 +75,5 @@ gem "omniauth-facebook"
 gem "koala"
 gem 'bundler'
 gem 'gmaps4rails'
+gem 'binding_of_caller'
 
