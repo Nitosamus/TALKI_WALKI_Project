@@ -12,16 +12,7 @@
  *
  *= require_tree .
  *= require_self
+ *= require users.css
+ *= require admin.css
  */
-
- h1{
- 	font-size: 50px;
- 	text-align: center;
- 	color: rgb(129, 162, 54);
- }
-
-body{ margin-left: 60px;
-	font-size: 20px;
-	font-family: fantasy; }
-
-	
+ 
