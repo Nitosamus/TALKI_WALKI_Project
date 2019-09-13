@@ -8,9 +8,9 @@
 
 system("clear")
 Place.destroy_all
-Professional_formation.destroy_all
-Domaine.destroy_all
+ProfessionalFormation.destroy_all
 User.destroy_all
+OffreEmploi.destroy_all
 
 Place.create!([
 { "name": "Buckingham Palace", "latitude": "51.501564","longitude": "-0.141944"},
@@ -21,21 +21,31 @@ Place.create!([
 
 10.times do
 	User.create!(
-		email:Faker::Internet.email, encrypted_password:Faker::Internet.password(min_length: 8)
+		email:Faker::Internet.email, password:Faker::Internet.password(min_length: 8)
 		)
 end
-10.times do
-Domaine.create!([
-{"titre":Faker::ProgrammingLanguage.name}
-])
-end
+tp User.all
 
 10.times do
-	Professional_formation.create(
-		objet:Faker::job.object,titre:Faker::job.title,lieu:Faker::city.name,contacte:Faker::PhoneNumber.phone_number,mail:Faker::Internet.email,description:Faker::job.description
+	ProfessionalFormation.create(
+		objet:Faker::Commerce.department,titre:Faker::Commerce.product_name,lieu:Faker::Address.street_address,
+		contacte:Faker::PhoneNumber.phone_number,
+		mail:Faker::Internet.email,
+		description:Faker::Job.name, 
+		user:User.find(251),
 		)
 end
-tp Professional_formation.all
-tp Domaine.all
-tp User.all
+tp ProfessionalFormation.all
+
+10.times do
+	OffreEmploi.create(
+		salaire:Faker::Commerce.department,
+		lieu:Faker::Address.street_address,
+		mail:Faker::Internet.email,
+		description:Faker::Job.name, 
+		user:User.find(255),
+		)
+end
+tp OffreEmploi.all
+
 
