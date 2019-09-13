@@ -6,6 +6,7 @@ class CreateCommentaires < ActiveRecord::Migration[5.2]
     	t.belongs_to :formation_academique
     	t.belongs_to :professional_formation
     	t.belongs_to :offre_emploi
+      t.belongs_to :reponse
       t.timestamps
     end
   end

@@ -6,6 +6,7 @@ class CommentairesController < ApplicationController
   end
 
   def index
+    @commentaires = Commentaire.all
   end
 
   def update
