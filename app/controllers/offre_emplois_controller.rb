@@ -14,8 +14,9 @@ class OffreEmploisController < ApplicationController
 
   def destroy
     @offreemploi = OffreEmploi.find(params[:id])
-    @offreemploi.destroy
-    redirect_to offre_emploi_path
+   if  @offreemploi.destroy
+    redirect_to offre_emplois_path
+   end
   end
 
   def update

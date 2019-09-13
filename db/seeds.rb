@@ -6,7 +6,7 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-system("clear")
+
 Place.destroy_all
 ProfessionalFormation.destroy_all
 User.destroy_all
@@ -32,7 +32,7 @@ tp User.all
 		contacte:Faker::PhoneNumber.phone_number,
 		mail:Faker::Internet.email,
 		description:Faker::Job.name, 
-		user:User.find(251),
+		user:User.find(1),
 		)
 end
 tp ProfessionalFormation.all
@@ -43,7 +43,7 @@ tp ProfessionalFormation.all
 		lieu:Faker::Address.street_address,
 		mail:Faker::Internet.email,
 		description:Faker::Job.name, 
-		user:User.find(255),
+		user:User.find(5),
 		)
 end
 tp OffreEmploi.all
