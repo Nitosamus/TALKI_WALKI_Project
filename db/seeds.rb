@@ -53,7 +53,7 @@ tp ProfessionalFormation.all
 		description:Faker::Job.name, 
 
 		user:User.find(5),
-		domaine: Faker::Commerce.department
+		
 
 		)
 end
