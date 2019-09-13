@@ -3,6 +3,7 @@ class CommentairesController < ApplicationController
   end
 
   def create
+
   end
 
   def index
