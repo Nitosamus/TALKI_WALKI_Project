@@ -1,3 +1,17 @@
 <h1>ProfessionalFormations#show</h1>
 <p>Find me in app/views/professional_formations/show.html.erb</p>
+<table>
+		<tr>
+		<td><%= @professionalformation.id %></td>
+	 	<td><%= @professionalformation.objet %></td>
+	 	<td><%= @professionalformation.titre %></td>
+	 	<td><%= @professionalformation.lieu %></td>
+	 	<td><%= @professionalformation.contacte %></td>
+	 	<td>
+	 		<%=link_to "éditer",edit_professional_formation_path(@professionalformation.id)%>
+	 		<%=link_to "Supprimer",professional_formation_path(@professionalformation.id), method:"delete",data:{confirm:"On supprime?"}%>
+	 	</td>
+	</tr>
 
+ 
+</table>

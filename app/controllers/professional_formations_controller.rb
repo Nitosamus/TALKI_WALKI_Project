@@ -14,8 +14,9 @@ class ProfessionalFormationsController < ApplicationController
 
   def destroy
     @professionalformation = ProfessionalFormation.find(params[:id])
-    @professionalformation.destroy
-    redirect_to professionalformations_path
+    if @professionalformation.destroy
+      redirect_to professional_formations_path
+    end
   end
 
   def update

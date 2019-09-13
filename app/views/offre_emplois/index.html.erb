@@ -8,6 +8,7 @@
 	 	<td><%= oe.lieu %></td>
 	 	<td><%= oe.salaire %></td>
 	 	<td><%= oe.mail %></td> 
+	 	<td><%=link_to "voir",offre_emploi_path(oe.id)%></a></td>
 	</tr>
 
  <%end%>
