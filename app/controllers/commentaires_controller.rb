@@ -2,7 +2,7 @@ class CommentairesController < ApplicationController
   def create
 
     @commentaire = Commentaire.create(commentaire_params)
-    redirect_to commentaire_path(@commentaire.id)
+    redirect_to formation_academiques_path
 
   end
 

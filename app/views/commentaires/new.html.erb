@@ -1,2 +1,5 @@
-<h1>Commentaires#new</h1>
-<p>Find me in app/views/commentaires/new.html.erb</p>
+<h2>Commenter</h2>
+<%= form_tag(controller: "commentaires", action: "/", method: "post" do %>
+<%= text_area_tag :contenu %>
+<%= submit_tag :envoyer%>
+<% end %>
