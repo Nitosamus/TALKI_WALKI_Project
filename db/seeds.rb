@@ -11,20 +11,28 @@ Place.destroy_all
 ProfessionalFormation.destroy_all
 User.destroy_all
 OffreEmploi.destroy_all
-
+FormationAcademique.destroy_all
 Place.create!([
 { "name": "Buckingham Palace", "latitude": "51.501564","longitude": "-0.141944"},
 { "name": "Westminster Abbey", "latitude": "51.499581", "longitude": "-0.127309"},
 { "name": "Big Ben", "latitude": "51.500792", "longitude": "-0.124613"}
 
 ])
-
-5.times do
-	User.create!(
-		email:Faker::Internet.email, password: "123456", password_confirmation: "123456")
+FormationAcademique.destroy_all
+User.destroy_all
+10.times do
+u= User.create(email: Faker::Internet.free_email, password: "123456", password_confirmation: "123456")
 end
-u= User.all
-tp u
+
+u=User.all
+
+
+10.times do
+FormationAcademique.create!(description: Faker::Lorem.paragraphs, contact: Faker::IDNumber.unique.valid, mail: Faker::Internet.free_email, titre: 
+Faker::University.name, domaine: Faker::Commerce.department, lieu: Faker::WorldCup.team, user:u[rand(10)] )
+end
+
+
 
 10.times do
 	ProfessionalFormation.create(
@@ -32,8 +40,8 @@ tp u
 		contacte:Faker::PhoneNumber.phone_number,
 		mail:Faker::Internet.email,
 		description:Faker::Job.name, 
-		user: u[rand(10)]
-		)
+		user:u[rand(10)],
+		domaine: Faker::Commerce.department)
 end
 tp ProfessionalFormation.all
 
@@ -43,9 +51,12 @@ tp ProfessionalFormation.all
 		lieu:Faker::Address.street_address,
 		mail:Faker::Internet.email,
 		description:Faker::Job.name, 
-		user: u[rand(10)]
+		user:u[rand(10)],
+		domaine: Faker::Commerce.department
 		)
 end
 tp OffreEmploi.all
+
+
 
 
