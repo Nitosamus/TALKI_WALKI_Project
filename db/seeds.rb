@@ -39,7 +39,7 @@ end
 		contacte:Faker::PhoneNumber.phone_number,
 		mail:Faker::Internet.email,
 		description:Faker::Job.name, 
-		user:User.find(251),
+		user:u[rand(10)]
 		)
 end
 tp ProfessionalFormation.all
@@ -50,7 +50,7 @@ tp ProfessionalFormation.all
 		lieu:Faker::Address.street_address,
 		mail:Faker::Internet.email,
 		description:Faker::Job.name, 
-		user:User.find(255),
+		user:u[rand(10)]
 		)
 end
 tp OffreEmploi.all
