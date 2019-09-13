@@ -6,7 +6,7 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-system("clear")
+
 Place.destroy_all
 ProfessionalFormation.destroy_all
 User.destroy_all
@@ -18,7 +18,7 @@ Place.create!([
 { "name": "Big Ben", "latitude": "51.500792", "longitude": "-0.124613"}
 
 ])
-FormationAcademique.destroy_all
+
 User.destroy_all
 10.times do
 u= User.create(email: Faker::Internet.free_email, password: "123456", password_confirmation: "123456")
@@ -42,6 +42,7 @@ end
 		description:Faker::Job.name, 
 		user:u[rand(10)],
 		domaine: Faker::Commerce.department)
+
 end
 tp ProfessionalFormation.all
 
@@ -51,8 +52,9 @@ tp ProfessionalFormation.all
 		lieu:Faker::Address.street_address,
 		mail:Faker::Internet.email,
 		description:Faker::Job.name, 
-		user:u[rand(10)],
+		user:User.find(5),
 		domaine: Faker::Commerce.department
+
 		)
 end
 tp OffreEmploi.all

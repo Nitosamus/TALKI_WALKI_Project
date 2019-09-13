@@ -73,6 +73,7 @@
 </body>
 
 
+
 <% if user_signed_in?%>
 <p>vous ête connecté </p>
 ----------<%=link_to "Mon profil Talki-Walkieur",  user_path(current_user.id) %>
@@ -83,6 +84,7 @@
 ------------------------------<%=link_to  "login", new_user_session_path%> <br><br>
 ------------------------------<%= link_to "sign_up", new_user_registration_path%>
   <%end%>
+
 
 
 
