@@ -13,7 +13,25 @@ Contact: <%=@formation.contact%>
 <br>
 
 <h2>Commenter</h2>
-<%= form_tag formation_academique_path(@formation.id), controller: "" , method: "post" do %>
+<%= form_tag  formation_academique_commentaire_academiques_path(@formation.id),controller: "commentaire_academiques", method: "post" do %>
 <%= text_area_tag :contenu %>
 <%= submit_tag :envoyer%>
 <% end %>
+
+
+<%@formation.commentaires.each do |f|%>
+	"<%=f.contenu%>" <%=link_to 'Editer',  edit_formation_academique_commentaire_academique_path(f.formation_academique_id,f.id, controller: "commentaire_academiques" )%> <%=link_to 'Supprimer',   formation_academique_commentaire_academique_path(f.formation_academique_id,f.id), method: "delete",  data: { confirm: 'Voulez-vous vraiment supprimer?' } %>
+	 ;
+		<%= form_tag  formation_academique_commentaire_academique_reponse_academiques_path(f.formation_academique_id, f.id), controller: "reponse_academiques", method: "post" do %>
+			REPONDRE CE COMS:
+			<%= text_area_tag :contenu %>
+			<%= submit_tag :envoyer%>
+		<% end %>
+
+	ma reponse: 
+				<% f.reponses.each do |r|%>
+				<%= r.contenu %>
+				<%end%>
+				<%=r.contenu%>
+				
+<br><br><br><%end%>
