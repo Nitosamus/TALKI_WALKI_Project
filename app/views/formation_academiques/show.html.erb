@@ -1,5 +1,4 @@
 
-<<<<<<< HEAD
 <div class="FA-container">
 	<h1 class="fa-title"><%=@formation.titre%></h1><br>
 	<div class="description" id="desc-1">
@@ -20,19 +19,7 @@
 	<%= link_to "Edit", edit_formation_academique_path(@formation.id), class: "fa-action"%> <br>
 	<%= link_to "Delete", formation_academique_path(@formation.id), method: "delete",  data: { confirm: 'Voulez-vous vraiment supprimer?' }, class: "fa-action"%>
 <hr>
-<small> <%= render "../views/layouts/footer"%> </small>
-=======
-Description: <%=@formation.description%> <br>
-Lieu: <%=@formation.lieu%><br>
-Mail si interréssé: <%=@formation.mail%><br>
-Domaine spécifique: <%=@formation.domaine%><br>
-Contact: <%=@formation.contact%>
-</p>
-<%= link_to "Home", formation_academiques_path%> <br>
-<%= link_to "Edit", edit_formation_academique_path(@formation.id)%> <br>
-<%= link_to "Delete", formation_academique_path(@formation.id), method: "delete",  data: { confirm: 'Voulez-vous vraiment supprimer?' }%>
-<br>
-<br>
+
 
 <h2>Commenter</h2>
 <%= form_tag  formation_academique_commentaire_academiques_path(@formation.id),controller: "commentaire_academiques", method: "post" do %>
@@ -57,4 +44,4 @@ Contact: <%=@formation.contact%>
 				<%=r.contenu%>
 				
 <br><br><br><%end%>
->>>>>>> 35e9f80d3642715abffd9a9b53346e620b3148ee
+
