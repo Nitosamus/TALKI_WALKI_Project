@@ -1,7 +1,11 @@
 class ProfessionalFormationsController < ApplicationController
   def create
-    @professionalformation = ProfessionalFormation.create(professionalformation_params)
-    redirect_to professionalformation_path(@professionalformation.id)
+    @professionalformation = ProfessionalFormation.new(user_id: current_user.id, titre: params[:titre], description: params[:description], lieu: params[:lieu], contacte: params[:contacte], mail: params[:mail], domaine:params[:domaine], objet: params[:objet])
+    if @professionalformation.save
+    redirect_to professional_formations_path
+  else
+    redirect_to new_professional_formation_path
+   end
   end
 
   def new
@@ -14,14 +18,15 @@ class ProfessionalFormationsController < ApplicationController
 
   def destroy
     @professionalformation = ProfessionalFormation.find(params[:id])
-    @professionalformation.destroy
-    redirect_to professionalformations_path
+    if @professionalformation.destroy
+      redirect_to professional_formations_path
+    end
   end
 
   def update
     @professionalformation = ProfessionalFormation.find(params[:id])
-    @professionalformation.update(professionalformation_params)
-    redirect_to professionalformation_path(@professionalformation.id)
+    @professionalformation.update(titre: params[:titre], description: params[:description], lieu: params[:lieu], contacte: params[:contacte], mail: params[:mail], domaine:params[:domaine], objet: params[:objet])
+    redirect_to professional_formation_path(@professionalformation.id)
   end
 
   def show
@@ -31,9 +36,5 @@ class ProfessionalFormationsController < ApplicationController
   def index
        @professionalformations = ProfessionalFormation.all
   end
-   private
-
-   def professionalformation_params
-    params.require(:professionalformation).permit(:objet,:titre,:lieu,:contacte, :mail,:description)
-   end
+   
 end
