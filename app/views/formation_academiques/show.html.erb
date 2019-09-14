@@ -1,11 +1,22 @@
-<h1><%=@formation.titre%></h1><br>
 
-Description: <%=@formation.description%> <br>
-Lieu: <%=@formation.lieu%><br>
-Mail si interréssé: <%=@formation.mail%><br>
-Domaine spécifique: <%=@formation.domaine%><br>
-Contact: <%=@formation.contact%>
-</p>
-<%= link_to "Home", formation_academiques_path%> <br>
-<%= link_to "Edit", edit_formation_academique_path(@formation.id)%> <br>
-<%= link_to "Delete", formation_academique_path(@formation.id), method: "delete",  data: { confirm: 'Voulez-vous vraiment supprimer?' }%>
+<div class="FA-container">
+	<h1 class="fa-title"><%=@formation.titre%></h1><br>
+	<div class="description" id="desc-1">
+		<h2 id="desc-title">Description</h2>
+		 <p id="desc-content"><%=@formation.description%></p> <br>
+    </div>
+    <div class="description" id="separation">
+    </div>
+	<div class="description" id="desc-2">
+	Lieu: <%=@formation.lieu%><br>
+	Mail si interréssé: <%=@formation.mail%><br>
+	Domaine spécifique: <%=@formation.domaine%><br>
+	Contact: <%=@formation.contact%>
+	</div>
+	
+</div><br>
+<%= link_to "Home", formation_academiques_path, class: "fa-action"%> <br>
+	<%= link_to "Edit", edit_formation_academique_path(@formation.id), class: "fa-action"%> <br>
+	<%= link_to "Delete", formation_academique_path(@formation.id), method: "delete",  data: { confirm: 'Voulez-vous vraiment supprimer?' }, class: "fa-action"%>
+<hr>
+<small> <%= render "../views/layouts/footer"%> </small>
