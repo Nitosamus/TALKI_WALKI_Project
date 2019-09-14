@@ -1,7 +1,9 @@
 class CommentairesController < ApplicationController
   def create
+
     @commentaire = Commentaire.create(commentaire_params)
     redirect_to commentaire_path(@commentaire.id)
+
   end
 
   def new
@@ -31,6 +33,7 @@ class CommentairesController < ApplicationController
   def index
        @commentaires = Commentaire.all
   end
+  
    private
 
    def commentaire_params
