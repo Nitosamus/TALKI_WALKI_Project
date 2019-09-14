@@ -14,6 +14,11 @@
       <%= f.label :email, class:"lab" %><br />
       <%= f.email_field :email, autofocus: true, autocomplete: "email", class:"inpts" %>
 
+<<<<<<< HEAD
+=======
+<%= form_for(resource, as: resource_name, url: user_path(resource_name)) do |f| %>
+  <%= render "devise/shared/error_messages", resource: resource %>
+>>>>>>> 35e9f80d3642715abffd9a9b53346e620b3148ee
 
       <%= f.label :password, class:"lab" %>
       <% if @minimum_password_length %>
