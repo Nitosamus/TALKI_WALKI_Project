@@ -1,61 +1,40 @@
 
 
-  <style>  
-   body{background: url(https://img.freepik.com/vecteurs-libre/lumieres-bokeh-fond-paillettes_1048-8548.jpg?size=626&ext=jpg);
-        margin:0;
-        background-size: cover;
-         }
-.field{
-  position: relative;
-  margin: auto;
-  width: 400px;
-  height: 500px;
-  background-color: #9e9d24 lime darken-3;
-  text-align: center;
-  box-shadow: 0px 4px 5px 0px rgb( 0,0,0.5);
-  opacity:0.5;
-  align-content: center;
-}
+<div class="sign-container">
 
-  .action{
-    margin: auto;
-    position: relative;
+    <div class="sign">
+    <h2>Talki-walki</h2>
+    <h1>Sign_up</h1>
+    </div>
 
-  }
-ul{}
-</style>
-<body>
+    <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+    <%= render "devise/shared/error_messages", resource: resource %>
 
-<h2>sign-up</h2>
-
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= render "devise/shared/error_messages", resource: resource %>
-
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+    <div class="field">
+      <%= f.label :email, class:"lab" %><br />
+      <%= f.email_field :email, autofocus: true, autocomplete: "email", class:"inpts" %>
 
 
-    <%= f.label :password %>
-    <% if @minimum_password_length %>
+      <%= f.label :password, class:"lab" %>
+      <% if @minimum_password_length %>
 
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
+      <em class="lab">(<%= @minimum_password_length %> characters minimum)</em>
 
-    <% end %><br />
+      <% end %><br />
 
-    <%= f.password_field :password, autocomplete: "new-password" %>
- 
+      <%= f.password_field :password, autocomplete: "new-password", class:"inpts" %>
 
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-  </div>
 
-  <div class="actions">
-    <%= f.submit "Sign up" %>
-  </div>
-<% end %>
+      <%= f.label :password_confirmation, class:"lab"%><br/>
+      <%= f.password_field :password_confirmation, autocomplete: "new-password", class:"inpts" %>
+    </div>
 
-<%= render "devise/shared/links" %>
+    <div class="actions">
+      <%= f.submit "Sign up", class:"btn btn-info btn-bg" %>
+    </div>
+    <% end %>
+    <small> <%= render "devise/shared/links" %> </small>
 
-</body>
-</html>
+</div>
+<hr>
+<small> <%= render "../views/layouts/footer"%> </small>

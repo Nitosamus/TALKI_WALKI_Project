@@ -1,0 +1,45 @@
+
+/*css sign controller registrations*/
+/*
+.sign_in {
+    margin:0;
+    padding: 0;
+    background:url(http://a52.idata.over-blog.com/5/97/91/57/fond-ecran-iphone/fond-ecran-iphone-1961.PNG);
+    font-family: sans-serif;
+    background-size: cover;
+  }
+
+   }
+   .actions:hover {
+    cursor: pointer;
+    background: rgb(0, 0, 174);
+    color: #000;
+
+   }
+   a{
+    text-decoration: none;
+    color: white;
+   }
+
+   a:hover {
+    cursor: pointer;
+    color: rgb(0, 0, 174);
+   }
+  */
+
+  #fyp{
+    position: relative;
+    top: 45px;
+    right:140px;
+    
+  }
+  #sup{
+    position: relative;
+    top: 60px;
+    left: 200px;
+  }
+  #login2{
+      position: relative;
+      right: 80px;
+      bottom: 30px;
+  }

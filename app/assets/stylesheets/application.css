@@ -14,6 +14,7 @@
  *= require_self
  *= require users.css
  *= require admin.css
- 
+ *= require sign_up.css
+ *= require sign_in.css
  */
  

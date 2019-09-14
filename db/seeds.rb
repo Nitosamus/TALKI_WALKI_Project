@@ -12,6 +12,7 @@ ProfessionalFormation.destroy_all
 User.destroy_all
 OffreEmploi.destroy_all
 FormationAcademique.destroy_all
+
 Place.create!([
 { "name": "Buckingham Palace", "latitude": "51.501564","longitude": "-0.141944"},
 { "name": "Westminster Abbey", "latitude": "51.499581", "longitude": "-0.127309"},
