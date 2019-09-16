@@ -412,3 +412,31 @@ margin-left: -40px;
   margin-left: -2px;
   margin-right: 10px;
 }
+.boutton-of {
+  border-bottom: 50px;
+  background-color: Tomato;
+  border-radius: 5px;
+  width: 60px;
+  height: 30px;
+  text-align: center;
+  margin-top: 100%;
+}
+.buttonof{
+  background-color: Tomato;
+  border-radius: 10px;
+  text-align: center;
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+  display: inline-block;
+  font-size: 20px;
+  width: 100px;
+  height: 50px;
+}
+
+.buttonof:hover {
+  text-decoration: none;
+  cursor: pointer;
+  color: black; 
+  background-color: rgb(31, 193, 192); 
+  border: 2px solid rgb(31, 193, 192);
+}
