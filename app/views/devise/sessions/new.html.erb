@@ -1,32 +1,30 @@
 
-<body class="sign_in">
-  <div class="login-box">
-    <img src="http://www.clipartroo.com/images/92/blue-person-clipart-92961.png" class="image">
-    <h1>Log in</h1>
-    <form>
-  <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
 
-  <div class="field">
-    <%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "current-password" %>
-  </div>
+    <div class="sign-container">
 
-  <% if devise_mapping.rememberable? %>
-    <div class="field">
-      <p><%= f.check_box :remember_me %>
-      <%= f.label :remember_me %><p>
-    </div>
-  <% end %>
+            <img src="http://www.clipartroo.com/images/92/blue-person-clipart-92961.png" class="image">
+            <h1 >Log in</h1>
 
-  <div class="actions">
-    <%= f.submit "Log in" %>
+        <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+        <div class="field">
+              <%= f.label :email, class:"lab" %><br/>
+              <%= f.email_field :email, autofocus: true, autocomplete: "email", class:"inpts" %>
+
+              <%= f.label :password, class:"lab" %><br />
+              <%= f.password_field :password, autocomplete: "current-password", class:"inpts" %>
+
+            <% if devise_mapping.rememberable? %>
+                <p><%= f.check_box :remember_me %>
+                <%= f.label :remember_me, class:"lab" %><p>
+            <% end %>
+
+            <div class="actions">
+              <%= f.submit "Log in", class:"btn btn-info btn-bg", id:"login2"%>
+            </div>
+            <% end %>
+            <small><%= render "devise/shared/links"%></small>
+        </div>
   </div>
-  <% end %>
-  <%= render "devise/shared/links" %>
-  </form>
-  </div>
-</body>
+  <hr>
+  <small> <%= render "../views/layouts/footer"%> </small>
+ 

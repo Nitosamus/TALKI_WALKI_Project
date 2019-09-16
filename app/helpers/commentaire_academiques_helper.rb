@@ -1,0 +1,2 @@
+module CommentaireAcademiquesHelper
+end

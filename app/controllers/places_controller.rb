@@ -10,6 +10,10 @@ class PlacesController < ApplicationController
   # GET /places/1
   # GET /places/1.json
   def show
+    puts"#{Rails.application.credentials.key}"
+    puts"#{@place.latitude}"
+    puts"#{@place.longitude}"
+
   end
 
   # GET /places/new

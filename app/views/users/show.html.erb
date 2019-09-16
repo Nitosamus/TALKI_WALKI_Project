@@ -1,18 +1,424 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+  
+  body{
+    height: 5;
+    width: 5%;
+    
+  }
+  #card{
+    
+    background-size: 50%;
+    text-align:center;
+    margin: auto;
+    position: left;
+  }
+  #card01{
+     position: fixed;
+     width: 100%;
+    margin-top: 10px;
+    background-color: rgb(0, 127, 197);
+  }
+  #card02{
+     position: fixed;
+     height:100%;
+    margin-top: 0px;
+    background-color: rgb(0, 127, 197);
+  }
+.card {
+  background-color: transparent;
+  box-shadow: 0 4px 15px 0 rgba(0, 0, 0, 0.2);
+  width: 300px;
+  height: 300px;
+  text-align: center;
+  perspective: 1000px;
+  border-radius: 15px;
+}
 
-<h1>Page Profil</h1>
+.foot{
+  border: none;
+  outline: 0;
+  display: inline-block;
+  padding: 8px;
+  color: white;
+  background-color: #000;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+  font-size: 18px;
+}
 
-<p>Bienvenue sur la page d'ajout d'un utilisateur pour le User portant l'id : <%=@user.id%></p>
-<h3>Photo de profil</h3>
-<%if @user.image.attached?%>
-  <%= image_tag @user.image, alt: 'image' %>
+button {
+  border: none;
+  outline: 0;
+  display: inline-block;
+  padding: 8px;
+  color: white;
+  background-color: #000;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+  font-size: 18px;
+}
 
-<%else%>
+a {
+  text-decoration: none;
+  font-size: 22px;
+  color: black;
+}
+
+button:hover, a:hover {
+  opacity: 0.7;
+}
+.flip-card {
+  background-color: transparent;
+  width: 300px;
+  height: 300px;
+  
+  
+}
+
+.flip-card-inner {
+  border-radius: 15px;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 15px;
+}
+
+.flip-card-front {
+  background-color: #bbb;
+  color: black;
+  border-radius: 15px;
+}
+
+.flip-card-back {
+  background-color: #2980b9;
+  color: white;
+  transform: rotateY(180deg);
+  border-radius: 15px;
+}
+.sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+.tab2{
+  background-color: blue;
+  position: right;
+}
+.tab02{
+  background-size: 100%;
+}
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: rgb(0, 127, 197);
+  color: white;
+  text-align: center;
+}
+/* ========== render (edit_user_path========== */
+
+input[type=text], input[type=password] {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background: #f1f1f1;
+}
+
+/* Add a background color when the inputs get focus */
+input[type=text]:focus, input[type=password]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+/* Set a style for all buttons */
+button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+}
+
+button:hover {
+  opacity:1;
+}
+
+/* Extra styles for the cancel button */
+.cancelbtn {
+  padding: 14px 20px;
+  background-color: #f44336;
+}
+
+/* Float cancel and signup buttons and add an equal width */
+.cancelbtn, .signupbtn {
+  float: left;
+  width: 50%;
+}
+
+/* Add padding to container elements */
+.container {
+  padding: 16px;
+}
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: #474e5d;
+  padding-top: 50px;
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #fefefe;
+  margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+  border: 1px solid #888;
+  width: 80%; /* Could be more or less, depending on screen size */
+}
+
+/* Style the horizontal ruler */
+hr {
+  border: 1px solid #f1f1f1;
+  margin-bottom: 25px;
+}
+ 
+/* The Close Button (x) */
+.close {
+  position: absolute;
+  right: 35px;
+  top: 15px;
+  font-size: 40px;
+  font-weight: bold;
+  color: #f1f1f1;
+}
+
+.close:hover,
+.close:focus {
+  
+  cursor: pointer;
+}
+
+/* Clear floats */
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+/* Change styles for cancel button and signup button on extra small screens */
+@media screen and (max-width: 300px) {
+  .cancelbtn, .signupbtn {
+     width: 100%;
+  }
+}
+</style>
+</head>
+<body>
+  
+      
+            <div class="card">
+            	<h2 style="text-align:center;">User Profile Card</h2>
+              <table>
+        <tr>
+          
+              <td>
+                
+                    <div class="flip-card">
+                      
+                      <div class="flip-card-inner">
+                        <div class="flip-card-front" style="border-radius: 15px;" >
+                          <%if @user.image.attached?%>
+                          <%= image_tag @user.image, alt: 'image' %>
+                          <%else%>
   <p>=== Il n'y a pas encore de photo de profil lié à cet utilisateur ===</p>
+
 <%end%>
+                        </div>
+
+                      <div class="flip-card-back">
+                        <h1><%= @user.last_name %></h1> 
+                        <p><%= @user.function %></p> 
+                        <p><%= @user.description %></p>
+                      </div>
+                    </div>
+                    <p><a href="#"><i class="fa fa-dribbble"></i></a> 
+                    <a href="#"><i class="fa fa-twitter"></i></a>  
+                    <a href="#"><i class="fa fa-linkedin"></i></a>  
+                    <a href="#"><i class="fa fa-facebook"></i></a> </p>
+                    <p><%= @user.email %></p>
+                    	<a style="font-size:30px;cursor:pointer" onclick="openNav()">Editer profile</a>
+                      <div id="mySidenav" class="sidenav">
+                  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                  <a ><%= form_tag user_images_path(@user), multipart: true do %>
+  					<p><%= file_field_tag :image %>
+  						<%= submit_tag"Modifier photo" %>
+					  <% end %></p>
+   				
+                  </a>
+                  <a onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Modifier le registration</a>
+                  <a href="#">Confidetialité</a>
+                  <a href="#">Se déconnecter</a>
+                      </div>
+
+                  <script>
+                  function openNav() {
+                    document.getElementById("mySidenav").style.width = "250px";
+                  }
+
+                  function closeNav() {
+                    document.getElementById("mySidenav").style.width = "0";
+                  }
+                  </script>
+                
+</div>
+        
+        </td>
+        <td>
+            <div id="card02">
+				 <h1 >Contenue</h1>
+			</div>
+            </td>
+      </tr>
+
+    </table>
+    
+ 
+</div>
+ <h1 style="margin-top: 200px;" >Contenue</h1>
+<div id="card01">
+	 <h6 ><p><%= @user.description %></p></h6>
+</div>
+<div class="footer">
+  <p>Footer</p>
+</div>
 
 
-<h3>Ajouter le profil</h3>
-<%= form_tag user_images_path(@user), multipart: true do %>
-  <%= file_field_tag :image %>
-  <%= submit_tag "Ajouter" %>
-<% end %>
+<!--   render edit_user_path     -->
+
+<div id="id01" class="modal">
+  <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+  <form class="modal-content" action="edit_user">
+    <div class="container">
+      <h4>Confindentialité</h4>
+      <p>Please fill in this form to create an account.</p>
+      <hr>
+      <label for="email"><b>First Name</b></label>
+      <input type="text" placeholder="@user.first_name" name="first_name" required>
+
+      <label for="email"><b>Last Name</b></label>
+      <input type="text" placeholder="@user.last_name" name="last_name" required>
+
+      <label for="email"><b>City</b></label>
+      <input type="text" placeholder="@user.city" name="city" required>
+
+      <label for="email"><b>Zip code</b></label>
+      <input type="text" placeholder="@user.zip_code" name="zip_code" required>
+
+      <label for="email"><b>Description</b></label>
+      <input type="text" placeholder="@user.description" name="description" required>
+
+      <label for="email"><b>Fonction</b></label>
+      <input type="text" placeholder="@user.fonction" name="fonction" required>
+
+      <label for="email"><b>Contacte</b></label>
+      <input type="text" placeholder="@user.phone_number" name="phone_number" required>
+       <label onclick="document.getElementById('id03').style.display='block'" style="width:auto;">Changer des mots de passe</label>
+      	<div id="id03" class="modal">
+      		<div class="container">
+      		<span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+      		<form class="modal-content" action="edit_user">
+      <label for="email"><b>Email</b></label>
+      <input type="text" placeholder=" user.email " name="mail" required>
+
+      <label for="psw"><b>Password</b></label>
+      <input type="password" placeholder="user.password" name="psw" required>
+  		
+      <label for="psw-repeat"><b>Repeat Password</b></label>
+      <input type="password" placeholder="@user.password_cofirmation" name="psw-repeat" required>
+      </div>
+  </div>
+</form>
+      <br>
+      <label>
+        <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Remember me
+      </label>
+
+      <p>By creating an account you agree to our <a href="#" style="color:dodgerblue">Terms & Privacy</a>.</p>
+
+      <div class="clearfix">
+        <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+        <button type="submit" class="signupbtn">Enregistrer</button>
+      </div>
+    </div>
+  </form>
+</div>
+
+</body>
+</html>
+

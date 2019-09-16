@@ -1,0 +1,60 @@
+
+<<<<<<< HEAD
+<div class="FA-container">
+	<h1 class="fa-title"><%=@formation.titre%></h1><br>
+	<div class="description" id="desc-1">
+		<h2 id="desc-title">Description</h2>
+		 <p id="desc-content"><%=@formation.description%></p> <br>
+    </div>
+    <div class="description" id="separation">
+    </div>
+	<div class="description" id="desc-2">
+	Lieu: <%=@formation.lieu%><br>
+	Mail si interréssé: <%=@formation.mail%><br>
+	Domaine spécifique: <%=@formation.domaine%><br>
+	Contact: <%=@formation.contact%>
+	</div>
+	
+</div><br>
+<%= link_to "Home", formation_academiques_path, class: "fa-action"%> <br>
+	<%= link_to "Edit", edit_formation_academique_path(@formation.id), class: "fa-action"%> <br>
+	<%= link_to "Delete", formation_academique_path(@formation.id), method: "delete",  data: { confirm: 'Voulez-vous vraiment supprimer?' }, class: "fa-action"%>
+<hr>
+<small> <%= render "../views/layouts/footer"%> </small>
+=======
+Description: <%=@formation.description%> <br>
+Lieu: <%=@formation.lieu%><br>
+Mail si interréssé: <%=@formation.mail%><br>
+Domaine spécifique: <%=@formation.domaine%><br>
+Contact: <%=@formation.contact%>
+</p>
+<%= link_to "Home", formation_academiques_path%> <br>
+<%= link_to "Edit", edit_formation_academique_path(@formation.id)%> <br>
+<%= link_to "Delete", formation_academique_path(@formation.id), method: "delete",  data: { confirm: 'Voulez-vous vraiment supprimer?' }%>
+<br>
+<br>
+
+<h2>Commenter</h2>
+<%= form_tag  formation_academique_commentaire_academiques_path(@formation.id),controller: "commentaire_academiques", method: "post" do %>
+<%= text_area_tag :contenu %>
+<%= submit_tag :envoyer%>
+<% end %>
+
+
+<%@formation.commentaires.each do |f|%>
+	"<%=f.contenu%>" <%=link_to 'Editer',  edit_formation_academique_commentaire_academique_path(f.formation_academique_id,f.id, controller: "commentaire_academiques" )%> <%=link_to 'Supprimer',   formation_academique_commentaire_academique_path(f.formation_academique_id,f.id), method: "delete",  data: { confirm: 'Voulez-vous vraiment supprimer?' } %>
+	 ;
+		<%= form_tag  formation_academique_commentaire_academique_reponse_academiques_path(f.formation_academique_id, f.id), controller: "reponse_academiques", method: "post" do %>
+			REPONDRE CE COMS:
+			<%= text_area_tag :contenu %>
+			<%= submit_tag :envoyer%>
+		<% end %>
+
+	ma reponse: 
+				<% f.reponses.each do |r|%>
+				<%= r.contenu %>
+				<%end%>
+				<%=r.contenu%>
+				
+<br><br><br><%end%>
+>>>>>>> 35e9f80d3642715abffd9a9b53346e620b3148ee

@@ -1,0 +1,17 @@
+  <%= label_tag :titre %><br>
+  <%= text_field_tag :titre %><br>
+  <%= label_tag :Domaine %><br>
+  <%= text_field_tag :domaine %><br>
+  <%= label_tag :description %><br>
+  <%= text_area_tag :description %><br>
+  <%= label_tag :Email %><br>
+  <%= email_field_tag :mail %><br>
+  <%= label_tag :contacte %><br>
+  <%= telephone_field_tag :contacte %><br>
+  <%= label_tag :lieu %><br>
+  <%= text_field_tag :lieu %><br>
+  <%= label_tag :objet %><br>
+  <%= text_field_tag :objet %><br>
+  
+  <%= hidden_field_tag :authenticity_token, form_authenticity_token %><br>
+  <%= submit_tag "Envoyer"%>
