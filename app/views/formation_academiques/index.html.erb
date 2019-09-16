@@ -1,7 +1,23 @@
-<h1>FormationAcademiques#index</h1>
-<p>Find me in app/views/formation_academiques/index.html.erb</p>
-<%=link_to "Proposer une offre", new_formation_academique_path%>
-<%@formation.each do |f|%><br>
-Titre: <%=f.titre%>
-<%=link_to "Voir plus", formation_academique_path(f.id)%>
-<%end%> 
+
+
+
+<div class="FA-container">
+	<div class="FA-title">
+		<h1 id="FA-title-content" >Formations Academiques</h1>
+	</div>
+
+	<div class="FA-cont-list">
+		<%@formation.each do |f|%><br>
+		<div class="FA-lst-titre">
+			<%=f.titre%>
+			<%=link_to "Voir plus >", formation_academique_path(f.id), id:"FA-bout-voir"%>
+		</div>
+		<%end%> 
+    </div>
+    
+	<div id="FA-bout-offre">
+		<%=button_to "Proposer une offre >>>", new_formation_academique_path,  id:"FA-bout"%>
+	</div>
+</div>
+<hr>
+<small> <%= render "../views/layouts/footer"%> </small>

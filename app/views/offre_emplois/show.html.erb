@@ -16,3 +16,29 @@
 
  
 </table>
+
+<h2>Commenter</h2>
+<%= form_tag  offre_emploi_commentaire_emplois_path(@offreemploi.id),controller: "commentaire_emplois", method: "post" do %>
+<%= text_area_tag :contenu %>
+<%= submit_tag :envoyer%>
+<% end %>
+
+
+<%@offreemploi.commentaires.each do |f|%>
+"<%=f.contenu%>"
+<%=link_to 'Editer',  edit_offre_emploi_commentaire_emploi_path(f.offre_emploi_id,f.id)%> 
+<%=link_to 'Supprimer',   offre_emploi_commentaire_emploi_path(f.offre_emploi_id,f.id), method: "delete",  data: { confirm: 'Voulez-vous vraiment supprimer?' } %><br>
+
+<%= form_tag  offre_emploi_commentaire_emploi_reponse_emplois_path(f.offre_emploi_id, f.id), controller: "reponse_emplois", method: "post" do %>
+			REPONDRE CE COMS:
+			<%= text_area_tag :contenu %>
+			<%= submit_tag :envoyer%>
+		<% end %>
+
+	ma reponse: 
+				<% f.reponses.each do |r|%>
+				<%= r.contenu %>
+				<%end%>
+				
+<br><br><br><%end%>
+
