@@ -1,7 +1,34 @@
-<h1>OffreEmplois#index</h1>
+<!DOCTYPE html>
+<html>
+<head>
+	 <!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 
-<table>
-<% @offreemplois.each do |oe| %> 
+	<!-- jQuery library -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+	<!-- Popper JS -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+
+	<!-- Latest compiled JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script> 
+</head>
+<body>
+<h1>OffreEmplois#index</h1>
+<div class="table-responsive">
+<table class="table table-dark table-striped">
+	<thead>
+	  <tr>
+        <th>ID</th>
+        <th>Description</th>
+        <th>Lieu</th>
+        <th>Salaire</th>
+        <th>Mail</th>
+      </tr>
+	</thead>
+	<tbody>
+<% @offreemplois.each do |oe| %>
+
 	<tr>
 		<td><%= oe.id %></td>
 	 	<td><%= oe.description %></td>
@@ -10,6 +37,11 @@
 	 	<td><%= oe.mail %></td> 
 	 	<td><%=link_to "voir plus",offre_emploi_path(oe.id)%></a></td>
 	</tr> 
+
  <%end%>
+ </tbody> 
 </table>
+</div>
 <%= link_to "Proposer un nouveau emploi", new_offre_emploi_path%>
+</body>
+</html>

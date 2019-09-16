@@ -18,7 +18,6 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :domaines
   resources :places
   root to: "publications#index"
   devise_for :users
