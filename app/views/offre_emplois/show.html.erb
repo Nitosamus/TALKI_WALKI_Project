@@ -9,10 +9,8 @@
 	 	<td><%= @offreemploi.salaire %></td>
 	 	<td><%= @offreemploi.mail %></td> 
 	 	<td>
-	 		<%= link_to "Home", offre_emplois_path%> 
 	 		<%=link_to "éditer",edit_offre_emploi_path(@offreemploi.id)%>
 	 		<%=link_to "Supprimer",offre_emploi_path(@offreemploi.id) , method:"delete",data:{confirm:"On supprime?"}%>
-
 	 	</td>
 	</tr>
 
