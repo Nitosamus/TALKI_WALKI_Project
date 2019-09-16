@@ -17,8 +17,10 @@
       <%= f.email_field :email, autofocus: true, autocomplete: "email", class:"inpts" %>
 
 
+
 <%= form_for(resource, as: resource_name, url: user_path(resource_name)) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
+
 
 
       <%= f.label :password, class:"lab" %>
