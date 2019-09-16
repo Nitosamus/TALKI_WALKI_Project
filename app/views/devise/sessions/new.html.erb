@@ -1,116 +1,30 @@
-<style>
-  .sign_in {
-      margin:0;
-      padding: 0;
-      background:url(http://a52.idata.over-blog.com/5/97/91/57/fond-ecran-iphone/fond-ecran-iphone-1961.PNG);
-      font-family: sans-serif;
-      background-size: cover;
-    }
 
-    .login-box {
-      width: 320px;
-      height: 420px;
-      background: rgba(0,0,0,0.5);
-      color: #fff;
-      top:50%;
-      left: 50%;
-      position: absolute;
-      transform: translate(-50%,-50%);
-      box-sizing: border-box;
-      padding: 70px 40px;
-      border-radius: 20px;
-     }
 
-     .image {
-      height: 100px;
-      width: 100px;
-      border-radius: 50%;
-      position: absolute;
-      top:0px;
-      left: calc(50% - 50px);
-     }
+    <div class="sign-container">
 
-     h1 {
-      padding: 0 0 20px;
-      text-align: center;
-      top:-80px;
-     }
+            <img src="http://www.clipartroo.com/images/92/blue-person-clipart-92961.png" class="image">
+            <h1 >Log in</h1>
 
-     .login-box field {
-      padding: 0;
-      font-weight: bold;
-     }
-     
-     .login-box input{
-      border:none;
-      border-bottom: 1px solid #fff;
-      background:transparent;
-      color: #fff;
-      font-size: 16px;
-     }
+        <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+        <div class="field">
+              <%= f.label :email, class:"lab" %><br/>
+              <%= f.email_field :email, autofocus: true, autocomplete: "email", class:"inpts" %>
 
-     p {
-      color:DodgerBlue;
-      text-align: center;
-     }
+              <%= f.label :password, class:"lab" %><br />
+              <%= f.password_field :password, autocomplete: "current-password", class:"inpts" %>
 
-     .actions{ 
-      text-decoration: none;
-      border:none;
-      outline: none;
-      height: 30px;
-      background: #1c8adb;
-      color: #fff;
-      font-size: 5px;
-      border-radius: 20px;
-      text-align: center;
-      
-     }
-     .actions:hover {
-      cursor: pointer;
-      background: rgb(0, 0, 174);
-      color: #000;
+            <% if devise_mapping.rememberable? %>
+                <p><%= f.check_box :remember_me %>
+                <%= f.label :remember_me, class:"lab" %><p>
+            <% end %>
 
-     }
-     a{
-      text-decoration: none;
-      color: white;
-     }
-
-     a:hover {
-      cursor: pointer;
-      color: rgb(0, 0, 174);
-     }
-    
-</style>
-<body class="sign_in">
-  <div class="login-box">
-    <img src="http://www.clipartroo.com/images/92/blue-person-clipart-92961.png" class="image">
-    <h1>Log in</h1>
-    <form>
-  <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="field">
-    <%= f.label :email %><br/>
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+            <div class="actions">
+              <%= f.submit "Log in", class:"btn btn-info btn-bg", id:"login2"%>
+            </div>
+            <% end %>
+            <small><%= render "devise/shared/links"%></small>
+        </div>
   </div>
-
-  <div class="field">
-    <%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "current-password" %>
-  </div>
-
-  <% if devise_mapping.rememberable? %>
-    <div class="field">
-      <p><%= f.check_box :remember_me %>
-      <%= f.label :remember_me %><p>
-    </div>
-  <% end %>
-
-  <div class="actions">
-    <%= f.submit "Log in" %>
-  </div>
-  <% end %>
-  <%= render "devise/shared/links" %>
-  </form>
-  </div>
-</body>
+  <hr>
+  <small> <%= render "../views/layouts/footer"%> </small>
+ 

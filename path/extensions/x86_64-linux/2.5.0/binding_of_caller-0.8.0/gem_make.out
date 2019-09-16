@@ -1,0 +1,16 @@
+current directory: /home/dev/Bureau/TALKI_WALKI_Project/path/gems/binding_of_caller-0.8.0/ext/binding_of_caller
+/home/dev/.rvm/rubies/ruby-2.5.1/bin/ruby -I /home/dev/.rvm/rubies/ruby-2.5.1/lib/ruby/site_ruby/2.5.0 -r ./siteconf20190913-4864-php2re.rb extconf.rb
+
+current directory: /home/dev/Bureau/TALKI_WALKI_Project/path/gems/binding_of_caller-0.8.0/ext/binding_of_caller
+make "DESTDIR=" clean
+make: *** Aucune règle pour fabriquer la cible « clean ». Arrêt.
+
+current directory: /home/dev/Bureau/TALKI_WALKI_Project/path/gems/binding_of_caller-0.8.0/ext/binding_of_caller
+make "DESTDIR="
+echo "Nada."
+Nada.
+
+current directory: /home/dev/Bureau/TALKI_WALKI_Project/path/gems/binding_of_caller-0.8.0/ext/binding_of_caller
+make "DESTDIR=" install
+echo "Nada."
+Nada.

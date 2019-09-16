@@ -1,0 +1,45 @@
+<nav id="navtheme" class="navbar navbar-dark bg-dark">
+  <form class="form-inline">
+      <%= link_to "Item-Home", root_path, class: "btn btn-outline-success navbar-brand", role: "button"%>
+      <%if user_signed_in? && current_user.cart%>
+
+      <%= link_to "<i class='fas fa-cart-arrow-down'><small> <span class='badge badge-light' >My Cart</span></small></i>".html_safe, item_cart_path(current_user.cart.items[0].id, current_user.cart.id), class: 'btn btn-outline-info btn-sm navbar-brand', role: "button", style: "opacity: 1.2"%>
+      <%end%>
+  </form>
+  <ul class="bandhead">
+<li class="drop">
+  <a href="javascript:void(0)" class="btn-outline-primary btn-sm">Share</a>
+  <div class="drop-content">
+    <a href="#">facebook</a>
+    <a href="#">twitter</a>
+    <a href="#">youtube</a>
+  </div>
+</li>
+</ul>
+
+  <% if user_signed_in?%>
+      <div class="btn-group">
+      <button type="button" class="btn btn-info">User</button>
+      <button type="button" class="btn btn-primary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <span class="sr-only">Toggle Dropdown</span>
+      </button>
+      <div class="dropdown-menu">
+          <%=link_to "Mon profil", user_path(current_user.id), class:"dropdown-item"%>
+          <%=link_to "Editer profil", edit_user_path(current_user.id), class:"dropdown-item" %>
+         <%=link_to "Se deconnecter",destroy_user_session_path, method: :delete, class:"dropdown-item"%>
+         <div class="dropdown-divider"></div>
+        </div>
+      </div>
+<%else%>
+<div class="btn-group">
+      <button type="button" class="btn btn-info">User</button>
+      <button type="button" class="btn btn-primary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <span class="sr-only">Toggle Dropdown</span>
+      </button>
+    <div class="dropdown-menu">
+      <%=link_to "S'inscrire", new_user_registration_path, class:"dropdown-item"%>
+      <%=link_to "Se connecter", new_user_session_path, class:"dropdown-item"%>
+      <div class="dropdown-divider"></div>
+  </div>
+<%end%>
+</nav>

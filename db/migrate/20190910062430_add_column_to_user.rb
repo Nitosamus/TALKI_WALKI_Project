@@ -7,5 +7,6 @@ class AddColumnToUser < ActiveRecord::Migration[5.2]
     add_column :users, :description, :text
     add_column :users, :function, :string
     add_column :users, :phone_number, :string
+    add_column :users, :role, :string
   end
 end

@@ -1,2 +1,45 @@
 <h1>ProfessionalFormations#show</h1>
 <p>Find me in app/views/professional_formations/show.html.erb</p>
+<table>
+		<tr>
+		<td><%= @professionalformation.id %></td>
+	 	<td><%= @professionalformation.objet %></td>
+	 	<td><%= @professionalformation.titre %></td>
+	 	<td><%= @professionalformation.lieu %></td>
+	 	<td><%= @professionalformation.contacte %></td>
+	 	<td>
+	 		<%=link_to "éditer",edit_professional_formation_path(@professionalformation.id)%>
+	 		<%=link_to "Supprimer",professional_formation_path(@professionalformation.id), method:"delete",data:{confirm:"On supprime?"}%>
+	 	</td>
+	</tr>
+
+ 
+</table>
+
+<h2>Commenter</h2>
+<%= form_tag  professional_formation_commentaire_professionels_path(@professionalformation.id),controller: "commentaire_professionels", method: "post" do %>
+<%= text_area_tag :contenu %>
+<%= submit_tag :envoyer%>
+<% end %>
+
+<%@professionalformation.commentaires.each do |f|%>
+"<%=f.contenu%>"
+<%=link_to 'Editer',  edit_professional_formation_commentaire_professionel_path(f.professional_formation_id,f.id)%>
+ <%=link_to 'Supprimer', professional_formation_commentaire_professionel_path(f.professional_formation_id,f.id), method: "delete",  data: { confirm: 'Voulez-vous vraiment supprimer?' }%>
+ <br>
+
+ <%= form_tag   professional_formation_commentaire_professionel_reponse_professionnels_path(f.professional_formation_id, f.id), controller: "reponse_academiques", method: "post" do %>
+			REPONDRE CE COMS:
+			<%= text_area_tag :contenu %>
+			<%= submit_tag :envoyer%>
+		<% end %>
+
+	ma reponse: 
+				<% f.reponses.each do |r|%>
+				<%= r.contenu %>
+				<%end%>
+				
+<br><br><br><%end%>
+
+
+

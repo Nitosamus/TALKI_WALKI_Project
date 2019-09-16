@@ -1,20 +1,20 @@
 Rails.application.routes.draw do
 
   resources :professional_formations do
-    resources :commentaires do 
-      resources :reponses
+    resources :commentaire_professionels do 
+      resources :reponse_professionnels
     end
   end
   
   resources :offre_emplois do
-    resources :commentaires do 
-      resources :reponses
+    resources :commentaire_emplois do 
+      resources :reponse_emplois
     end
   end
 
   resources :formation_academiques  do
-    resources :commentaires do 
-      resources :reponses
+    resources :commentaire_academiques do 
+      resources :reponse_academiques
     end
   end
 
