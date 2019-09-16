@@ -60,14 +60,7 @@
        <span>TALKI WALKI</span>
      </h4>
    </section>
-<div class="notification">
-  <% if user_signed_in?%>
-  <p>vous êtes connecté </p>
-  <%= link_to "logout", destroy_user_session_path, method: :delete%>
-  <%else%>
-  <p>vous êtes déconnecté </p>
-  <%end%>
-</div>
+
 <dir class="container">
   <dir class="card">
     <img src="https://www.biblond.com/wp-content/uploads/2019/05/formation-1-857x600.jpg">
@@ -115,6 +108,15 @@
        </a>
     </div>
   </div>
+</div>
+
+<div class="notification">
+  <% if user_signed_in?%>
+  <p>vous êtes connecté </p>
+  <%= link_to "logout", destroy_user_session_path, method: :delete%>
+  <%else%>
+  <p>vous êtes déconnecté </p>
+  <%end%>
 </div>
 
 </body>
