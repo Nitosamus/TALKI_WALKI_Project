@@ -18,7 +18,7 @@
 <%= link_to "Home", formation_academiques_path, class: "fa-action"%> <br>
 	<%= link_to "Edit", edit_formation_academique_path(@formation.id), class: "fa-action"%> <br>
 	<%= link_to "Delete", formation_academique_path(@formation.id), method: "delete",  data: { confirm: 'Voulez-vous vraiment supprimer?' }, class: "fa-action"%>
-<hr>
+<br><br>
 
 
 <h2>Commenter</h2>
@@ -29,7 +29,7 @@
 
 
 <%@formation.commentaires.each do |f|%>
-	"<%=f.contenu%>" <%=link_to 'Editer',  edit_formation_academique_commentaire_academique_path(f.formation_academique_id,f.id, controller: "commentaire_academiques" )%> <%=link_to 'Supprimer',   formation_academique_commentaire_academique_path(f.formation_academique_id,f.id), method: "delete",  data: { confirm: 'Voulez-vous vraiment supprimer?' } %>
+	"<%=f.contenu%>" <%=link_to 'Editer',  edit_formation_academique_commentaire_academique_path(f.formation_academique_id,f.id), controller: "commentaire_academiques"%> <%=link_to 'Supprimer',   formation_academique_commentaire_academique_path(f.formation_academique_id,f.id), method: "delete",  data: { confirm: 'Voulez-vous vraiment supprimer?' } %>
 	 ;
 		<%= form_tag  formation_academique_commentaire_academique_reponse_academiques_path(f.formation_academique_id, f.id), controller: "reponse_academiques", method: "post" do %>
 			REPONDRE CE COMS:
@@ -42,6 +42,7 @@
 				<%= r.contenu %>
 				<%end%>
 				<%=r.contenu%>
-				
-<br><br><br><%end%>
+	<%end%>			
+<br><br><br>
+
 
