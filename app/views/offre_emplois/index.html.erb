@@ -20,6 +20,22 @@
 <table>
 <% @offreemplois.each do |oe| %>
 
+<table>
+<% @offreemplois.each do |oe| %> 
+
+<div class="table-responsive">
+<table class="table table-dark table-striped">
+	<thead>
+	  <tr>
+        <th>ID</th>
+        <th>Description</th>
+        <th>Lieu</th>
+        <th>Salaire</th>
+        <th>Mail</th>
+      </tr>
+	</thead>
+	<tbody>
+<% @offreemplois.each do |oe| %>
 
 <table>
 <% @offreemplois.each do |oe| %> 
@@ -37,6 +53,7 @@
 	</thead>
 	<tbody>
 <% @offreemplois.each do |oe| %>
+
 	<tr>
 		<td><%= oe.id %></td>
 	 	<td><%= oe.description %></td>
@@ -47,7 +64,7 @@
 	 	<td><%=link_to "voir",offre_emploi_path(oe.id)%></a></td>
 	</tr>
 	 	<td><%=link_to "voir plus",offre_emploi_path(oe.id)%></a></td>
-	</tr> 
+	</tr>  
 
  <%end%>
  </tbody> 

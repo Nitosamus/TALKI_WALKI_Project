@@ -30,7 +30,7 @@ u=User.all
 
 10.times do
 FormationAcademique.create!(description: Faker::Lorem.paragraphs, contact: Faker::IDNumber.unique.valid, mail: Faker::Internet.free_email, titre: 
-Faker::University.name, domaine: Faker::Commerce.department, lieu: Faker::WorldCup.team, user:u[rand(10)] )
+Faker::University.name,lieu: Faker::WorldCup.team, user:u[rand(10)] )
 end
 
 
@@ -41,8 +41,7 @@ end
 		contacte:Faker::PhoneNumber.phone_number,
 		mail:Faker::Internet.email,
 		description:Faker::Job.name, 
-		user:u[rand(10)],
-		domaine: Faker::Commerce.department)
+		user:u[rand(10)])
 
 end
 tp ProfessionalFormation.all
@@ -53,13 +52,8 @@ tp ProfessionalFormation.all
 		lieu:Faker::Address.street_address,
 		mail:Faker::Internet.email,
 		description:Faker::Job.name, 
-		user:User.find(5),
-		
-
+		user:u[rand(10)]
 		)
 end
+tp User.all
 tp OffreEmploi.all
-
-
-
-
