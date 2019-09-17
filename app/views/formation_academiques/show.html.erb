@@ -18,8 +18,13 @@
 <%= link_to "Home", formation_academiques_path, class: "fa-action"%> <br>
 	<%= link_to "Edit", edit_formation_academique_path(@formation.id), class: "fa-action"%> <br>
 	<%= link_to "Delete", formation_academique_path(@formation.id), method: "delete",  data: { confirm: 'Voulez-vous vraiment supprimer?' }, class: "fa-action"%>
+
 <br><br>
 
+
+<hr>
+
+<br>
 
 <h2>Commenter</h2>
 <%= form_tag  formation_academique_commentaire_academiques_path(@formation.id),controller: "commentaire_academiques", method: "post" do %>
@@ -33,6 +38,20 @@
 	 ;
 		<%= form_tag  formation_academique_commentaire_academique_reponse_academiques_path(f.formation_academique_id, f.id), controller: "reponse_academiques", method: "post" do %>
 			REPONDRE CE COMS:
+
+<%@formation.commentaires.each do |a|%>
+	"<%=a.contenu%>" <%=link_to 'Editer',  edit_formation_academique_commentaire_academique_path(a.formation_academique_id,a.id, controller: "commentaire_academiques" )%> <%=link_to 'Supprimer',   formation_academique_commentaire_academique_path(a.formation_academique_id,a.id), method: "delete",  data: { confirm: 'Voulez-vous vraiment supprimer?' } %>
+	 ; <br><br>
+		
+	 
+				<% a.reponses.each do |r|%>
+			<span> ma reponse: </span>
+				"<%= r.contenu %>" <%=link_to "Editer",  edit_formation_academique_commentaire_academique_reponse_academique_path(a.formation_academique_id, a.id, r.id), controller: "reponse_academiques"%> <%=link_to "Supprimer",  formation_academique_commentaire_academique_reponse_academique_path(a.formation_academique_id, a.id, r.id), controller: "reponse_academiques", method: "DELETE",  data: { confirm: 'Voulez-vous vraiment supprimer?' } %> 
+				<%end%>
+
+
+				<%= form_tag  formation_academique_commentaire_academique_reponse_academiques_path(a.formation_academique_id, a.id), controller: "reponse_academiques", method: "post" do %>
+			<span> REPONDRE CE COMS: </span>
 			<%= text_area_tag :contenu %>
 			<%= submit_tag :envoyer%>
 		<% end %>
@@ -46,3 +65,6 @@
 <br><br><br>
 
 
+			<%end%>	
+<br><br><br>
+<%= render "layouts/footer" %>
