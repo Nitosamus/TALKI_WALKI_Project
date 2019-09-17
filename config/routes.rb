@@ -1,4 +1,5 @@
- 	resources :images, only:[:create]
+ 	Rails.application.routes.draw do
+  resources :images, only:[:create]
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   devise_for :users
   resources :professional_formations do
@@ -17,6 +18,7 @@
     resources :commentaires do 
       resources :reponses
     end
+  end
   resources :professional_formations do
     resources :commentaire_professionels do 
       resources :reponse_professionnels
@@ -34,8 +36,8 @@
       resources :reponse_academiques
     end
   end
-  resources :places
-  resources :users do
-  root to: "publications#index"
+    resources :places
+    resources :users do
+    root to: "publications#index"
+  end
 end
-Rails.application.routes.draw do
