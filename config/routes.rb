@@ -36,8 +36,19 @@
       resources :reponse_academiques
     end
   end
+
     resources :places
     resources :users do
     root to: "publications#index"
+
+  resources :users do
+ 	  resources :images, only:[:create]
+
+  resources :places
+  root to: "publications#index"
+  devise_for :users
+  
+  resources :users do
+ 	  resources :images, only:[:create]
   end
 end

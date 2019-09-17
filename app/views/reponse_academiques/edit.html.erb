@@ -1,2 +1,5 @@
-<h1>ReponseAcademiques#edit</h1>
-<p>Find me in app/views/reponse_academiques/edit.html.erb</p>
+<h2>Editer reponse:</h2>
+<%= form_tag    formation_academique_commentaire_academique_reponse_academique_path(@reponse.commentaire.formation_academique_id,@reponse.commentaire_id, @reponse.id),controller: "reponse_academiques", method: "put" do %>
+<%= text_area_tag :contenu %>
+<%= submit_tag :envoyer%>
+<% end %>
