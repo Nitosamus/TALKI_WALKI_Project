@@ -30,11 +30,13 @@
  
  
 				<% coms.reponses.each do |r|%>
-				<span> Reponse: </span>
-				<%= r.contenu %> , 
-				<%end%>
+				<span> Reponse: 
+				<%= r.contenu %> , </span> 
+	<%=link_to "Editer", edit_professional_formation_commentaire_professionel_reponse_professionnel_path(coms.professional_formation_id, coms.id, r.id), controller: "reponse_professionnels" %>  <%=link_to "Supprimer",  professional_formation_commentaire_professionel_reponse_professionnel_path(coms.professional_formation_id, coms.id, r.id), controller: "reponse_professionnels", method: "DELETE",  data: { confirm: 'Voulez-vous vraiment supprimer?' } %>
+				<%end%> 
+
 				
-<%= form_tag   professional_formation_commentaire_professionel_reponse_professionnels_path(coms.professional_formation_id, coms.id), controller: "reponse_academiques", method: "post" do %>
+<%= form_tag   professional_formation_commentaire_professionel_reponse_professionnels_path(coms.professional_formation_id, coms.id), controller: "reponse_professionnels", method: "post" do %>
  <span>REPONDRE CE COMS: </span> 
 <%= text_area_tag :contenu %>
 <%= submit_tag :envoyer%>

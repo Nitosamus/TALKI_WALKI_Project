@@ -36,7 +36,7 @@
 	 
 				<% a.reponses.each do |r|%>
 			<span> ma reponse: </span>
-				"<%= r.contenu %>" <%=link_to "Editer",  edit_formation_academique_commentaire_academique_reponse_academique_path(a.formation_academique_id, a.id, r.id), controller: "reponse_academiques"%>  
+				"<%= r.contenu %>" <%=link_to "Editer",  edit_formation_academique_commentaire_academique_reponse_academique_path(a.formation_academique_id, a.id, r.id), controller: "reponse_academiques"%> <%=link_to "Supprimer",  formation_academique_commentaire_academique_reponse_academique_path(a.formation_academique_id, a.id, r.id), controller: "reponse_academiques", method: "DELETE",  data: { confirm: 'Voulez-vous vraiment supprimer?' } %> 
 				<%end%>
 
 
