@@ -15,13 +15,8 @@
       <%= f.label :email, class:"lab" %><br />
         <input type="hidden" name="authenticity_token" value="[different hash]">
       <%= f.email_field :email, autofocus: true, autocomplete: "email", class:"inpts" %>
-
-
-
-<%= form_for(resource, as: resource_name, url: user_path(resource_name)) do |f| %>
+%= form_for(resource, as: resource_name, url: user_path(resource_name)) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
-
-
 
       <%= f.label :password, class:"lab" %>
       <% if @minimum_password_length %>
@@ -47,4 +42,5 @@
 </div>
 <hr>
 <small> <%= render "../views/layouts/footer"%> </small>
+
 <% end %>

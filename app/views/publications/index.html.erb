@@ -1,3 +1,125 @@
 
+<section class="page">
+  <div class="wrap">
+      <nav>
+        <div class="logo"><div class="loading">
+        <span>Tk-Wk</span>
+      </div></div>
+        <ul>
+          <li><a class="active" href="">TALKI-WALKI</a></li>
+          <li><a href="">Emploi</a></li>
+          <li><a href="">Formation</a></li>
+          <li><a href="">Domaine</a></li>
+          <li>
+        
+             <a class="dropdown">Action</a>
+               <div class="contenu-drop">
+              <%=link_to  "Connexion", new_user_session_path%> 
+              <%= link_to "Inscription", new_user_registration_path%>
+            </a>
+            </li>
+        </ul>
+      </nav> 
+  </div>
+
+    <div class="gauche" style="display: inline-block;">
+    <ul>
+      <li><a class="active" href="">Acceuil</a></li>
+      <li><a href="">A propos</a></li>
+      <li><a href="">Contact</a></li>
+      <li><a href="">Aide</a></li>
+      <div class="loading">
+        <span>Loading...</span>
+      </div>
+    </ul>
+    <div class="gauche" style="display: inline-block;">
+    <ul>
+      <li><a class="active" href="">Acceuil</a></li>
+      <li><a><%= render "layouts/apropos" %></a></li>
+      <li><a><%= render "layouts/contacte" %></a></li>
+      <li><a><%= render "layouts/aide" %></a></li>
+      <div class="loading">
+        <span>Loading...</span>
+      </div>
+    </ul>
+    <div class="gauche" style="display: inline-block;">
+    <ul>
+      <li><a class="active" href="">Acceuil</a></li>
+      <li><a href="">A propos</a></li>
+      <li><a href="">Contact</a></li>
+      <li><a href="">Aide</a></li>
+      <div class="loading">
+        <span>Loading...</span>
+      </div>
+    </ul>
+       </div>
+    </ul>
+   </div>
+   <section class="animation">
+    
+     <h4>
+       C'est une site pour but d'aider les étudiants à trouver un emploi stable<br>
+       <span>TALKI WALKI</span>
+     </h4>
+   </section>
+
+<dir class="container">
+  <dir class="card">
+    <img src="https://www.biblond.com/wp-content/uploads/2019/05/formation-1-857x600.jpg">
+   
+    <p>You'll notice that there are two sets of the files. The min means that the file is "compressed" to reduce load times. These min.</p>
+ <div class="bouton">
+     <p> <a href="professional_formations" class="button">Formation professionnelle</a></p>
+    </div>
+  </dir>
+  <dir class="card">
+    <img src="https://www.groupe-esi.fr/wp-content/uploads/1000pxL-formation-continue.jpg">
+   
+    <p>You'll notice that there are two sets of the files. The min means that the file is "compressed" to reduce load times. These min.</p>
+    
+       <div class="bouton">
+         <p><a href="formation_academiques" class="button">Formation académique</a></p>
+       </div>
+  </dir>
+  <dir class="card">
+    <img src="https://www.bazar-kely.com/wp-content/uploads/2019/07/offre.jpg">
+    <p>You'll notice that there are two sets of the files. The min means that the file is "compressed" to reduce load times. These min.</p>
+    <div class="bouton">
+      <p>
+        <a href="offre_emplois" class="button">Offre d'emploi</a>
+      </p>
+    </div>
+  </dir>
+</dir>
+<div class="notification">
+  <% if user_signed_in?%>
+  <p>vous êtes connecté </p>
+  <%= link_to "logout", destroy_user_session_path, method: :delete%>
+  <%else%>
+  <p>vous êtes déconnecté </p>
+  <%end%>
+</div>
+
+ 
+  <div class="footer">
+    <div class="middle">
+        <a class="btn" href="https://www.facebook.com/groups/831950326988986/">
+       <i class="icon ion-logo-facebook"></i>
+       </a>
+       <a class="btn" href="https://www.portaljob-madagascar.com/">
+       <i><ion-icon name="logo-google"></ion-icon>
+       </a></i>
+       <a class="btn" href="http://www.lezomadetana.mg/products?c=entreprise&cname=OFFRES%20BANCAIRES">
+       <i><ion-icon name="pricetags"></ion-icon></i>
+       </a>
+       <a class="btn" href="https://www.youtube.com/channel/UC_giEAbxnR8RZ62H_cRk5Eg">
+       <i><ion-icon name="play-circle"></ion-icon></i>
+       </a>
+       <a class="btn" href="https://mail.google.com/mail/u/0/#inbox">
+       <i><ion-icon name="at"></ion-icon></i>
+       </a>
+    </div>
+  </div>
+</div>
 
 
