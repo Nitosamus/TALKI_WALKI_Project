@@ -1,13 +1,4 @@
 /*index- principale*/
-
-.page {
-    background:url(wallpaper-2561368_960_720.jpg);
-    background-size:cover;
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-  }
-
 @media only screen and (max-device-width: 1366px) {
   .parallax {
     background-attachment: scroll;
@@ -141,6 +132,7 @@
   width: 70px;
   height: 70px;
   margin-left: 20%;
+  margin-top: -15px;
   box-sizing: border-box;
   border-radius: 50%;
   border-top: 10px solid #e74c3c;
@@ -299,18 +291,6 @@ nav ul li a.active {
   color: #fff;
   border-radius: 6px;
 }
-.dropdown{
-  text-decoration: none;
-  color: white;
-  background-color: rgba(0, 255, 255,0.5);
-  border-radius: 6px;
-}
-.dropdown:hover {
-  cursor: pointer;
-  background-color: rgb(0, 255, 255);
-  color: white;
-}
-
 
 /*animation text*/
 section .animation {
@@ -318,7 +298,6 @@ section .animation {
   background-color: black;
   color: rgba(60, 179, 200,0.5);
   text-align: center;
-  margin: 0;
 }
 
 h4 {
@@ -330,7 +309,7 @@ h4 {
   border-width: 4px 0;
   padding: 1.5em 0em;
   position: absolute;
-  top:18%;
+  top:40%;
   left: 50%;
   width: 40em;
   margin: 0 0 0 -20em;
