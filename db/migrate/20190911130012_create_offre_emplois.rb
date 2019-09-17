@@ -5,7 +5,6 @@ class CreateOffreEmplois < ActiveRecord::Migration[5.2]
       t.string :lieu
       t.string :salaire
       t.string :mail
-      t.string :domaine
 
 
       t.belongs_to :user, index:true

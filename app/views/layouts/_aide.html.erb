@@ -1,24 +1,43 @@
-<div class="aides">
+<label style="font-size:15px;cursor:pointer" onclick="openNav01()">&#9776;Aide</label>
 
-<h3>S'INSCRIRE</h3>
-<p>Si vous n'êtes pas encore inscrit(e)s, vous devrez d'abord <a href="<%= new_user_registration_path%>">s'incrire</a>pour avoir une compte et d'avoir accès au forum</p>
+<div id="aide01" class="aide">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav01()">&times;</a>
+  <form class="aide-content" action="">
+    <div class="aide_containeur01" style="padding: 16px;">
+      <h6 style="text-align: center;">Guide du site</h6>
+
+<h6>S'INSCRIRE</h6>
+<p>Si vous n'êtes pas encore inscrit(e)s, vous devrez d'abord <a <%= link_to "s'inscrir", new_user_registration_path%>></a>pour avoir une compte et d'avoir accès au forum</p>
 <br>
-<h3>SE CONNECTER</h3>
-<p>Si vous êtes inscrit(e)s, et que vous voulez <a href="<%= new_user_session_path%>">se connecter</a>,afin que vous ayez l'accès directe de votre profile</p>
+<h6>SE CONNECTER</h6>
+<p>Si vous êtes inscrit(e)s, et que vous voulez <a <%=link_to  "se connecte", new_user_session_path%>></a>,afin que vous ayez l'accès directe de votre profile</p>
 <br>
-<h3>FORUM:</h3>
-<h5>FORMATIONS</h5>
-<p>Pour cette fonctionalité,il faut que l'utilisateur soit <a href="<%= new_user_registration_path%>">inscrit(e)s</a> pour être parmis <a href="<%= new_user_registration_path%>">les membres</a> et avoir l'accès à tous les fonctionnalité du site.</p>
+<h6>FORUM:</h6>
+<h6>FORMATIONS</h6>
+<p>Pour cette fonctionalité,il faut que l'utilisateur soit <a <%= link_to "s'inscrir", new_user_registration_path%>></a> pour être parmis <a href="">les membres</a> et avoir l'accès à tous les fonctionnalité du site.</p>
 <p>Etant connecter,l'utilisateur pourait participer sur notre forum.<br>
 <li>
-	<ul><h6>Formation</h6></ul>
-	<p>Les formation indexée sont des publication commit par l'utilisateur;</p>
-	<ul><h6>Offre</h6></ul>
-	<p>Les offres indexées sont des publications commit par l'utilisateur;</p>
+  <ul><h6>Formation</h6></ul>
+  <p>Les formation indexée sont des publication commit par l'utilisateur;</p>
+  <ul><h6>Offre</h6></ul>
+  <p>Les offres indexées sont des publications commit par l'utilisateur;</p>
 </li></p>
 <br>
-<h5>Apropos de nous</h5>
+<h6>Apropos de nous</h6>
 <p>Talki-Walki est une site de discussion pour les jeunes actif et qui veut partager avec beaucoup de ses amis;<br>
 De son côté,Talki-Walki offre une opportunité pour les membres de voir les publications des entreprises.</p>
 
 </div>
+      
+    </div>
+  </form>
+</div>
+
+<script>
+  function openNav01() {
+    document.getElementById('aide01').style.width = "25%";
+  };
+  function closeNav01() {
+  document.getElementById("aide01").style.width = "0%";
+  };
+</script>

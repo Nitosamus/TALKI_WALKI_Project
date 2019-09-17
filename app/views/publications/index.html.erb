@@ -1,45 +1,40 @@
-
-
-
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 <link href="https://unpkg.com/ionicons@4.5.10-0/dist/css/ionicons.min.css" rel="stylesheet">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Neuton|oswald">
 <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons"rel="stylesheet">
-<section class="page">
-  <div class="wrap">
-      <nav>
-        <div class="logo"><div class="loading">
-        <span>Tk-Wk</span>
-      </div></div>
-        <ul>
-          <li><a class="active" href="">TALKI-WALKI</a></li>
-          <li><a href="">Emploi</a></li>
-          <li><a href="">Formation</a></li>
-          <li><a href="">Domaine</a></li>
-          <li>
-        
-             <a class="dropdown">Action</a>
-               <div class="contenu-drop">
-              <%=link_to  "Connexion", new_user_session_path%> 
-              <%= link_to "Inscription", new_user_registration_path%>
-            </a>
-            </li>
-        </ul>
-      </nav> 
+<section>
+  <div class="menu-bar">
+  <ul>
+    <li class="active"><i class="fa fa-home" aria-hidden="true"></i><a href="#">Talki-walki</li>
+    <li><i class="fa fa-address-card" aria-hidden="true"></i><a href="offre_emplois">Emploi</li>
+    <li><i class="fa fa-book" aria-hidden="true"></i><a href="">Formation</a>
+        <div class="sub-menu-1">
+          <ul>
+            <li><a href="formation_academiques">Academique</a></li>
+            <li><a href="professional_formations">Professionnelle</a></li>
+          </ul>
+        </div>
+    </li>
+    <li><i class="fa fa-user-circle-o" aria-hidden="true"></i><a>Action</a>
+        <div class="sub-menu-1">
+          <ul>
+            <li><a> <%=link_to  "Connexion", new_user_session_path%> </a></li>
+            <li><a><%= link_to "Inscription", new_user_registration_path%></a></li>
+            <li><a><%= link_to "logout", destroy_user_session_path, method: :delete%></a></li>
+          </ul>
+        </div>
+    </li>
+  </ul>
   </div>
-
-   
-       </div>
-    </ul>
-   </div>
-   <section class="animation">
+</section>
+<section class="animation">
      <h4>
        C'est une site pour but d'aider les étudiants à trouver un emploi stable<br>
        <span>TALKI WALKI</span>
      </h4>
    </section>
-
 <dir class="container">
   <dir class="card">
     <img src="https://www.biblond.com/wp-content/uploads/2019/05/formation-1-857x600.jpg">
@@ -98,4 +93,5 @@
     </div>
   </div>
 </div>
-
+</div>
+</section>
