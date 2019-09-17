@@ -12,17 +12,20 @@
   <%= @place.name %>
 </p>
 <p>
-    <div id="map"></div>
-</p>
-<p>
-  <strong>Latitude:</strong>
-  <%= @place.latitude %>
-</p>
+<div id="map" style="width:100%;height:500px"></div>
 
-<p>
-  <strong>Longitude:</strong>
-  <%= @place.longitude %>
-</p>
+<script>
+function myMap() {
+  var mapCanvas = document.getElementById("map");
+  var mapOptions = {
+    center: new google.maps.LatLng(51.508742, -0.120850),
+    zoom: 5
+  };
+  var map = new google.maps.Map(mapCanvas, mapOptions);
+}
+</script>
+
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBu-916DdpKAjTmJNIgngS6HL_kDIKU0aU&callback=myMap"></script>
 
 <p>
 <%= image_tag "https://maps.googleapis.com/maps/api/staticmap?zoom=17&size=400x300&center=#{@place.latitude},#{@place.longitude}&key=#{Rails.application.credentials.key}", alt: "Map" %>

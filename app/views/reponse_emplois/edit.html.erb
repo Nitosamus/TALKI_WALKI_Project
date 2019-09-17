@@ -1,2 +1,5 @@
-<h1>ReponseEmplois#edit</h1>
-<p>Find me in app/views/reponse_emplois/edit.html.erb</p>
+<h2>Editer reponse:</h2>
+<%= form_tag offre_emploi_commentaire_emploi_reponse_emploi_path(@reponse.commentaire.offre_emploi_id,@reponse.commentaire_id, @reponse.id),controller: "reponse_emplois", method: "put" do %>
+<%= text_area_tag :contenu %>
+<%= submit_tag :envoyer%>
+<% end %>
