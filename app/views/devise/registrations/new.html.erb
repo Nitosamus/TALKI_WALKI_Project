@@ -6,19 +6,22 @@
     <h2>Talki-walki</h2>
     <h1>Sign_up</h1>
     </div>
-
+    
     <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+      <input type="hidden" name="authenticity_token" value="[different hash]">
     <%= render "devise/shared/error_messages", resource: resource %>
 
     <div class="field">
       <%= f.label :email, class:"lab" %><br />
+        <input type="hidden" name="authenticity_token" value="[different hash]">
       <%= f.email_field :email, autofocus: true, autocomplete: "email", class:"inpts" %>
 
-<<<<<<< HEAD
-=======
+
+
 <%= form_for(resource, as: resource_name, url: user_path(resource_name)) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
->>>>>>> 35e9f80d3642715abffd9a9b53346e620b3148ee
+
+
 
       <%= f.label :password, class:"lab" %>
       <% if @minimum_password_length %>
@@ -26,11 +29,12 @@
       <em class="lab">(<%= @minimum_password_length %> characters minimum)</em>
 
       <% end %><br />
-
+        <input type="hidden" name="authenticity_token" value="[different hash]">
       <%= f.password_field :password, autocomplete: "new-password", class:"inpts" %>
 
 
       <%= f.label :password_confirmation, class:"lab"%><br/>
+        <input type="hidden" name="authenticity_token" value="[different hash]">
       <%= f.password_field :password_confirmation, autocomplete: "new-password", class:"inpts" %>
     </div>
 
@@ -43,3 +47,4 @@
 </div>
 <hr>
 <small> <%= render "../views/layouts/footer"%> </small>
+<% end %>

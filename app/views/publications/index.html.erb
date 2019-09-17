@@ -1,29 +1,13 @@
-<body class="page">
-   <button class="dropdown">
-          <a href="javascript:void(0)" class="drop">Pour aller loin</a>
-          <div class="contenu-drop">
-            <a href="">Connexion</a>
-            <a href="">Inscription</a>
-    </button>
 
 
-<body class="page">
-   <button class="dropdown">
-          <a href="javascript:void(0)" class="drop">Pour aller loin</a>
-          <div class="contenu-drop">
-            <a href="">Connexion</a>
-            <a href="">Inscription</a>
-    </button>
 
-<link href="https://unpkg.com/ionicons@4.5.10-0/dist/css/ionicons.min.css" rel="stylesheet">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Neuton|oswald">
-<script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
-<link href="https://fonts.googleapis.com/icon?family=Material+Icons"rel="stylesheet">
+
 <section class="page">
   <div class="wrap">
       <nav>
-        <div class="logo">Logo</div>
+        <div class="logo"><div class="loading">
+        <span>Tk-Wk</span>
+      </div></div>
         <ul>
           <li><a class="active" href="">TALKI-WALKI</a></li>
           <li><a href="">Emploi</a></li>
@@ -41,33 +25,18 @@
       </nav> 
   </div>
 
-    <div class="gauche" style="display: inline-block;">
-    <ul>
-      <li><a class="active" href="">Acceuil</a></li>
-      <li><a href="">A propos</a></li>
-      <li><a href="">Contact</a></li>
-      <li><a href="">Aide</a></li>
-      <div class="loading">
-        <span>Loading...</span>
-      </div>
-    </ul>
+   
        </div>
     </ul>
    </div>
    <section class="animation">
+    
      <h4>
        C'est une site pour but d'aider les étudiants à trouver un emploi stable<br>
        <span>TALKI WALKI</span>
      </h4>
    </section>
-<div class="notification">
-  <% if user_signed_in?%>
-  <p>vous êtes connecté </p>
-  <%= link_to "logout", destroy_user_session_path, method: :delete%>
-  <%else%>
-  <p>vous êtes déconnecté </p>
-  <%end%>
-</div>
+
 <dir class="container">
   <dir class="card">
     <img src="https://www.biblond.com/wp-content/uploads/2019/05/formation-1-857x600.jpg">
@@ -96,6 +65,16 @@
     </div>
   </dir>
 </dir>
+<div class="notification">
+  <% if user_signed_in?%>
+  <p>vous êtes connecté </p>
+  <%= link_to "logout", destroy_user_session_path, method: :delete%>
+  <%else%>
+  <p>vous êtes déconnecté </p>
+  <%end%>
+</div>
+
+ 
   <div class="footer">
     <div class="middle">
         <a class="btn" href="https://www.facebook.com/groups/831950326988986/">
@@ -117,4 +96,3 @@
   </div>
 </div>
 
-</body>
