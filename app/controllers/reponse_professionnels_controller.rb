@@ -4,8 +4,8 @@ class ReponseProfessionnelsController < ApplicationController
   end
 
   def create
-  	if @reponse= Reponse.create(user_id: current_user.id, contenu: params[:contenu],  commentaire_id: params[:commentaire_id])
-      redirect_to professional_formations_path(params[:professional_formations_id])
+  	if @reponse= Reponse.create(user_id: current_user.id, contenu: params[:contenu],  commentaire_id: params[:commentaire_professionel_id])
+      redirect_to professional_formation_path(params[:professional_formation_id])
     end
   end
 

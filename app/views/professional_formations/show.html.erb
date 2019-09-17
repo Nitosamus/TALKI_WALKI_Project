@@ -22,24 +22,27 @@
 <%= submit_tag :envoyer%>
 <% end %>
 
-<%@professionalformation.commentaires.each do |f|%>
-"<%=f.contenu%>"
-<%=link_to 'Editer',  edit_professional_formation_commentaire_professionel_path(f.professional_formation_id,f.id)%>
- <%=link_to 'Supprimer', professional_formation_commentaire_professionel_path(f.professional_formation_id,f.id), method: "delete",  data: { confirm: 'Voulez-vous vraiment supprimer?' }%>
- <br>
-
- <%= form_tag   professional_formation_commentaire_professionel_reponse_professionnels_path(f.professional_formation_id, f.id), controller: "reponse_academiques", method: "post" do %>
-			REPONDRE CE COMS:
-			<%= text_area_tag :contenu %>
-			<%= submit_tag :envoyer%>
-		<% end %>
-
-	ma reponse: 
-				<% f.reponses.each do |r|%>
-				<%= r.contenu %>
+<%@professionalformation.commentaires.each do |coms|%>
+<div>Commentaire: "<%= coms.contenu%>"  
+<%=link_to 'Editer',  edit_professional_formation_commentaire_professionel_path(coms.professional_formation_id,coms.id)%>
+ <%=link_to 'Supprimer', professional_formation_commentaire_professionel_path(coms.professional_formation_id,coms.id), method: "delete",  data: { confirm: 'Voulez-vous vraiment supprimer?' }%>
+ </div>
+ 
+ 
+				<% coms.reponses.each do |r|%>
+				<span> Reponse: </span>
+				<%= r.contenu %> , 
 				<%end%>
 				
+<%= form_tag   professional_formation_commentaire_professionel_reponse_professionnels_path(coms.professional_formation_id, coms.id), controller: "reponse_academiques", method: "post" do %>
+ <span>REPONDRE CE COMS: </span> 
+<%= text_area_tag :contenu %>
+<%= submit_tag :envoyer%>
+		<% end %>
 <br><br><br><%end%>
+<br><br>
+<%= render "layouts/footer" %>
+
 
 
 
