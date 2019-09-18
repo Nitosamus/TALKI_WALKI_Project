@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_09_11_130012) do
+ActiveRecord::Schema.define(version: 2019_09_16_082117) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -36,6 +36,25 @@ ActiveRecord::Schema.define(version: 2019_09_11_130012) do
     t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
   end
 
+  create_table "appels", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "commentaires", force: :cascade do |t|
+    t.text "contenu"
+    t.bigint "user_id"
+    t.bigint "formation_academique_id"
+    t.bigint "professional_formation_id"
+    t.bigint "offre_emploi_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["formation_academique_id"], name: "index_commentaires_on_formation_academique_id"
+    t.index ["offre_emploi_id"], name: "index_commentaires_on_offre_emploi_id"
+    t.index ["professional_formation_id"], name: "index_commentaires_on_professional_formation_id"
+    t.index ["user_id"], name: "index_commentaires_on_user_id"
+  end
+
   create_table "formation_academiques", force: :cascade do |t|
     t.string "titre"
     t.string "contact"
@@ -47,6 +66,23 @@ ActiveRecord::Schema.define(version: 2019_09_11_130012) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_formation_academiques_on_user_id"
+  end
+
+  create_table "likes", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "commentaire_id"
+    t.bigint "reponse_id"
+    t.bigint "formation_academique_id"
+    t.bigint "professional_formation_id"
+    t.bigint "offre_emploi_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["commentaire_id"], name: "index_likes_on_commentaire_id"
+    t.index ["formation_academique_id"], name: "index_likes_on_formation_academique_id"
+    t.index ["offre_emploi_id"], name: "index_likes_on_offre_emploi_id"
+    t.index ["professional_formation_id"], name: "index_likes_on_professional_formation_id"
+    t.index ["reponse_id"], name: "index_likes_on_reponse_id"
+    t.index ["user_id"], name: "index_likes_on_user_id"
   end
 
   create_table "offre_emplois", force: :cascade do |t|
@@ -76,10 +112,21 @@ ActiveRecord::Schema.define(version: 2019_09_11_130012) do
     t.string "contacte"
     t.string "mail"
     t.string "description"
+    t.string "domaine"
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_professional_formations_on_user_id"
+  end
+
+  create_table "reponses", force: :cascade do |t|
+    t.text "contenu"
+    t.bigint "user_id"
+    t.bigint "commentaire_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["commentaire_id"], name: "index_reponses_on_commentaire_id"
+    t.index ["user_id"], name: "index_reponses_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -97,6 +144,7 @@ ActiveRecord::Schema.define(version: 2019_09_11_130012) do
     t.text "description"
     t.string "function"
     t.string "phone_number"
+    t.string "role"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
