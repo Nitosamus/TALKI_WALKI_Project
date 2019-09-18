@@ -61,7 +61,6 @@ ActiveRecord::Schema.define(version: 2019_09_16_082117) do
     t.string "mail"
     t.string "lieu"
     t.text "description"
-    t.string "domaine"
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -90,7 +89,6 @@ ActiveRecord::Schema.define(version: 2019_09_16_082117) do
     t.string "lieu"
     t.string "salaire"
     t.string "mail"
-    t.string "domaine"
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -112,7 +110,6 @@ ActiveRecord::Schema.define(version: 2019_09_16_082117) do
     t.string "contacte"
     t.string "mail"
     t.string "description"
-    t.string "domaine"
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

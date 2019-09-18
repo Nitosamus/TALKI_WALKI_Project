@@ -111,14 +111,15 @@
     <h2>Talki-walki</h2>
     <h1>Sign_up</h1>
     </div>
-
+    
     <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+      <input type="hidden" name="authenticity_token" value="[different hash]">
     <%= render "devise/shared/error_messages", resource: resource %>
 
     <div class="field">
       <%= f.label :email, class:"lab" %><br />
+        <input type="hidden" name="authenticity_token" value="[different hash]">
       <%= f.email_field :email, autofocus: true, autocomplete: "email", class:"inpts" %>
-
       <%= f.label :password, class:"lab" %>
       <% if @minimum_password_length %>
 
@@ -132,7 +133,7 @@
 </div>
 
       <% end %><br />
-
+        <input type="hidden" name="authenticity_token" value="[different hash]">
       <%= f.password_field :password, autocomplete: "new-password", class:"inpts" %>
 
     <em>(<%= @minimum_password_length %> caracters minimum)</em>
@@ -161,15 +162,15 @@
 </html>
 
       <%= f.label :password_confirmation, class:"lab"%><br/>
+        <input type="hidden" name="authenticity_token" value="[different hash]">
       <%= f.password_field :password_confirmation, autocomplete: "new-password", class:"inpts" %>
     </div>
 
-    <div class="actions">
-      <%= f.submit "Sign up", class:"btn btn-info btn-bg" %>
+    <div>
+      <%= f.submit "Sign up", class:"btn btn-info logs", id: "sg"%>
     </div>
-    <% end %>
     <small> <%= render "devise/shared/links" %> </small>
-
+    <% end %>
 </div>
 <hr>
 <small> <%= render "../views/layouts/footer"%> </small>

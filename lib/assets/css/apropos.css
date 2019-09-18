@@ -1,0 +1,55 @@
+.aide_containeur02 {
+      margin-top: auto;
+      color: white;
+}
+.aide{
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: rgb(0,0,0);
+  background-color: rgba(0,0,0, 0.5);
+  overflow-x: hidden;
+  transition: 0.5s;
+}
+    /* Aide Content/Box */
+.aide-content {
+  margin:25% auto 50% auto;
+  border: 1px solid #888;
+  width: 80%;
+}
+    
+.closebtn {
+  position: absolute;
+  top: 10px;
+  right: 45px;
+  font-size: 30px;
+}
+
+.aide_btn button {
+  position: absolute;
+  text-decoration: none;
+  font-size: 20px;
+  color: white;
+}
+.aide_btn button:hover {
+  left: 0;
+}
+.cancelbtn {
+  background-color: rgba(0,0,0, 0.3);
+  border: none;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 15px 50px;
+  cursor: pointer;
+}
+.aide_btn .cancelbtn ::after {
+  content: "";
+  clear: both;
+  display: table;
+}
