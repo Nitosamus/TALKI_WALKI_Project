@@ -25,10 +25,11 @@ function myMap() {
 }
 </script>
 
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBu-916DdpKAjTmJNIgngS6HL_kDIKU0aU&callback=myMap"></script>
-
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAgAXF9oCID7Osw3tBeZufKg1aQjByUZyY&callback=myMap"
+  type="text/javascript"></script>
 <p>
 <%= image_tag "https://maps.googleapis.com/maps/api/staticmap?zoom=17&size=400x300&center=#{@place.latitude},#{@place.longitude}&key=#{Rails.application.credentials.key}", alt: "Map" %>
 </p>
 <%= link_to 'Edit', edit_place_path(@place) %> 
 <%= link_to 'Back', places_path %>
+
