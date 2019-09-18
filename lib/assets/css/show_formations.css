@@ -1,3 +1,4 @@
+
 h1.fa-title{
     background-image: url("canada.jpg");
     background-attachment:fixed;
@@ -53,7 +54,7 @@ h1.fa-title{
     padding-top: 20px;
 }
 
-}
+
 #desc-title{
     font-size: 1.3em;
     font-weight: 200;
@@ -68,7 +69,7 @@ h1.fa-title{
     width: 50%;
     display: inline-block;
     clear: both;
-    text-align: center
+    text-align: center;
 }
 .fa-action3{
     width: 50%;
@@ -89,8 +90,7 @@ h1.fa-title{
     width: 50%;
     background-color: white;
     text-align: center;
-    
-    
+      
 }
 #title-comment{
     font-family: Verdana, Geneva, Tahoma, sans-serif;
