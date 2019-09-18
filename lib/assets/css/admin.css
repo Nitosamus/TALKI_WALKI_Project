@@ -176,8 +176,9 @@ border-radius: 3px;
 
 }
 .notification p{
-  /*position: fixed;*/
+  position: fixed;
   color: rgba(0,0,0,0.5);
+
 }
 .loading {
   display: flex;
