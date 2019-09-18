@@ -15,9 +15,6 @@
       <%= f.label :email, class:"lab" %><br />
         <input type="hidden" name="authenticity_token" value="[different hash]">
       <%= f.email_field :email, autofocus: true, autocomplete: "email", class:"inpts" %>
-%= form_for(resource, as: resource_name, url: user_path(resource_name)) do |f| %>
-  <%= render "devise/shared/error_messages", resource: resource %>
-
       <%= f.label :password, class:"lab" %>
       <% if @minimum_password_length %>
 
@@ -33,14 +30,11 @@
       <%= f.password_field :password_confirmation, autocomplete: "new-password", class:"inpts" %>
     </div>
 
-    <div class="actions">
-      <%= f.submit "Sign up", class:"btn btn-info btn-bg" %>
+    <div>
+      <%= f.submit "Sign up", class:"btn btn-info logs", id: "sg"%>
     </div>
-    <% end %>
     <small> <%= render "devise/shared/links" %> </small>
-
+    <% end %>
 </div>
 <hr>
 <small> <%= render "../views/layouts/footer"%> </small>
-
-<% end %>
