@@ -1,4 +1,6 @@
 class FormationAcademiquesController < ApplicationController
+   before_action :authenticate_user!, only: [:show, :create]
+
    def new
     @formation= FormationAcademique.new
   end
