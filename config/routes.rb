@@ -36,28 +36,10 @@
       resources :reponse_academiques
     end
   end
-<<<<<<< HEAD
-
-  resources :domaines
-
-  resources :places
-||||||| merged common ancestors
-  resources :places
-=======
-
-    resources :places
-    resources :users do
-    root to: "publications#index"
-
->>>>>>> front_accueil
-  resources :users do
- 	  resources :images, only:[:create]
-
   resources :places
   root to: "publications#index"
-  devise_for :users
-  
   resources :users do
  	  resources :images, only:[:create]
   end
+
 end
