@@ -1,4 +1,6 @@
-<h1>Editer les informations sur ce formation:</h1>
-<%=form_tag  professional_formation_path(@professionalformation.id), method: "put" do %>
-<%= render "layouts/form_Profess" %>
+<form class="sign-container fa-black-bg" >
+    <h1 class="fa-head-title" >Editer les informations sur cette formation</h1>
+    <%=form_tag  professional_formation_path(@professionalformation.id), method: "put" do %>
+    <%= render "layouts/form_Profess" %>
 <% end %>
+</form>
