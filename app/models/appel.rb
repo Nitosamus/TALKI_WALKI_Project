@@ -1,0 +1,2 @@
+class Appel < ApplicationRecord
+end
