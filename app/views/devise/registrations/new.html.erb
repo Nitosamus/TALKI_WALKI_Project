@@ -1,5 +1,4 @@
 
-
 <div class="sign-container">
 
     <div class="sign">
@@ -17,14 +16,9 @@
       <%= f.email_field :email, autofocus: true, autocomplete: "email", class:"inpts" %>
       <%= f.label :password, class:"lab" %>
       <% if @minimum_password_length %>
-
       <em class="lab">(<%= @minimum_password_length %> characters minimum)</em>
-
       <% end %><br />
-        <input type="hidden" name="authenticity_token" value="[different hash]">
       <%= f.password_field :password, autocomplete: "new-password", class:"inpts" %>
-
-
       <%= f.label :password_confirmation, class:"lab"%><br/>
         <input type="hidden" name="authenticity_token" value="[different hash]">
       <%= f.password_field :password_confirmation, autocomplete: "new-password", class:"inpts" %>
@@ -38,3 +32,5 @@
 </div>
 <hr>
 <small> <%= render "../views/layouts/footer"%> </small>
+
+

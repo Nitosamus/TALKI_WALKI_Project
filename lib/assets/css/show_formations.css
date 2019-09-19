@@ -59,7 +59,7 @@ h1.fa-title{
     font-size: 1.3em;
     font-weight: 200;
 }
-#action{
+.actions-type{
     width: 100%;
     background-color: rgb(245, 238, 238);
     position: relative;
@@ -78,6 +78,7 @@ h1.fa-title{
     bottom: 24px;
     float: right;
     text-align: center;
+    background-color: rgba(0, 0, 0, 0.205);
 
 }
 .fa-com-resp{
@@ -92,13 +93,13 @@ h1.fa-title{
     text-align: center;
       
 }
-#title-comment{
+.title-comment{
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: 1.6em;
     text-transform: capitalize;
    
 }
-#fa-inpt-comment{
+.fa-inpt-comment{
     width: 90%;
     height: 50px;
     box-decoration-break: clone;
@@ -106,8 +107,8 @@ h1.fa-title{
     border:none;
     border-bottom: 0.5px solid rgba(0, 0, 255, 0.253);
 }
-#fa-submit1{
-    width: 100px;
+.fa-submit1{
+    width: 80px;
     height: 50px;
     border: 1.5px solid rgba(0, 0, 255, 0.253); border-radius: 5px;
 }

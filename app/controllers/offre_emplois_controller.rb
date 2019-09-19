@@ -1,9 +1,12 @@
 class OffreEmploisController < ApplicationController
+  before_action :authenticate_user!, only: [:show, :new, :create]
   def create
       @offreemploi = OffreEmploi.new(user_id: current_user.id,  description: params[:description], lieu: params[:lieu], salaire: params[:salaire], domaine: params[:domaine], mail: params[:mail])
      if  @offreemploi.save
+      flash[:success]="Vous venez de proposer une nouvelle offre d'emploi! Merci pour la collaboration"
       redirect_to offre_emplois_path
     else
+      flash[:alert]= "Erreur de remplissage, veillez recommencer"
       redirect_to edit_offre_emploi_path(@offreemploi.id)
     end
   end

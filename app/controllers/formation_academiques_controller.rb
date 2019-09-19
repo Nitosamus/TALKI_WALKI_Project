@@ -1,5 +1,5 @@
 class FormationAcademiquesController < ApplicationController
-   before_action :authenticate_user!, only: [:show, :create]
+   before_action :authenticate_user!, only: [:show, :new, :create]
 
    def new
     @formation= FormationAcademique.new
@@ -11,6 +11,7 @@ class FormationAcademiquesController < ApplicationController
   def create
     @formation= FormationAcademique.new(user_id: current_user.id, titre: params[:titre], description: params[:description], lieu: params[:lieu], contact: params[:contact], mail: params[:mail], domaine:params[:domaine])
     if @formation.save
+      flash[:success]="Vous venez de proposer une nouvelle formation académique"
       redirect_to formation_academiques_path
     else
        flash[:alert]= "Erreur, recommencer"

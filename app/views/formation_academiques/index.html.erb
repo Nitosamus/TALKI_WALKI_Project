@@ -3,20 +3,20 @@
 
 <div class="FA-container">
 	<div class="FA-title">
-		<h1 id="FA-title-content" >Formations Academiques</h1>
+		<h1 class="FA-title-content" >Formations Academiques</h1>
 	</div>
 
 	<div class="FA-cont-list">
 		<%@formation.each do |f|%><br>
 		<div class="FA-lst-titre">
 			<%=f.titre%>
-			<%=link_to "Voir plus >", formation_academique_path(f.id), id:"FA-bout-voir"%>
+			<%=link_to "Voir plus >", formation_academique_path(f.id), class:"FA-bout-voir"%>
 		</div>
 		<%end%> 
     </div>
     
 	<div id="FA-bout-offre">
-		<%=link_to "Proposer une offre >>>", new_formation_academique_path,  id:"FA-bout"%>
+		<%=link_to "Proposer une offre >>>", new_formation_academique_path,  class:"FA-bout"%>
 	</div>
 </div>
 <hr>

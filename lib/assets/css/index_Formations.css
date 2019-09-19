@@ -57,7 +57,7 @@ div#FA-bout-offre{
     text-align: center;
     font-size: 5em;
 }
-#FA-bout{
+.FA-bout{
 	background-image: url("sky.jpg");
 	background-attachment: fixed;
     width: 95%;
