@@ -83,33 +83,50 @@ h1.fa-title{
 }
 .fa-com-resp{
     width: 90%;
-    background-color: rgba(250, 235, 215, 0.459);
+    background-color:rgba(0, 0, 0, 0.178);
     box-shadow: 0 0 2px rgba(0, 0, 0, 0.171);
     margin:0px auto;
 }
 .comments{
-    width: 50%;
+    width: 55%;
     background-color: white;
     text-align: center;
+    margin: 20px auto;
+    border-radius: 10px;
+
+
       
 }
 .title-comment{
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: 1.6em;
     text-transform: capitalize;
+    text-align: center
    
 }
 .fa-inpt-comment{
-    width: 90%;
+    width: 80%;
     height: 50px;
+    position: relative;
+    left: 10%;
     box-decoration-break: clone;
-    /*box-shadow: 0px 0px 3px rgba(0, 0, 255, 0.24);*/
+    box-shadow: 0px 0px 3px rgba(0, 0, 255, 0.24);
     border:none;
     border-bottom: 0.5px solid rgba(0, 0, 255, 0.253);
+    border-radius: 20px;
+    margin: 20px, auto;
+    text-align: left;
+    text-indent: 30px;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 10px 40px;
+
 }
 .fa-submit1{
     width: 80px;
     height: 50px;
     border: 1.5px solid rgba(0, 0, 255, 0.253); border-radius: 5px;
+    position: relative;
+    left: 150px;
+    bottom: 18px;
 }
 
