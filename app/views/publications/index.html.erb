@@ -33,16 +33,7 @@
     </div>
   </dir>
 </dir>
-<div class="notification">
-  <% if user_signed_in?%>
-  <p>vous êtes connecté </p>
-  <%= link_to "logout", destroy_user_session_path, method: :delete%>
-  <%else%>
-  <p>vous êtes déconnecté </p>
-  <%end%>
-</div>
 
- 
   <div class="footer">
     <div class="middle">
         <a class="btn" href="https://www.facebook.com/groups/831950326988986/">

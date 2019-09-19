@@ -33,25 +33,31 @@
 				<% end %>
 			</div>
 			<div class="comments">
-			<%@formation.commentaires.each do |a|%>
-						<p><%=a.contenu%></p> 
-						<%=link_to 'Editer',  edit_formation_academique_commentaire_academique_path(a.formation_academique_id,a.id, controller: "commentaire_academiques" )%> 
-						<%=link_to 'Supprimer',   formation_academique_commentaire_academique_path(a.formation_academique_id,a.id), method: "delete",  data: { confirm: 'Voulez-vous vraiment supprimer?' } %>
-							<br><br>
-						<%a.reponses.each do |r|%>
-							<span> ma reponse: </span>
-							<%= r.contenu %> 
-							<%=link_to "Editer", edit_formation_academique_commentaire_academique_reponse_academique_path(a.formation_academique_id, a.id, r.id), controller: "reponse_academiques"%> 
-							<%=link_to "Supprimer",  formation_academique_commentaire_academique_reponse_academique_path(a.formation_academique_id, a.id, r.id), controller: "reponse_academiques", method: "DELETE", data: { confirm: 'Voulez-vous vraiment supprimer?' } %> 
-						<%=link_to "like",formation_academique_commentaire_academique_reponse_academique_like_index_path(a.formation_academique_id, a.id, r.id), controller: "like", action: "create", method: "post"%>
-					
-							<%= form_tag  formation_academique_commentaire_academique_reponse_academiques_path(a.formation_academique_id, a.id), controller: "reponse_academiques", method: "post" do %>
-							<span> REPONDRE CE COMS: </span>
-							<%= text_area_tag :contenu %>
-							<%= submit_tag :envoyer%>
-							<% end %>
-					<% end %>	
-				<%end%>	
+			
+				
 			</div>		
-<div>
+</div>
+
+<%@formation.commentaires.each do |a|%>
+	<%a.reponses.each do |r|%>
+	
+	<p><%=a.contenu%></p> 
+	
+	<%=link_to 'Editer',  edit_formation_academique_commentaire_academique_path(a.formation_academique_id,a.id, controller: "commentaire_academiques" )%> 
+	<%=link_to 'Supprimer',   formation_academique_commentaire_academique_path(a.formation_academique_id,a.id), method: "delete",  data: { confirm: 'Voulez-vous vraiment supprimer?' } %>
+		<br><br>
+		
+		 ma reponse: 
+		<%= r.contenu %> 
+		<%=link_to "Editer", edit_formation_academique_commentaire_academique_reponse_academique_path(a.formation_academique_id, a.id, r.id), controller: "reponse_academiques"%> 
+		<%=link_to "Supprimer",  formation_academique_commentaire_academique_reponse_academique_path(a.formation_academique_id, a.id, r.id), controller: "reponse_academiques", method: "DELETE", data: { confirm: 'Voulez-vous vraiment supprimer?' } %> 
+		<%=link_to "like",formation_academique_commentaire_academique_reponse_academique_like_index_path(a.formation_academique_id, a.id, r.id), controller: "like", action: "create", method: "post"%>
+
+		<%= form_tag  formation_academique_commentaire_academique_reponse_academiques_path(a.formation_academique_id, a.id), controller: "reponse_academiques", method: "post" do %>
+		<span> REPONDRE CE COMS: </span>
+		<%= text_area_tag :contenu %>
+		<%= submit_tag :envoyer%>
+		<% end %>
+<% end %>	
+<%end%>	
 <br><br><br>

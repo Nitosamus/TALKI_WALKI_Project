@@ -1,4 +1,5 @@
 class ProfessionalFormationsController < ApplicationController
+  before_action :authenticate_user!, only: [:show, :new, :create]
   def create
     @professionalformation = ProfessionalFormation.new(user_id: current_user.id, titre: params[:titre], description: params[:description], lieu: params[:lieu], contacte: params[:contacte], mail: params[:mail], domaine:params[:domaine], objet: params[:objet])
     if @professionalformation.save
