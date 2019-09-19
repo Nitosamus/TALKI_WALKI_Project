@@ -1,22 +1,12 @@
 
-<section>
-  <div class="menu-bar">
-    <div class="notification">
-  <% if user_signed_in?%>
-  <p>vous êtes connecté </p>
-  <%= link_to "logout", destroy_user_session_path, method: :delete%>
-  <%else%>
-  <p>vous êtes déconnecté </p>
-  <%end%>
-</div>
-    <header>
-  
+  <header>
     <a href="<%=root_path%>">
       <div class="logo">
     <h1 class="logo-text"><i><b><span style="    text-decoration-color:rgb(255, 255, 255)">Talki</span></b><sub style="text-decoration: overline; text-decoration-color: rgb(63, 181, 168);"><i class="fa fa-volume-control-phone" aria-hidden="true"></i>Walki</sub></i></h1>
   </div>
     </a>
   </header>
+
   <ul>
     <li class="active"><i class="fa fa-home" aria-hidden="true"></i><a href="<%=root_path%>">Talki-walki</li>
     <li id="offre-emploi"><i class="fa fa-address-card" aria-hidden="true"></i><a href="<%=offre_emplois_path%>">Emploi</li>
