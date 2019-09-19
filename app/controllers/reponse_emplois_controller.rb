@@ -5,6 +5,7 @@ class ReponseEmploisController < ApplicationController
 
   def create
   	if @reponse= Reponse.create(user_id: current_user.id, contenu: params[:contenu],  commentaire_id: params[:commentaire_emploi_id])
+      
   	 redirect_to offre_emploi_path(params[:offre_emploi_id])
     end
   end

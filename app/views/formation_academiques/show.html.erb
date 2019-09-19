@@ -1,9 +1,9 @@
 
 <div class="FA-container">
 	<h1 class="fa-title"><%=@formation.titre%></h1><br>
-	<div id="action">
-	<%= link_to "Editer-infos", edit_formation_academique_path(@formation.id), class: "fa-action2 btn-primary"%> <br>
-	<%= link_to "suprimer-infos", formation_academique_path(@formation.id), method: "delete",  data: { confirm: 'Voulez-vous vraiment supprimer?' }, class: "fa-action3 btn-warning"%>	
+	<div class="actions-type">
+		<%= link_to "Editer-infos", edit_formation_academique_path(@formation.id), class: "fa-action2 btn-primary"%> <br>
+		<%= link_to "suprimer-infos", formation_academique_path(@formation.id), method: "delete",  data: { confirm: 'Voulez-vous vraiment supprimer?' }, class: "fa-action3 btn-warning"%>	
 	</div>
 	<div id="desc-1">
 		<h2 id="desc-title">Description</h2>
@@ -26,14 +26,13 @@
 <br>
 <div class="fa-com-resp">
 			<div>
-				<h2 id="title-comment">commentaires<hr></h2>
+				<h2 class="title-comment">commentaires<hr></h2>
 				<%= form_tag  formation_academique_commentaire_academiques_path(@formation.id),controller: "commentaire_academiques", method: "post" do %>
-				<%= text_area_tag :contenu, nil, placeholder:"votre commentaire", id:"fa-inpt-comment"%>
-				<%= submit_tag :envoyer, id:"fa-submit1"%>
+				<%= text_area_tag :contenu, nil, placeholder:"votre commentaire", class:"fa-inpt-comment"%>
+				<%= submit_tag :envoyer, class:"fa-submit1"%>
 				<% end %>
 			</div>
 			<div class="comments">
-			
 				
 			</div>		
 </div>

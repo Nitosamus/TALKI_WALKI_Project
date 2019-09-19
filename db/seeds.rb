@@ -51,7 +51,7 @@ tp ProfessionalFormation.all
 		salaire:Faker::Commerce.department,
 		lieu:Faker::Address.street_address,
 		mail:Faker::Internet.email,
-		description:Faker::Job.name, 
+		description:Faker::Job.title, 
 		user:u[rand(10)]
 		)
 end
