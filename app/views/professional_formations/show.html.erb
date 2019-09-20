@@ -1,6 +1,10 @@
 <h1>ProfessionalFormations#show</h1>
 <p>Find me in app/views/professional_formations/show.html.erb</p>
 <table>
+	
+	<%@professionalformation.commentaires.each do |coms|%>
+		<% coms.reponses.each do |r|%>
+
 		<tr>
 		<td><%= @professionalformation.id %></td>
 	 	<td><%= @professionalformation.objet %></td>
@@ -10,6 +14,7 @@
 	 	<td>
 	 		<%=link_to "éditer",edit_professional_formation_path(@professionalformation.id)%>
 	 		<%=link_to "Supprimer",professional_formation_path(@professionalformation.id), method:"delete",data:{confirm:"On supprime?"}%>
+	 		, <%=link_to "like", professional_formation_commentaire_professionel_reponse_professionnel_like_professionels_path(coms.professional_formation_id, coms.id, r.id), controller: "like_professionels", action: "create", method: "post"%>(<%=@professionalformation.likes.length%>)
 	 	</td>
 	</tr>
 
@@ -22,17 +27,19 @@
 <%= submit_tag :envoyer%>
 <% end %>
 
-<%@professionalformation.commentaires.each do |coms|%>
+
 <div>Commentaire: "<%= coms.contenu%>"  
 <%=link_to 'Editer',  edit_professional_formation_commentaire_professionel_path(coms.professional_formation_id,coms.id)%>
  <%=link_to 'Supprimer', professional_formation_commentaire_professionel_path(coms.professional_formation_id,coms.id), method: "delete",  data: { confirm: 'Voulez-vous vraiment supprimer?' }%>
+ <%=link_to "like", professional_formation_commentaire_professionel_reponse_professionnel_like_professionels_path(coms.professional_formation_id, coms.id, r.id), controller: "like_professionels", action: "create", method: "post"%>(<%=coms.likes.length%>)
  </div>
  
  
-				<% coms.reponses.each do |r|%>
+				
 				<span> Reponse: 
 				<%= r.contenu %> , </span> 
 	<%=link_to "Editer", edit_professional_formation_commentaire_professionel_reponse_professionnel_path(coms.professional_formation_id, coms.id, r.id), controller: "reponse_professionnels" %>  <%=link_to "Supprimer",  professional_formation_commentaire_professionel_reponse_professionnel_path(coms.professional_formation_id, coms.id, r.id), controller: "reponse_professionnels", method: "DELETE",  data: { confirm: 'Voulez-vous vraiment supprimer?' } %>
+	<%=link_to "like", professional_formation_commentaire_professionel_reponse_professionnel_like_professionels_path(coms.professional_formation_id, coms.id, r.id), controller: "like_professionels", action: "create", method: "post"%>(<%=r.likes.length%>)
 				<%end%> 
 
 				
@@ -43,7 +50,9 @@
 		<% end %>
 <br><br><br><%end%>
 <br><br>
-<%= render "layouts/footer" %>
+
+
+
 
 
 
