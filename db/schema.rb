@@ -10,7 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 2019_09_18_144350) do
+||||||| merged common ancestors
+ActiveRecord::Schema.define(version: 2019_09_12_063501) do
+=======
+ActiveRecord::Schema.define(version: 2019_09_16_082117) do
+>>>>>>> 7a33d3e1445b146e7f9fb8ab00f174ea6316706b
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -36,6 +42,19 @@ ActiveRecord::Schema.define(version: 2019_09_18_144350) do
     t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
   end
 
+  create_table "aides", force: :cascade do |t|
+    t.text "login"
+    t.text "sign_up"
+    t.text "formation"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "appels", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "commentaires", force: :cascade do |t|
     t.text "contenu"
     t.bigint "user_id"
@@ -50,12 +69,19 @@ ActiveRecord::Schema.define(version: 2019_09_18_144350) do
     t.index ["user_id"], name: "index_commentaires_on_user_id"
   end
 
+  create_table "domaines", force: :cascade do |t|
+    t.string "titre"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "formation_academiques", force: :cascade do |t|
     t.string "titre"
     t.string "contact"
     t.string "mail"
     t.string "lieu"
     t.text "description"
+    t.string "domaine"
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -84,6 +110,7 @@ ActiveRecord::Schema.define(version: 2019_09_18_144350) do
     t.string "lieu"
     t.string "salaire"
     t.string "mail"
+    t.string "domaine"
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -155,7 +182,6 @@ ActiveRecord::Schema.define(version: 2019_09_18_144350) do
     t.text "description"
     t.string "function"
     t.string "phone_number"
-    t.string "role"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
     t.index ["room_id"], name: "index_users_on_room_id"

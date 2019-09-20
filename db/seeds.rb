@@ -14,9 +14,9 @@ OffreEmploi.destroy_all
 FormationAcademique.destroy_all
 
 Place.create!([
-{ "name": "Buckingham Palace", "latitude": "51.501564","longitude": "-0.141944"},
-{ "name": "Westminster Abbey", "latitude": "51.499581", "longitude": "-0.127309"},
-{ "name": "Big Ben", "latitude": "51.500792", "longitude": "-0.124613"}
+{ "name": "Ivandry Antananarivo", "latitude": "-18.8753","longitude": "47.5238"},
+{ "name": "Toliara", "latitude": "-23.35", "longitude": "43.666667"},
+
 
 ])
 
@@ -51,7 +51,7 @@ tp ProfessionalFormation.all
 		salaire:Faker::Commerce.department,
 		lieu:Faker::Address.street_address,
 		mail:Faker::Internet.email,
-		description:Faker::Job.name, 
+		description:Faker::Job.title, 
 		user:u[rand(10)]
 		)
 end

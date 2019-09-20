@@ -1,4 +1,8 @@
-<h1>Proposer un nouveau formation:</h1>
-<%=form_tag formation_academiques_path, method: "post"  do %>
+
+
+<%=form_tag formation_academiques_path, method: "post", class:"sign-container"  do %>
+<h1 class="fa-head-title"> Proposer une nouvelle formation</h1><br>
 <%= render "layouts/form_Academique" %>
 <% end %>
+<br><br>
+<small> <%= render "../views/layouts/footer"%> </small>

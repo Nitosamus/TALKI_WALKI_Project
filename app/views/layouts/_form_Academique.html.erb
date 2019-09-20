@@ -1,18 +1,17 @@
 
 
- <%= label_tag :titre %><br>
-  <%= text_field_tag :titre %><br>
-  <%= label_tag :Domaine %><br>
-  <%= text_field_tag :domaine %><br>
-  <%= label_tag :description %><br>
-  <%= text_area_tag :description %><br>
-  <%= label_tag :Email %><br>
-  <%= email_field_tag :mail %><br>
-  <%= label_tag :contact %><br>
-  <%= telephone_field_tag :contact %><br>
-  <%= label_tag :lieu %><br>
-  <%= text_field_tag :lieu %><br>
+ <%= label_tag :titre, nil, class:"lab", id: "lab-title"%><br>
+  <%= text_field_tag :titre, nil, class: "inpts" %><br>
+  <%= label_tag :Domaine, nil, class:"lab" %><br>
+  <%= text_field_tag :domaine, nil, class: "inpts" %><br>
+  <%= label_tag :description, nil, class:"lab" %><br>
+  <%= text_area_tag :description, nil, class: "inpts" %><br>
+  <%= label_tag :Email, nil, class:"lab" %><br>
+  <%= email_field_tag :mail, nil, class: "inpts" %><br>
+  <%= label_tag :contact, nil, class:"lab" %><br>
+  <%= telephone_field_tag :contact, nil, class: "inpts" %><br>
+  <%= label_tag :lieu, nil, class:"lab" %><br>
+  <%= text_field_tag :lieu , nil, class: "inpts" %><br>
   
   <%= hidden_field_tag :authenticity_token, form_authenticity_token %><br>
-  <%= submit_tag "Envoyer"%>
-
+  <%= submit_tag "Envoyer", class:" btn btn-info logs", id:"sub-fa"%>

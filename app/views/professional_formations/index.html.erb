@@ -1,16 +1,20 @@
-<h1>ProfessionalFormations#index</h1>
-<p>Find me in app/views/professional_formations/index.html.erb</p>
-<table>
-<% @professionalformations.each do |fp| %>
-	<tr>
-	<td><%= fp.id %></td>
- 	<td><%= fp.objet %></td>
- 	<td><%= fp.titre %></td>
- 	<td><%= fp.lieu %></td>
- 	<td><%= fp.contacte %></td>
- 	<td><%=link_to "voir",professional_formation_path(fp.id)%></a></td>
- 
-</tr>
 
- <%end%>
-</table>
+<div class="FA-container">
+	<div class="FA-title">
+		<h1 class="FA-title-content" >Formations Professionelles</h1>
+	</div>
+	<div class="FA-cont-list">
+		<% @professionalformations.each do |fp| %>
+			<div class="FA-lst-titre">
+				<%= fp.titre %>
+				<%=link_to "voir",professional_formation_path(fp.id)%></a></td>
+			</div>		
+		<%end%>
+	</div>
+	<div id="FA-bout-offre">
+		<%=link_to "Proposer une formation >>>", new_professional_formation_path,  class:"FA-bout"%>
+	</div>	
+</div>
+<hr>
+<br><br>
+<small> <%= render "../views/layouts/footer"%> </small>

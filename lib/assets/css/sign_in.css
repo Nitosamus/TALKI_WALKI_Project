@@ -41,8 +41,21 @@
   .logs{
       width: 100px;
       position: relative;
+<<<<<<< HEAD
   }
   #lg{
       margin: 10px auto;
       top: 30px;
   }
+||||||| merged common ancestors
+      right: 80px;
+      bottom: 30px;
+  }
+=======
+  }
+  #lg{
+      margin: 10px auto;
+      top: 30px;
+  }
+  
+>>>>>>> 7a33d3e1445b146e7f9fb8ab00f174ea6316706b

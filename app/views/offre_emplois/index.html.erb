@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html>
 <head>
@@ -46,7 +47,97 @@
 </table>
 
 <%= link_to "Proposer un nouveau emploi", new_offre_emploi_path%>
+||||||| merged common ancestors
+<!DOCTYPE html>
+<html>
+<head>
+	 <!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 
+	<!-- jQuery library -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+	<!-- Popper JS -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+
+	<!-- Latest compiled JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script> 
+</head>
+<body>
+<h1>OffreEmplois#index</h1>
+
+<p>Find me in app/views/offre_emplois/index.html.erb</p>
+<table>
+<% @offreemplois.each do |oe| %>
+
+<table>
+<% @offreemplois.each do |oe| %> 
+
+<div class="table-responsive">
+<table class="table table-dark table-striped">
+	<thead>
+	  <tr>
+        <th>ID</th>
+        <th>Description</th>
+        <th>Lieu</th>
+        <th>Salaire</th>
+        <th>Mail</th>
+      </tr>
+	</thead>
+	<tbody>
+<% @offreemplois.each do |oe| %>
+
+<table>
+<% @offreemplois.each do |oe| %> 
+
+<div class="table-responsive">
+<table class="table table-dark table-striped">
+	<thead>
+	  <tr>
+        <th>ID</th>
+        <th>Description</th>
+        <th>Lieu</th>
+        <th>Salaire</th>
+        <th>Mail</th>
+      </tr>
+	</thead>
+	<tbody>
+<% @offreemplois.each do |oe| %>
+
+	<tr>
+		<td><%= oe.id %></td>
+	 	<td><%= oe.description %></td>
+	 	<td><%= oe.lieu %></td>
+	 	<td><%= oe.salaire %></td>
+	 	<td><%= oe.mail %></td> 
+
+	 	<td><%=link_to "voir",offre_emploi_path(oe.id)%></a></td>
+	</tr>
+	 	<td><%=link_to "voir plus",offre_emploi_path(oe.id)%></a></td>
+	</tr>  
+
+ <%end%>
+ </tbody> 
+</table>
+
+<%= link_to "Proposer un nouveau emploi", new_offre_emploi_path%>
+=======
+>>>>>>> 7a33d3e1445b146e7f9fb8ab00f174ea6316706b
+
+<div class="FA-container">
+	<div class="FA-title">
+		<h1 class="FA-title-content" >Offre d'emplois</h1>
+	</div>
+	<div class="FA-cont-list">
+		<% @offreemplois.each do |oe| %>
+		<div class="FA-lst-titre">
+			<%= oe.description %>
+			<%=link_to "Voir",offre_emploi_path(oe.id), class:"FA-bout-voir"%>
+		</div>
+		<%end%>
+	</div>
+	<div id="FA-bout-offre">	
+		<%= link_to "Proposer un emploi >>>", new_offre_emploi_path, class:"FA-bout"%>
+	</div>
 </div>
-</body>
-</html>
+<small> <%= render "../views/layouts/footer"%> </small>

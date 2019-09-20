@@ -22,7 +22,14 @@
  *= require aide.css
  *= require contacte.css
  *= require apropos.css
+<<<<<<< HEAD
  *= require edit_user.css
  *= require rails-chat-tutorial.css
  *= require rooms.css
+||||||| merged common ancestors
+=======
+ *= require formations_form.css
+ *= require show_FP.css
+ *= require show_OE.css
+>>>>>>> 7a33d3e1445b146e7f9fb8ab00f174ea6316706b
  */
