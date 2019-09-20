@@ -1,13 +1,16 @@
 class FormationAcademiquesController < ApplicationController
+<<<<<<< HEAD
+   before_action :authenticate_user!, only: [:show, :create]
+
+||||||| merged common ancestors
+=======
    before_action :authenticate_user!, only: [:show, :new, :create]
 
+>>>>>>> 7a33d3e1445b146e7f9fb8ab00f174ea6316706b
    def new
     @formation= FormationAcademique.new
   end
-  def show
-    @formation= current_user.formation_academique
-  end
-
+  
   def create
     @formation= FormationAcademique.new(user_id: current_user.id, titre: params[:titre], description: params[:description], lieu: params[:lieu], contact: params[:contact], mail: params[:mail], domaine:params[:domaine])
     if @formation.save

@@ -1,0 +1,2 @@
+module LikeProfessionelsHelper
+end

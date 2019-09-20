@@ -14,10 +14,12 @@ OffreEmploi.destroy_all
 FormationAcademique.destroy_all
 
 Place.create!([
-{ "name": "Ivandry Antananarivo", "latitude": "-18.8753","longitude": "47.5238"},
 { "name": "Toliara", "latitude": "-23.35", "longitude": "43.666667"},
-
-
+{ "name": "Diego Suarez", "latitude": "-13,7715","longitude": "49,5279"},
+{ "name": "Majunga", "latitude": "-15.7166","longitude": "46.3166"},
+{ "name": "Tamatave", "latitude": "-18.1492","longitude": "49.4023"},
+{ "name": "Fianarantsoa", "latitude": "-21.4536","longitude": "47.0858"},
+{ "name": "Tananarive", "latitude": "-18.91368","longitude": "47.53613"},
 ])
 
 User.destroy_all
