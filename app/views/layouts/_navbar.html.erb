@@ -1,136 +1,18 @@
 
-<<<<<<< HEAD
-<section>
-  <div class="menu-bar">
-  <ul>
-    <li class="active"><i class="fa fa-home" aria-hidden="true"></i><a href="<%=root_path%>">Talki-walki</li>
-    <li><i class="fa fa-address-card" aria-hidden="true"></i><a href="offre_emplois">Emploi</li>
-    <li><i class="fa fa-book" aria-hidden="true"></i><a href="">Formation</a>
-        <div class="sub-menu-1">
-          <ul>
-            <li><a href="formation_academiques">Academique</a></li>
-            <li><a href="professional_formations">Professionnelle</a></li>
-          </ul>
-        </div>
-    </li>
-    <%if user_signed_in?%>
-||||||| merged common ancestors
-      <%= link_to "<i class='fas fa-cart-arrow-down'><small> <span class='badge badge-light' >My Cart</span></small></i>".html_safe, item_cart_path(current_user.cart.items[0].id, current_user.cart.id), class: 'btn btn-outline-info btn-sm navbar-brand', role: "button", style: "opacity: 1.2"%>
-      <%end%>
-  </form>
-  <ul class="bandhead">
-<li class="drop">
-  <a href="javascript:void(0)" class="btn-outline-primary btn-sm">Share</a>
-  <div class="drop-content">
-    <a href="#">facebook</a>
-    <a href="#">twitter</a>
-    <a href="#">youtube</a>
+<div class="FA-container">
+  <div class="FA-title">
+    <h1 class="FA-title-content" >Offre d'emplois</h1>
   </div>
-</li>
-</ul>
-=======
-<section>
-  <div class="menu-bar">
-  <header>
-    <a href="<%=root_path%>">
-      <div class="logo">
-    <h1 class="logo-text"><i><b><span style="    text-decoration-color:rgb(255, 255, 255)">Talki</span></b><sub style="text-decoration: overline; text-decoration-color: rgb(63, 181, 168);"><i class="fa fa-volume-control-phone" aria-hidden="true"></i>Walki</sub></i></h1>
-  </div>
-    </a>
-  </header>
->>>>>>> 7a33d3e1445b146e7f9fb8ab00f174ea6316706b
-
-<<<<<<< HEAD
-    <li><i class="fa fa-user-circle-o" aria-hidden="true"></i><a>Action</a>
-        <div class="sub-menu-1">
-          <ul>
-            <li><a><%= link_to "Mon profil", user_path(current_user.id)%></a></li>
-            <li><a><%= link_to "Déconnexion", destroy_user_session_path, method: :delete%></a></li>
-          </ul>
-||||||| merged common ancestors
-  <% if user_signed_in?%>
-      <div class="btn-group">
-      <button type="button" class="btn btn-info">User</button>
-      <button type="button" class="btn btn-primary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        <span class="sr-only">Toggle Dropdown</span>
-      </button>
-      <div class="dropdown-menu">
-          <%=link_to "Mon profil", user_path(current_user.id), class:"dropdown-item"%>
-          <%=link_to "Editer profil", edit_user_path(current_user.id), class:"dropdown-item" %>
-         <%=link_to "Se deconnecter",destroy_user_session_path, method: :delete, class:"dropdown-item"%>
-         <div class="dropdown-divider"></div>
-=======
-  <ul>
-    <li class="active"><i class="fa fa-home" aria-hidden="true"></i><a href="<%=root_path%>">Talki-walki</li>
-    <li id="offre-emploi"><i class="fa fa-address-card" aria-hidden="true"></i><a href="<%=offre_emplois_path%>">Emploi</li>
-    <li><i class="fa fa-book" aria-hidden="true"></i><a href="#">Formation</a>
-        <div class="sub-menu-1">
-          <ul>
-            <li><a href="<%=formation_academiques_path%>">Academique</a></li>
-            <li><a href="<%=professional_formations_path%>">Professionnelle</a></li>
-          </ul>
->>>>>>> 7a33d3e1445b146e7f9fb8ab00f174ea6316706b
-        </div>
-<<<<<<< HEAD
-    </li>
-    <%else%>
-    <li><i class="fa fa-user-circle-o" aria-hidden="true"></i><a>Action</a>
-        <div class="sub-menu-1">
-          <ul>
-            <li><a> <%=link_to  "Connexion", new_user_session_path%> </a></li>
-            <li><a><%= link_to "Inscription", new_user_registration_path%></a></li>
-          </ul>
-        </div>
-    </li>
+  <div class="FA-cont-list">
+    <% @offreemplois.each do |oe| %>
+    <div class="FA-lst-titre">
+      <%= oe.description %>
+      <%=link_to "Voir",offre_emploi_path(oe.id), class:"FA-bout-voir"%>
+    </div>
     <%end%>
-  </ul>
-||||||| merged common ancestors
-      </div>
-<%else%>
-<div class="btn-group">
-      <button type="button" class="btn btn-info">User</button>
-      <button type="button" class="btn btn-primary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        <span class="sr-only">Toggle Dropdown</span>
-      </button>
-    <div class="dropdown-menu">
-      <%=link_to "S'inscrire", new_user_registration_path, class:"dropdown-item"%>
-      <%=link_to "Se connecter", new_user_session_path, class:"dropdown-item"%>
-      <div class="dropdown-divider"></div>
-=======
-    </li>
-    <%if user_signed_in?%>
-    <li><i class="fa fa-user-circle-o" aria-hidden="true"></i><a>Action</a>
-        <div class="sub-menu-1">
-          <ul>
-            <li><a><%= link_to "Mon profil", user_path(current_user.id)%></a></li>
-            <li><a><%= link_to "Déconnexion", destroy_user_session_path, method: :delete%></a></li>
-          </ul>
-        </div>
-    </li>
-    <%else%>
-    <li><i class="fa fa-user-circle-o" aria-hidden="true"></i><a>Action</a>
-        <div class="sub-menu-1">
-          <ul>
-            <li><a> <%=link_to  "Connexion", new_user_session_path%> </a></li>
-            <li><a><%= link_to "Inscription", new_user_registration_path%></a></li>
-          </ul>
-        </div>
-    </li>
-    <%end%>
-  </ul>
->>>>>>> 7a33d3e1445b146e7f9fb8ab00f174ea6316706b
   </div>
-<<<<<<< HEAD
-</section>
-
-  
-||||||| merged common ancestors
-<%end%>
-</nav>
-=======
-</section>
-<<<<<<< HEAD
-=======
-
->>>>>>> 7a33d3e1445b146e7f9fb8ab00f174ea6316706b
->>>>>>> 74d10aa282daa38762423bf9e6ddc912f5700f30
+  <div id="FA-bout-offre">  
+    <%= link_to "Proposer un emploi >>>", new_offre_emploi_path, class:"FA-bout"%>
+  </div>
+</div>
+<small> <%= render "../views/layouts/footer"%> </small>

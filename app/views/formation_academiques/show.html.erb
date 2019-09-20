@@ -2,31 +2,13 @@
 
 <div class="FA-container">
 	<h1 class="fa-title"><%=@formation.titre%></h1><br>
-<<<<<<< HEAD
-	<div id="action">
-
-
-
-=======
-<<<<<<< HEAD
-	<div id="action">
-	<%= link_to "Editer-infos", edit_formation_academique_path(@formation.id), class: "fa-action2 btn-primary"%> <br>
-	<%= link_to "suprimer-infos", formation_academique_path(@formation.id), method: "delete",  data: { confirm: 'Voulez-vous vraiment supprimer?' }, class: "fa-action3 btn-warning"%>	
-	</div>
-	<div id="desc-1">
-||||||| merged common ancestors
-	<div class="description" id="desc-1">
-=======
->>>>>>> 74d10aa282daa38762423bf9e6ddc912f5700f30
 	<div id="actions-type">
-
 	<%= link_to "Editer-infos", edit_formation_academique_path(@formation.id), class: "fa-action2 btn-primary"%> <br>
 	<%= link_to "suprimer-infos", formation_academique_path(@formation.id), method: "delete",  data: { confirm: 'Voulez-vous vraiment supprimer?' }, class: "fa-action3 btn-warning"%>	
 	</div>
 	<div id="desc-1">
->>>>>>> 7a33d3e1445b146e7f9fb8ab00f174ea6316706b
 		<h2 id="desc-title">Description</h2>
-		 <p id="desc-content"><%= @formation.description%></p> <br>
+		 <p id="desc-content"><%=@formation.description%></p> <br>
 	</div>
 	
 	<div id="separation"></div>
@@ -34,86 +16,16 @@
 	<div id="desc-2">
 		Lieu: <%=@formation.lieu%><br>
 		Mail si interréssé: <%=@formation.mail%><br>
-		Domaine spécifique: <%=@formation.domaine%><br>
 		Contact: <%=@formation.contact%>
 	</div>
 	 <br>	
 </div>
-<div> <%=link_to "Interressé par cette formation",formation_academique_like_academiques_path(@formation.id), controller: "like_academiques", action: "create", method: "post" %> <%= @formation.likes.length%> </div>
 
 <br>
 
-<<<<<<< HEAD
-<br>
-<div class="fa-com-resp">
-			<div>
-				<h2 id="title-comment">commentaires<hr></h2>
-				<%= form_tag  formation_academique_commentaire_academiques_path(@formation.id),controller: "commentaire_academiques", method: "post" do %>
-				<%= text_area_tag :contenu, nil, placeholder:"votre commentaire", id:"fa-inpt-comment"%>
-				<%= submit_tag :envoyer, id:"fa-submit1"%>
-				<% end %>
-			</div>
-		<%@formation.commentaires.each do |a|%>
-			<div class="comments">
-				<div>
-					<p><%=a.contenu%></p> 
-					<%=link_to 'Editer',  edit_formation_academique_commentaire_academique_path(a.formation_academique_id,a.id, controller: "commentaire_academiques" )%> 
-					<%=link_to 'Supprimer',   formation_academique_commentaire_academique_path(a.formation_academique_id,a.id), method: "delete",  data: { confirm: 'Voulez-vous vraiment supprimer?' } %>
-						<br><br>
-					</div>
-				</div>
-				<% a.reponses.each do |r|%>
-				<div class="replies">
-					<div class="fa-lst-resp">
-						<span> ma reponse: </span>
-						"<%= r.contenu %>" 
-						<%=link_to "Editer", edit_formation_academique_commentaire_academique_reponse_academique_path(a.formation_academique_id, a.id, r.id), controller: "reponse_academiques"%> 
-						<%=link_to "Supprimer",  formation_academique_commentaire_academique_reponse_academique_path(a.formation_academique_id, a.id, r.id), controller: "reponse_academiques", method: "DELETE", data: { confirm: 'Voulez-vous vraiment supprimer?' } %> 
-					<%=link_to "like",formation_academique_commentaire_academique_reponse_academique_like_index_path(a.formation_academique_id, a.id, r.id), controller: "like", action: "create", method: "post"%>
-					</div>
-					<div>
-						<%= form_tag  formation_academique_commentaire_academique_reponse_academiques_path(a.formation_academique_id, a.id), controller: "reponse_academiques", method: "post" do %>
-						<span> REPONDRE CE COMS: </span>
-						<%= text_area_tag :contenu %>
-						<%= submit_tag :envoyer%>
-						<% end %>
-					</div>
-				</div>
-				<% end %>
-			</div>
-		<%end%>	
-<div>
-||||||| merged common ancestors
-<h2>Commenter</h2>
-<%= form_tag  formation_academique_commentaire_academiques_path(@formation.id),controller: "commentaire_academiques", method: "post" do %>
-<%= text_area_tag :contenu %>
-<%= submit_tag :envoyer%>
-<% end %>
-
-
-<%@formation.commentaires.each do |a|%>
-	"<%=a.contenu%>" <%=link_to 'Editer',  edit_formation_academique_commentaire_academique_path(a.formation_academique_id,a.id, controller: "commentaire_academiques" )%> <%=link_to 'Supprimer',   formation_academique_commentaire_academique_path(a.formation_academique_id,a.id), method: "delete",  data: { confirm: 'Voulez-vous vraiment supprimer?' } %>
-	 ; <br><br>
-		
-	 
-				<% a.reponses.each do |r|%>
-			<span> ma reponse: </span>
-				"<%= r.contenu %>" <%=link_to "Editer",  edit_formation_academique_commentaire_academique_reponse_academique_path(a.formation_academique_id, a.id, r.id), controller: "reponse_academiques"%> <%=link_to "Supprimer",  formation_academique_commentaire_academique_reponse_academique_path(a.formation_academique_id, a.id, r.id), controller: "reponse_academiques", method: "DELETE",  data: { confirm: 'Voulez-vous vraiment supprimer?' } %> 
-				<%end%>
-
-
-				<%= form_tag  formation_academique_commentaire_academique_reponse_academiques_path(a.formation_academique_id, a.id), controller: "reponse_academiques", method: "post" do %>
-			<span> REPONDRE CE COMS: </span>
-			<%= text_area_tag :contenu %>
-			<%= submit_tag :envoyer%>
-		<% end %>
-
-			<%end%>	
-=======
 	<br>
 	<div class="fa-com-resp">
 			<div>
-
 				<h2 class="title-comment">commentaires<hr></h2>
 				<%= form_tag  formation_academique_commentaire_academiques_path(@formation.id),controller: "commentaire_academiques", method: "post" do %>
 				<%= text_area_tag :contenu, nil, placeholder:" Votre commentaire ici", class:"fa-inpt-comment"%>
@@ -122,56 +34,32 @@
 			</div>
 
 			<div class="comments">
+				<div>
+					
+				</div>
+					
+				<%@formation.commentaires.each do |a|%>
+					<p><%=a.contenu%></p> 
+					<%=link_to 'Editer',  edit_formation_academique_commentaire_academique_path(a.formation_academique_id,a.id, controller: "commentaire_academiques" )%> 
+					<%=link_to 'Supprimer',   formation_academique_commentaire_academique_path(a.formation_academique_id,a.id), method: "delete",  data: { confirm: 'Voulez-vous vraiment supprimer?' } %>
+						<br><br>
+						<%= form_tag  formation_academique_commentaire_academique_reponse_academiques_path(a.formation_academique_id, a.id), controller: "reponse_academiques", method: "post" do %>
+							<span> REPONDRE CE COMS: </span>
+							<%= text_area_tag :contenu %>
+							<%= submit_tag :envoyer%>
+							<% end %>	
+					<div class="replies">
+						<%a.reponses.each do |r|%>	
+						<p> Reponse de: <%=current_user.first_name%></p>
+						<p><%= r.contenu %></p> 
+						<%=link_to "Editer", edit_formation_academique_commentaire_academique_reponse_academique_path(a.formation_academique_id, a.id, r.id), controller: "reponse_academiques"%> 
+						<%=link_to "Supprimer",  formation_academique_commentaire_academique_reponse_academique_path(a.formation_academique_id, a.id, r.id), controller: "reponse_academiques", method: "DELETE", data: { confirm: 'Voulez-vous vraiment supprimer?' } %> 
+						<%=link_to "like",formation_academique_commentaire_academique_reponse_academique_like_index_path(a.formation_academique_id, a.id, r.id), controller: "like", action: "create", method: "post"%>
+						<% end %>	
+					</div>			
+				<%end%>	
+		</div>
 
-			
-				
-			</div>		
 </div>
-<<<<<<< HEAD
-<div>
-<%@formation.commentaires.each do |a|%>
-	
-<p><%=a.contenu%></p><%=link_to 'Editer',  edit_formation_academique_commentaire_academique_path(a.formation_academique_id,a.id, controller: "commentaire_academiques" )%> <%=link_to 'Supprimer',   formation_academique_commentaire_academique_path(a.formation_academique_id,a.id), method: "delete",  data: { confirm: 'Voulez-vous vraiment supprimer?' } %>
-	
-	 
-
-<br><br>
-<%= form_tag  formation_academique_commentaire_academique_reponse_academiques_path(a.formation_academique_id, a.id), controller: "reponse_academiques", method: "post" do %>
-		<span> REPONDRE CE COMS: </span>
-		<%= text_area_tag :contenu %>
-		<%= submit_tag :envoyer%>
-		<% end %>
-
-	
-	
-<%a.reponses.each do |r|%>
-<%=link_to "like commentaires", formation_academique_commentaire_academique_reponse_academique_like_academiques_path(a.formation_academique_id, a.id, r.id  ), controller: "like_academiques", action: "create", method: "post" %> <%= r.likes.length%>
-
-	
-	<br> 
-		ma reponse: 
-
-		<%= r.contenu %> 
-		<%=link_to "Editer", edit_formation_academique_commentaire_academique_reponse_academique_path(a.formation_academique_id, a.id, r.id), controller: "reponse_academiques"%> 
-		<%=link_to "Supprimer",  formation_academique_commentaire_academique_reponse_academique_path(a.formation_academique_id, a.id, r.id), controller: "reponse_academiques", method: "DELETE", data: { confirm: 'Voulez-vous vraiment supprimer?' } %> 
-		<%=link_to "like",formation_academique_commentaire_academique_reponse_academique_like_academiques_path(a.formation_academique_id, a.id, r.id), controller: "like_academiques", action: "create", method: "post" %> <%= r.likes.length%>
-</div>		 
-	
-<% end %>	
-<%end%>	
 <br><br><br>
-	
-		 
-
-		
-
-=======
->>>>>>> 7a33d3e1445b146e7f9fb8ab00f174ea6316706b
-<br><br><br>
-<<<<<<< HEAD
-||||||| merged common ancestors
-<%= render "layouts/footer" %>
-=======
 <small> <%= render "../views/layouts/footer"%> </small>
->>>>>>> 7a33d3e1445b146e7f9fb8ab00f174ea6316706b
->>>>>>> 74d10aa282daa38762423bf9e6ddc912f5700f30
