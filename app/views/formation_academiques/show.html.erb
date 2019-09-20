@@ -32,27 +32,31 @@
 				<%= submit_tag :envoyer, class:"fa-submit1"%>
 				<% end %>
 			</div>
-			
+
 			<div class="comments">
+				<div>
+					
+				</div>
+					
 				<%@formation.commentaires.each do |a|%>
 					<p><%=a.contenu%></p> 
 					<%=link_to 'Editer',  edit_formation_academique_commentaire_academique_path(a.formation_academique_id,a.id, controller: "commentaire_academiques" )%> 
 					<%=link_to 'Supprimer',   formation_academique_commentaire_academique_path(a.formation_academique_id,a.id), method: "delete",  data: { confirm: 'Voulez-vous vraiment supprimer?' } %>
 						<br><br>
-						
-						<%a.reponses.each do |r|%>
-					
-						<p> ma reponse:</p>
-						<%= r.contenu %> 
+						<%= form_tag  formation_academique_commentaire_academique_reponse_academiques_path(a.formation_academique_id, a.id), controller: "reponse_academiques", method: "post" do %>
+							<span> REPONDRE CE COMS: </span>
+							<%= text_area_tag :contenu %>
+							<%= submit_tag :envoyer%>
+							<% end %>	
+					<div class="replies">
+						<%a.reponses.each do |r|%>	
+						<p> Reponse de: <%=current_user.first_name%></p>
+						<p><%= r.contenu %></p> 
 						<%=link_to "Editer", edit_formation_academique_commentaire_academique_reponse_academique_path(a.formation_academique_id, a.id, r.id), controller: "reponse_academiques"%> 
 						<%=link_to "Supprimer",  formation_academique_commentaire_academique_reponse_academique_path(a.formation_academique_id, a.id, r.id), controller: "reponse_academiques", method: "DELETE", data: { confirm: 'Voulez-vous vraiment supprimer?' } %> 
 						<%=link_to "like",formation_academique_commentaire_academique_reponse_academique_like_index_path(a.formation_academique_id, a.id, r.id), controller: "like", action: "create", method: "post"%>
-						<%= form_tag  formation_academique_commentaire_academique_reponse_academiques_path(a.formation_academique_id, a.id), controller: "reponse_academiques", method: "post" do %>
-						<span> REPONDRE CE COMS: </span>
-						<%= text_area_tag :contenu %>
-						<%= submit_tag :envoyer%>
-						<% end %>
-					<% end %>	
+						<% end %>	
+					</div>			
 				<%end%>	
 		</div>
 
