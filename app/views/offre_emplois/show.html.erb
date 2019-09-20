@@ -1,3 +1,23 @@
+<<<<<<< HEAD
+<h1>OffreEmplois#show</h1>
+<p>Find me in app/views/offre_emplois/show.html.erb</p>
+<table>
+<%@offreemploi.commentaires.each do |f|%>
+<% f.reponses.each do |r|%>
+	<tr>
+		<td><%= @offreemploi.id %></td>
+	 	<td><%= @offreemploi.description %></td>
+	 	<td><%= @offreemploi.lieu %></td>
+	 	<td><%= @offreemploi.salaire %></td>
+	 	<td><%= @offreemploi.mail %></td> 
+	 	<td>
+	 		<%=link_to "éditer",edit_offre_emploi_path(@offreemploi.id)%>
+	 		<%=link_to "Supprimer",offre_emploi_path(@offreemploi.id) , method:"delete",data:{confirm:"On supprime?"}%>
+	 		, <%=link_to "like",offre_emploi_commentaire_emploi_reponse_emploi_like_emplois_path(f.offre_emploi_id, f.id, r.id), controller: "like_emplois", action: "create", method: "post"%>(<%=@offreemploi.likes.length%>)
+	 	</td>
+	</tr>
+=======
+>>>>>>> 7a33d3e1445b146e7f9fb8ab00f174ea6316706b
 
 <div class="FA-container">
 <h1 class="fa-title"><%= @offreemploi.description%></h1><br>
@@ -37,14 +57,14 @@
 
 
 
-<%@offreemploi.commentaires.each do |f|%>
+
 "<%=f.contenu%>"
 <%=link_to 'Editer',  edit_offre_emploi_commentaire_emploi_path(f.offre_emploi_id,f.id)%> 
-<%=link_to 'Supprimer',   offre_emploi_commentaire_emploi_path(f.offre_emploi_id,f.id), method: "delete",  data: { confirm: 'Voulez-vous vraiment supprimer?' } %><br>
+<%=link_to 'Supprimer',   offre_emploi_commentaire_emploi_path(f.offre_emploi_id,f.id), method: "delete",  data: { confirm: 'Voulez-vous vraiment supprimer?' } %>, <%=link_to "like",offre_emploi_commentaire_emploi_reponse_emploi_like_emplois_path(f.offre_emploi_id, f.id, r.id), controller: "like_emplois", action: "create", method: "post"%> (<%=f.likes.length%>)<br>
  
-				<% f.reponses.each do |r|%>
 				<span> reponse:  
-				<%= r.contenu %>, <%=link_to "Editer", edit_offre_emploi_commentaire_emploi_reponse_emploi_path(f.offre_emploi_id, f.id, r.id), controller: "reponse_emplois"%>,  <%=link_to "Supprimer",  offre_emploi_commentaire_emploi_reponse_emploi_path(f.offre_emploi_id, f.id, r.id), controller: "reponse_emplois", method: "DELETE" ,  data: { confirm: 'Voulez-vous vraiment supprimer?' } %>
+				<%= r.contenu %>, <%=link_to "Editer", edit_offre_emploi_commentaire_emploi_reponse_emploi_path(f.offre_emploi_id, f.id, r.id), controller: "reponse_emplois"%>,  <%=link_to "Supprimer",  offre_emploi_commentaire_emploi_reponse_emploi_path(f.offre_emploi_id, f.id, r.id), controller: "reponse_emplois", method: "DELETE" ,  data: { confirm: 'Voulez-vous vraiment supprimer?' } %>,
+				<%=link_to "like",offre_emploi_commentaire_emploi_reponse_emploi_like_emplois_path(f.offre_emploi_id, f.id, r.id), controller: "like_emplois", action: "create", method: "post"%> (<%=r.likes.length%>)
 				 </span> 
 				<%end%>
 

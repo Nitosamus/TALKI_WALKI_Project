@@ -15,6 +15,24 @@ h1.fa-title{
     text-transform: uppercase;
     
 }
+<<<<<<< HEAD
+#desc-1, #separation, #desc-2{
+    text-align: center;
+    position: relative;
+    box-shadow: 0px 0px 4px rgba(0, 0, 255, 0.233);
+||||||| merged common ancestors
+
+div.description{
+    display: inline-block;
+}
+#desc-1{
+    background-color: blue;
+    position: relative;
+    left: 300px;
+    top: 40px;
+   
+
+=======
 #desc-1, #separation, #desc-2{
     text-align: center;
     position: relative;
@@ -42,6 +60,7 @@ h1.fa-title{
     box-shadow: none;
 
 }
+>>>>>>> 7a33d3e1445b146e7f9fb8ab00f174ea6316706b
 
 #desc-2{
     position: relative;
@@ -54,7 +73,38 @@ h1.fa-title{
     padding-top: 20px;
 }
 
+<<<<<<< HEAD
+#desc-1{
+    
+    width: 60%;
+    height: 350px;
+    display: inline-block;
+    bottom: 30px;
+    border: 0.5px solid rgba(0, 0, 255, 0.151); border-radius: 5px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    padding-top: 100px;
+}
+#separation{
+    width: 1%;
+    height: 250px;
+    border-right: 0.5px solid rgba(0, 0, 0, 0.116);
+    display: inline-block;
+    left: 20px;
+    top: 100px;
+    box-shadow: none;
+||||||| merged common ancestors
+#separation{
+=======
+>>>>>>> 7a33d3e1445b146e7f9fb8ab00f174ea6316706b
 
+<<<<<<< HEAD
+}
+
+#desc-2{
+||||||| merged common ancestors
+    width: 2px;
+    height: 500px;
+=======
 #desc-title{
     font-size: 1.3em;
     font-weight: 200;
@@ -74,7 +124,22 @@ h1.fa-title{
 .fa-action3{
     width: 50%;
     display: inline-block; 
+>>>>>>> 7a33d3e1445b146e7f9fb8ab00f174ea6316706b
     position: relative;
+<<<<<<< HEAD
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    display: inline-block; 
+    width: 30%;
+    height: 200px;  
+    left: 60px;
+    border: 0.5px solid rgba(0, 0, 255, 0.253); border-radius: 5px;  
+    padding-top: 20px;
+}
+||||||| merged common ancestors
+    left: 40px;
+    top: 350px;
+    border-right: 0.5px solid blue;
+=======
     bottom: 24px;
     float: right;
     text-align: center;
@@ -93,11 +158,40 @@ h1.fa-title{
     text-align: center;
     margin: 20px auto;
     border-radius: 10px;
+>>>>>>> 7a33d3e1445b146e7f9fb8ab00f174ea6316706b
 
 
+<<<<<<< HEAD
+#desc-title{
+    font-size: 1.3em;
+    font-weight: 200;
+||||||| merged common ancestors
+=======
 
       
+>>>>>>> 7a33d3e1445b146e7f9fb8ab00f174ea6316706b
 }
+<<<<<<< HEAD
+#action{
+    width: 100%;
+    background-color: rgb(245, 238, 238);
+    position: relative;
+    bottom: 10px;
+}
+.fa-action2{
+    width: 50%;
+    display: inline-block;
+    clear: both;
+    text-align: center;
+}
+.fa-action3{
+    width: 50%;
+    display: inline-block; 
+||||||| merged common ancestors
+
+#desc-2{
+    
+=======
 .title-comment{
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: 1.6em;
@@ -126,10 +220,58 @@ h1.fa-title{
     width: 80px;
     height: 50px;
     border: 1.5px solid rgba(0, 0, 255, 0.253); border-radius: 5px;
+>>>>>>> 7a33d3e1445b146e7f9fb8ab00f174ea6316706b
     position: relative;
+<<<<<<< HEAD
+    bottom: 24px;
+    float: right;
+    text-align: center;
+
+}
+.fa-com-resp{
+    width: 90%;
+    background-color: rgba(250, 235, 215, 0.459);
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.171);
+    margin:0px auto;
+}
+.comments{
+    width: 50%;
+    background-color: white;
+    text-align: center;
+      
+}
+#title-comment{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 1.6em;
+    text-transform: capitalize;
+   
+}
+#fa-inpt-comment{
+    width: 90%;
+    height: 50px;
+    box-decoration-break: clone;
+    /*box-shadow: 0px 0px 3px rgba(0, 0, 255, 0.24);*/
+    border:none;
+    border-bottom: 0.5px solid rgba(0, 0, 255, 0.253);
+||||||| merged common ancestors
+    bottom: 150px;
+    left: 1200px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: blue;
+=======
     left: 150px;
     bottom: 18px;
+>>>>>>> 7a33d3e1445b146e7f9fb8ab00f174ea6316706b
 }
+<<<<<<< HEAD
+#fa-submit1{
+    width: 100px;
+    height: 50px;
+    border: 1.5px solid rgba(0, 0, 255, 0.253); border-radius: 5px;
+}
+
+||||||| merged common ancestors
+=======
 
 .replies{
     background-color: rgba(0, 0, 0, 0.267);
@@ -143,3 +285,4 @@ h1.fa-title{
 
 }
 
+>>>>>>> 7a33d3e1445b146e7f9fb8ab00f174ea6316706b
