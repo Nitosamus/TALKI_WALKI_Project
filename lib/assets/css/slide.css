@@ -1,11 +1,11 @@
-body {
+/*body {
   margin: 0;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 14px;
   line-height: 20px;
   color: #333333;
   background-color: #ffffff;
-}
+}*/
 
 .img-rounded {
   -webkit-border-radius: 6px;
@@ -216,7 +216,7 @@ a.btn {
 .section {
   padding-top:30px;
 }
-
+/*
 #footer {
   font-size: 12px;
 }
@@ -224,3 +224,4 @@ a.btn {
 #footer .span8 {
   padding-top:20px;
 }
+*/
