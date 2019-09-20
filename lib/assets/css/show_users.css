@@ -1,38 +1,51 @@
-
-  body{
-    height: 5;
-    width: 5%;
-    
-  }
-  #card{
-    
-    background-size: 50%;
-    text-align:center;
-    margin: auto;
-    position: left;
-  }
-  #card01{
-     position: fixed;
-     width: 100%;
-    margin-top: 10px;
-    background-color: rgb(0, 127, 197);
-  }
-  #card02{
-     position: fixed;
-     height:100%;
-    margin-top: 0px;
-    background-color: rgb(0, 127, 197);
-  }
-.card {
-  background-color: transparent;
-  box-shadow: 0 4px 15px 0 rgba(0, 0, 0, 0.2);
-  width: 300px;
-  height: 300px;
+ 
+.Card0 {
+ width: 100%;
+  max-width: 1200px;
+  height: 430px;
+  display: flex;
+  flex-wrap: wrap;
   text-align: center;
-  perspective: 1000px;
-  border-radius: 15px;
+  justify-content: center;
+
+  text-align: center;
+  }
+
+.card{
+  
+  border-radius: 8px;
+  overflow: hidden;
+  margin:20px;
+  text-align: center;
+  transition: all 0.25s;
 }
 
+#crt01:hover{
+  transform: translateY(-15px);
+  box-shadow: 0 12px 16px rgba(0,0,0,0.2)
+}
+#crt02:hover{
+  float: right;
+  box-shadow: 0 12px 16px rgba(0,0,0,0.2)
+}
+#crt01{
+  margin: auto;
+}
+#crt02{
+  margin-right: 0px;
+  margin-left: 550px;
+
+  object-position: right;
+}
+.head02{
+  background-color: #555;
+  box-sizing:border-box;
+  color: white;
+  cursor: pointer;
+  float: left;
+  padding: 14px 16px;
+  font-size: 17px;
+}
 .foot{
   border: none;
   outline: 0;
@@ -54,7 +67,7 @@ button {
   color: white;
   background-color: #000;
   text-align: center;
-  cursor: pointer;
+  cursor: pointer; 
   width: 100%;
   font-size: 18px;
 }
@@ -66,7 +79,8 @@ a {
 }
 
 button:hover, a:hover {
-  opacity: 0.7;
+  opacity: 0.2;
+  background-color: rgb(50, 147, 212);
 }
 .flip-card {
   background-color: transparent;
@@ -128,7 +142,7 @@ button:hover, a:hover {
   padding: 8px 8px 8px 32px;
   text-decoration: none;
   
-  color: #818181;
+  color: rgb(255, 255, 255);
   display: block;
   transition: 0.3s;
 }
@@ -149,24 +163,50 @@ button:hover, a:hover {
   .sidenav {padding-top: 15px;}
   .sidenav a {font-size: 18px;}
 }
-.tab2{
-  background-color: blue;
-  position: right;
-}
-.tab02{
-  background-size: 100%;
-}
-.footer {
+
+.cart01 {
   position: fixed;
   left: 0;
   bottom: 0;
   width: 100%;
-  background-color: rgb(0, 127, 197);
+  background-color: rgb(0, 210, 203);
   color: white;
   text-align: center;
 }
+.tablink {
+  background-color: #555;
+  color: white;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  font-size: 17px;
+  width: 25%;
+}
+
+.tablink:hover {
+  background-color: #777;
+}
+.tabcontent {
+  color: white;
+  display: none;
+  padding: 100px 20px;
+  height: 100%;
+}
+#Home {background-color: red;}
+#News {background-color: green;}
+#Contact {background-color: blue;}
+#About {background-color: orange;}
 /* ========== render (edit_user_path========== */
+<<<<<<< HEAD:lib/assets/css/show_users.css
+
+/* Full-width input fields */
+||||||| merged common ancestors
+
+=======
 /*
+>>>>>>> 7a33d3e1445b146e7f9fb8ab00f174ea6316706b:lib/assets/css/show.css
 input[type=text], input[type=password] {
   width: 100%;
   padding: 15px;
@@ -255,7 +295,7 @@ hr {
 
 .close:hover,
 .close:focus {
-  
+  color: #f44336;
   cursor: pointer;
 }
 
