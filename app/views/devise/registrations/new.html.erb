@@ -1,3 +1,4 @@
+
 <div class="sign-container">
 
     <div class="sign">
@@ -18,9 +19,7 @@
 
       <em class="lab">(<%= @minimum_password_length %> characters minimum)</em>
       <% end %><br />
-        <input type="hidden" name="authenticity_token" value="[different hash]">
       <%= f.password_field :password, autocomplete: "new-password", class:"inpts" %>
-
 
       <%= f.label :password_confirmation, class:"lab"%><br/>
         <input type="hidden" name="authenticity_token" value="[different hash]">
@@ -34,4 +33,7 @@
     <% end %>
 </div>
 <hr>
+
 <small> <%= render "../views/layouts/footer"%> </small>
+
+

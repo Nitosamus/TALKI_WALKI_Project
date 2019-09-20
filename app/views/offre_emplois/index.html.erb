@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html>
 <head>
@@ -45,7 +46,23 @@
 </table>
 
 <%= link_to "Proposer un nouveau emploi", new_offre_emploi_path%>
+=======
+>>>>>>> 7a33d3e1445b146e7f9fb8ab00f174ea6316706b
 
+<div class="FA-container">
+	<div class="FA-title">
+		<h1 class="FA-title-content" >Offre d'emplois</h1>
+	</div>
+	<div class="FA-cont-list">
+		<% @offreemplois.each do |oe| %>
+		<div class="FA-lst-titre">
+			<%= oe.description %>
+			<%=link_to "Voir",offre_emploi_path(oe.id), class:"FA-bout-voir"%>
+		</div>
+		<%end%>
+	</div>
+	<div id="FA-bout-offre">	
+		<%= link_to "Proposer un emploi >>>", new_offre_emploi_path, class:"FA-bout"%>
+	</div>
 </div>
-</body>
-</html>
+<small> <%= render "../views/layouts/footer"%> </small>

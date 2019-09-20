@@ -1,5 +1,7 @@
-<form class="sign-container">
+
+<%=form_tag professional_formations_path, method: "post", class: "sign-container"  do %>
     <h1 class="fa-head-title">Proposer une nouvelle formation</h1>
-    <%=form_tag professional_formations_path, method: "post"  do %>
     <%= render "layouts/form_Profess" %>
 <% end %>
+<br><br>
+<small> <%= render "../views/layouts/footer"%> </small>
