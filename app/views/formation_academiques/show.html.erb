@@ -4,11 +4,8 @@
 	<h1 class="fa-title"><%=@formation.titre%></h1><br>
 	<div id="actions-type">
 	<%= link_to "Editer-infos", edit_formation_academique_path(@formation.id), class: "fa-action2"%> <br>
-<<<<<<< HEAD
 	<%= link_to "suprimer-infos", formation_academique_path(@formation.id), method: "delete",  data: { confirm: 'Voulez-vous vraiment supprimer?' }, class: "fa-action3"%>	
-=======
 	<%= link_to "suprimer-infos", formation_academique_path(@formation.id), method: "delete",  data: { confirm: 'Voulez-vous vraiment supprimer?' }, class: "fa-action3 btn-warning"%>	
->>>>>>> f012af7539175514562d87badf427e15710918cf
 	</div>
 	<div id="desc-1">
 		<h2 id="desc-title">Description</h2>

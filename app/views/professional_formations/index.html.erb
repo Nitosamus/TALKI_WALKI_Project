@@ -1,19 +1,4 @@
 
-<h1>ProfessionalFormations#index</h1>
-
-<table>
-<% @professionalformations.each do |fp| %>
-	<tr>
-	<td><%= fp.id %></td>
- 	<td><%= fp.objet %></td>
- 	<td><%= fp.titre %></td>
- 	<td><%= fp.lieu %></td>
- 	<td><%= fp.contacte %></td>
- 	<td><%=link_to "voir",professional_formation_path(fp.id)%></a></td>
- 
-</tr>
-
-
 <div class="FA-container">
 	<div class="FA-title">
 		<h1 class="FA-title-content" >Formations Professionelles</h1>
