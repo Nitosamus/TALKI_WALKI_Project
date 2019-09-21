@@ -9,12 +9,13 @@
     devise_for :users
     
   resources :professional_formations do
+    resources :like_professionels
     resources :commentaire_professionels do 
-      resources :reponse_professionnels do
-        resources :like_professionels
+      resources :reponse_professionnels 
+        
       end
     end
-  end
+  
   
   resources :offre_emplois do
      resources :like_emplois
@@ -23,15 +24,12 @@
        
       end
     end
-  end
+ 
 
   resources :formation_academiques  do
     resources :like_academiques
     resources :commentaire_academiques do
-      resources :like_academiques 
-      resources :reponse_academiques  do
-        resources :like_academiques   
-      end 
+      resources :reponse_academiques  
     end
   end
 
