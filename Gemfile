@@ -79,3 +79,4 @@ gem 'binding_of_caller'
 gem 'simple_form'
 gem 'bootstrap', '~> 4.3.1'
 gem 'redis'
+gem "webpacker"

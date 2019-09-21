@@ -37,8 +37,7 @@
     resources :commentaire_academiques do
       resources :reponse_academiques  
     end
-  
-
+  end
 
     resources :places
     resources :users 
