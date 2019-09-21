@@ -60,7 +60,8 @@
 							<p class="fa-content-resp"><%= r.contenu %></p> 
 							<%=link_to ('<i class="fas fa-pencil-alt"></i>').html_safe, edit_formation_academique_commentaire_academique_reponse_academique_path(a.formation_academique_id, a.id, r.id), controller: "reponse_academiques", class: "fa-actions-on-com"%> 
 							<%=link_to ('<i class="fas fa-trash"></i>').html_safe,  formation_academique_commentaire_academique_reponse_academique_path(a.formation_academique_id, a.id, r.id), controller: "reponse_academiques", method: "DELETE", data: { confirm: 'Voulez-vous vraiment supprimer?' }, class: "fa-actions-on-com" %> 
-							<%=link_to ('<i class="far fa-thumbs-up"></i>()').html_safe%>
+
+							<%=link_to ('<i class="far fa-thumbs-up"></i>()').html_safe							<%=link_to ('<i class="far fa-thumbs-up"></i>()').html_safe,
 							<span class="fa-actions-on-com" ><small><%=r.created_at%></small></p></span>
 							<% end %>	
 						</div>	
