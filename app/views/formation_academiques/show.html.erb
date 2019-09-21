@@ -18,8 +18,8 @@
 		Mail si interréssé: <%=@formation.mail%><br>
 		Contact: <%=@formation.contact%>
 	</div>
-	<%= link_to "Interréssé",  formation_academique_like_academiques_path(@formation.id), controller: "like_academiques", action: "create", method: "post"%> (<%=@formation.likes.length%>)
-	 <br>	
+	div style="font-size: 35px">
+<%= link_to "Interréssé",  formation_academique_like_academiques_path(@formation.id), controller: "like_academiques", action: "create", method: "post", class:"like-int"%> (<%=@formation.likes.length%>) </div>	
 </div>
 
 <br>
