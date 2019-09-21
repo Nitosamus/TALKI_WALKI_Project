@@ -70,6 +70,7 @@ h1.fa-title{
     display: inline-block;
     clear: both;
     text-align: center;
+    background-color: rgba(0, 0, 0, 0.384);
 }
 .fa-action3{
     width: 50%;
@@ -93,6 +94,7 @@ h1.fa-title{
     text-align: center;
     margin: 20px auto;
     border-radius: 10px;
+    padding-top: 50px;
 
 
 
@@ -141,5 +143,74 @@ h1.fa-title{
     font-size: 0.95em;
     padding: 20px 0px 10px 0px;
 
+
 }
 
+.fa-content-resp{
+    text-align: left;
+    color: white;
+    margin-left: 10px;
+    text-indent: 5px;
+}
+.fa-actions-on-com{
+    color: rgba(0, 0, 0, 0.466);
+    margin: 0px 12px;
+}
+.fa-inpts-resp, .fa-com-content{
+    background-color: rgba(0, 0, 0, 0.267);
+    width: 75%;
+    margin: 20px auto;
+    border-radius: 15px;
+}
+.inpts-resp{
+    width: 30%;
+    height: 30px;
+    border: 0.5px solid white;
+    border-radius: 15px;
+    padding-left: 15px;
+    margin: 15px 10px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 0.8em;
+
+}
+.inpts-resp:hover{
+    border: 1px solid rgba(0, 0, 255, 0.336);
+     
+}
+.lab-rep, .fa-submit-rep{
+    magin-top: 2px;
+    position: relative;
+    bottom: 20px;
+
+}
+
+
+.fa-submit-rep{
+    width: 15%;
+    height:22px;
+    border-radius: 12px;
+    font-size: 0.7em;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: rgba(255, 255, 255, 0.788);
+    border-color: none;
+}
+.fa-submit-rep:hover{
+    opacity: 0.6;
+
+}
+.fa-com{
+    border: 0.3px solid rgba(0, 0, 0, 0.171); border-radius: 8px;
+    background-color:white;
+    width: 85%;
+    margin: 20px auto;
+    box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.288);
+
+}
+.fa-com-content{
+    margin-bottom: 10px;
+    padding: 10px 10px;
+    color: white;
+}
+.lab-rep2, .lab-rep{
+    color: rgba(0, 0, 0, 0.452);
+}
