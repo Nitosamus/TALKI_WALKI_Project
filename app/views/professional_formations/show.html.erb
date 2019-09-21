@@ -20,6 +20,9 @@
 		Lieu:<%= @professionalformation.lieu %> <br>
 		contact:<%= @professionalformation.contacte %><br>		
 	</div>
+	<div style="font-size: 35px">
+	<%= link_to "Interréssé",  professional_formation_like_professionels_path(@professionalformation.id), controller: "like_professionels", action: "create", method: "post", class:"like-int"%> (<%=@professionalformation.likes.length%>)</div>
+	</div>
 </div>
 <br>
 <br>
