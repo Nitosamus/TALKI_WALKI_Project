@@ -9,30 +9,27 @@
     devise_for :users
     
   resources :professional_formations do
+    resources :like_professionels
     resources :commentaire_professionels do 
-      resources :reponse_professionnels do
-        resources :like_professionels
-      end
+      resources :reponse_professionnels 
     end
   end
   
   resources :offre_emplois do
+    resources :like_emplois
     resources :commentaire_emplois do 
-      resources :reponse_emplois do 
-        resources :like_emplois
-      end
+      resources :reponse_emplois 
+        
     end
   end
 
   resources :formation_academiques  do
     resources :like_academiques
-    resources :commentaire_academiques do
-      resources :like_academiques 
-      resources :reponse_academiques  do
-        resources :like_academiques   
+    resources :commentaire_academiques do 
+      resources :reponse_academiques   
       end 
     end
-  end
+  
 
 
     resources :places

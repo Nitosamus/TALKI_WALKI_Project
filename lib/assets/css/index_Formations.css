@@ -1,5 +1,5 @@
 /* css index Formations académiques */
-
+/* Version 2.0
 div.FA-container{
     width: 95%;
     padding: 50px 50px;
@@ -84,3 +84,193 @@ div#FA-bout-offre{
     background-size: 120%;
 
 }
+*/
+
+* {
+  box-sizing: border-box
+}
+section-index {
+  font-family: Verdana, sans-serif;
+  margin:0
+}
+.mySlides {
+  display: none
+}
+img {
+  vertical-align: middle;
+}
+
+/* Slideshow container */
+.slideshow-container {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -22px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+/* Caption text */
+.text {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+
+@-webkit-keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+  .prev, .next,.text {font-size: 11px}
+}
+/*container dans le slide*/
+  .sevices-section{
+      padding: 60px 0;
+    }
+    .inner-width {
+      width: 100%;
+      max-width: 1200px;
+      margin: auto;
+      padding: 0 20px;
+      overflow: hidden;
+    }
+    .section-title {
+      text-align: center;
+      color: rgb(0, 0, 0);
+      text-transform: uppercase;
+      font-size: 30px;
+    }
+    .border {
+      width: 160px;
+      height: 2px;
+      background:rgb(57, 185, 188);
+      margin: 40px auto;
+    }
+    .services-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .service-box {
+      max-width: 33.33%;
+      padding: 30px;
+      margin: 0px 0px 25px 0px;
+      text-align: center;
+      color: rgb(57, 185, 188);
+      cursor: pointer;
+    }
+    .service-icon {
+      display: inline-block;
+      width: 70px;
+      height: 70px;
+      border: 3px solid rgb(57, 185, 188);
+      color: rgb(57, 185, 188);
+      transform: rotate(45deg);
+      margin-bottom: 30px;
+      margin-top: 16px;
+      transition: 0.3s linear;
+    }
+    .service-icon i{
+      line-height: 70px;
+      transform: rotate(-45deg);
+      font-size: 26px;
+    }
+    .service-box:hover .service-icon{
+      background: rgb(57, 185, 188);
+      color: #ddd;
+    }
+    .service-title{
+      color: rgb(0, 0, 0);
+      font-size: 18px;
+      text-transform: uppercase;
+      margin-bottom: 30px;
+    }
+    .service-desc {
+      font-size: 18px;
+      color: #fff;
+    }
+    .slide1{
+      background-image:url(meeting.jpg);
+      background-size: cover;
+      border-radius: 15px;
+    }
+    .slide2{
+      background-image:url(A.jpg);
+      background-size: cover;
+      border-radius: 15px;
+    }
+    .slide3{
+     background-image:url(https://jeffontheroad.com/wp-content/uploads/2018/08/helloquence-51716-unsplash.jpg);  
+     background-size: cover;
+     border-radius: 15px;
+    }
