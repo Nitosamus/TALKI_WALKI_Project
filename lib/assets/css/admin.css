@@ -3,7 +3,8 @@
   margin: 0;
   box-sizing:border-box;
 }
-.menu-bar{
+.menu-bar {
+  margin-top: -12px;
   background:rgba(120, 120, 120,0.5);
   text-align: center;
 }
@@ -83,13 +84,13 @@ border-radius: 3px;
   height: 50px;
 }
 
-.button:hover{
+.button:hover {
   text-decoration: none;
   cursor: pointer;
   background-color:white; 
   border: 2px solid rgb(60, 179, 113);
 }
-.desc{
+.desc {
   height:160px;
   background-color:none;
   font-size:36px;
@@ -97,7 +98,7 @@ border-radius: 3px;
   margin-top: 300px;
 }
 
-.publicité{
+.publicité {
       font-family: sans-serif;
       text-align: center;
       background: rgb(0,0,0);
