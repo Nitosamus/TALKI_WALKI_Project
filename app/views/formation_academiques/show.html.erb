@@ -4,7 +4,11 @@
 	<h1 class="fa-title"><%=@formation.titre%></h1><br>
 	<div id="actions-type">
 	<%= link_to "Editer-infos", edit_formation_academique_path(@formation.id), class: "fa-action2"%> <br>
+<<<<<<< HEAD
 	<%= link_to "suprimer-infos", formation_academique_path(@formation.id), method: "delete",  data: { confirm: 'Voulez-vous vraiment supprimer?' }, class: "fa-action3"%>	
+=======
+	<%= link_to "suprimer-infos", formation_academique_path(@formation.id), method: "delete",  data: { confirm: 'Voulez-vous vraiment supprimer?' }, class: "fa-action3 btn-warning"%>	
+>>>>>>> f012af7539175514562d87badf427e15710918cf
 	</div>
 	<div id="desc-1">
 		<h2 id="desc-title">Description</h2>
@@ -18,7 +22,8 @@
 		Mail si interréssé: <%=@formation.mail%><br>
 		Contact: <%=@formation.contact%>
 	</div>
-	 <br>	
+	<div style="font-size: 35px">
+<%= link_to "Interréssé",  formation_academique_like_academiques_path(@formation.id), controller: "like_academiques", action: "create", method: "post", class:"like-int"%> (<%=@formation.likes.length%>) </div>
 </div>
 
 <br>
@@ -31,7 +36,7 @@
 				<%= text_area_tag :contenu, nil, placeholder:" Votre commentaire ici...", class:"fa-inpt-comment"%>
 				<%= submit_tag :envoyer, class:"fa-submit1"%>
 				<% end %>
-			</div>
+		
 
 			<div class="comments">
 						
