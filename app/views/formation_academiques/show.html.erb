@@ -33,6 +33,8 @@
 				<%= submit_tag :envoyer, class:"fa-submit1"%>
 				<% end %>
 			</div>
+		<div style="font-size: 35px">
+<%= link_to "Interréssé",  formation_academique_like_academiques_path(@formation.id), controller: "like_academiques", action: "create", method: "post", class:"like-int"%> (<%=@formation.likes.length%>) </div>
 
 			<div class="comments">
 						
