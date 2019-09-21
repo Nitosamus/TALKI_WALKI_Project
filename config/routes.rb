@@ -17,9 +17,10 @@
   end
   
   resources :offre_emplois do
+     resources :like_emplois
     resources :commentaire_emplois do 
-      resources :reponse_emplois do 
-        resources :like_emplois
+      resources :reponse_emplois 
+       
       end
     end
   end
