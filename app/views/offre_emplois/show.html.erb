@@ -18,6 +18,7 @@
 			<li>contact:<%= @offreemploi.mail %></li>
 		</ul>
 	</div>
+	<div style="font-size: 35px"><%= link_to "Interressé",  offre_emploi_like_emplois_path(@offreemploi.id) , controller: "like_emplois", action: "create", method: "post", class:"like-int"%> (<%=@offreemploi.likes.length%>)	</div>
 	<br>	
 </div>
 <br><br>
