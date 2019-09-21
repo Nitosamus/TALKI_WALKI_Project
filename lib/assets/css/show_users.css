@@ -59,7 +59,7 @@
   font-size: 18px;
 }
 
-button {
+/*button {
   border: none;
   outline: 0;
   display: inline-block;
@@ -81,7 +81,7 @@ a {
 button:hover, a:hover {
   opacity: 0.2;
   background-color: rgb(50, 147, 212);
-}
+}*/
 .flip-card {
   background-color: transparent;
   width: 300px;
