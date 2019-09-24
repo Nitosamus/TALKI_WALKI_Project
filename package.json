@@ -1,5 +1,9 @@
 {
   "name": "talki_walki",
   "private": true,
-  "dependencies": {}
+  "dependencies": {},
+  "devDependencies": {
+    "webpack": "^4.40.2",
+    "webpack-dev-server": "^3.8.1"
+  }
 }
