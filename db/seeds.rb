@@ -42,7 +42,7 @@ end
 		objet:Faker::Commerce.department,titre:Faker::Commerce.product_name,lieu:Faker::Address.street_address,
 		contacte:Faker::PhoneNumber.phone_number,
 		mail:Faker::Internet.email,
-		description:Faker::Job.name, 
+		description:Faker::Job.title, 
 		user:u[rand(10)])
 
 end

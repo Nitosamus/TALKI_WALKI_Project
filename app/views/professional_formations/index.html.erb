@@ -18,7 +18,7 @@
                 <div class="service-icon">
                   <i class="fa fa-ravelry" aria-hidden="true"></i>
                 </div>
-                <div class="service-title"><b>Nom de l'entreprise</b>
+                <div class="service-title"><b><%=oe.description%></b>
                 </div>
               <div class="service-desc">
             <%= oe.titre %> <br>
@@ -42,7 +42,7 @@
                 <div class="service-icon">
                   <i class="fa fa-ravelry" aria-hidden="true"></i>
                 </div>
-                <div class="service-title"><b>Nom de l'entreprise</b>
+                <div class="service-title"><b><%=oe.description%></b>
                 </div>
               <div class="service-desc">
             <%= oe.titre %> <br>
@@ -66,7 +66,7 @@
                 <div class="service-icon">
                   <i class="fa fa-ravelry" aria-hidden="true"></i>
                 </div>
-                <div class="service-title"><b>Nom de l'entreprise</b>
+                <div class="service-title"><b><%=oe.description%></b>
                 </div>
               <div class="service-desc">
             <%= oe.titre %> <br>
@@ -93,6 +93,9 @@
 </div>
 </div>
 </div>
+<div id="FA-bout-offre">
+		<%=link_to "Proposer une formation >>>", new_professional_formation_path,  class:"FA-bout"%>
+</div>	
 
 <script>
 var slideIndex = 1;

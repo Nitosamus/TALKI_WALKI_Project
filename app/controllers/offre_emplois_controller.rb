@@ -1,7 +1,7 @@
 class OffreEmploisController < ApplicationController
   before_action :authenticate_user!, only: [:show, :new, :create]
   def create
-      @offreemploi = OffreEmploi.new(user_id: current_user.id,  description: params[:description], lieu: params[:lieu], salaire: params[:salaire], domaine: params[:domaine], mail: params[:mail])
+      @offreemploi = OffreEmploi.new(user_id: current_user.id,  description: params[:description], lieu: params[:lieu], salaire: params[:salaire], mail: params[:mail])
      if  @offreemploi.save
       flash[:success]="Vous venez de proposer une nouvelle offre d'emploi! Merci pour la collaboration"
       redirect_to offre_emplois_path
@@ -28,7 +28,7 @@ class OffreEmploisController < ApplicationController
 
   def update
     @offreemploi = OffreEmploi.find(params[:id])
-    if @offreemploi.update(description: params[:description], lieu: params[:lieu], salaire: params[:salaire], domaine: params[:domaine], mail: params[:mail])
+    if @offreemploi.update(description: params[:description], lieu: params[:lieu], salaire: params[:salaire], mail: params[:mail])
     redirect_to offre_emploi_path(@offreemploi.id)
   end
   end

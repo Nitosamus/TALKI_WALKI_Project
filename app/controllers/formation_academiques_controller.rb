@@ -7,7 +7,7 @@ class FormationAcademiquesController < ApplicationController
   end
   
   def create
-    @formation= FormationAcademique.new(user_id: current_user.id, titre: params[:titre], description: params[:description], lieu: params[:lieu], contact: params[:contact], mail: params[:mail], domaine:params[:domaine])
+    @formation= FormationAcademique.new(user_id: current_user.id, titre: params[:titre], description: params[:description], lieu: params[:lieu], contact: params[:contact], mail: params[:mail])
     if @formation.save
       flash[:success]="Vous venez de proposer une nouvelle formation académique"
       redirect_to formation_academiques_path
@@ -29,7 +29,7 @@ class FormationAcademiquesController < ApplicationController
 
   def update
     @formation= FormationAcademique.find(params[:id])
-    if @formations= @formation.update(titre: params[:titre], description: params[:description], lieu: params[:lieu], contact: params[:contact], mail: params[:mail], domaine: params[:domaine])
+    if @formations= @formation.update(titre: params[:titre], description: params[:description], lieu: params[:lieu], contact: params[:contact], mail: params[:mail])
       redirect_to formation_academique_path(@formation.id)
     else 
       redirect_to edit_formation_academique_path(@formation.id)

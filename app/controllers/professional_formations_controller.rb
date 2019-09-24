@@ -1,7 +1,7 @@
 class ProfessionalFormationsController < ApplicationController
   before_action :authenticate_user!, only: [:show, :new, :create]
   def create
-    @professionalformation = ProfessionalFormation.new(user_id: current_user.id, titre: params[:titre], description: params[:description], lieu: params[:lieu], contacte: params[:contacte], mail: params[:mail], domaine:params[:domaine], objet: params[:objet])
+    @professionalformation = ProfessionalFormation.new(user_id: current_user.id, titre: params[:titre], description: params[:description], lieu: params[:lieu], contacte: params[:contacte], mail: params[:mail], objet: params[:objet])
     if @professionalformation.save
     flash[:success]="Vous venez de proposer une nouvelle formation! Merci pour la collaboration" 
     redirect_to professional_formations_path
@@ -28,7 +28,7 @@ class ProfessionalFormationsController < ApplicationController
 
   def update
     @professionalformation = ProfessionalFormation.find(params[:id])
-    @professionalformation.update(titre: params[:titre], description: params[:description], lieu: params[:lieu], contacte: params[:contacte], mail: params[:mail], domaine:params[:domaine], objet: params[:objet])
+    @professionalformation.update(titre: params[:titre], description: params[:description], lieu: params[:lieu], contacte: params[:contacte], mail: params[:mail], objet: params[:objet])
     redirect_to professional_formation_path(@professionalformation.id)
   end
 

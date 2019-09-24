@@ -20,11 +20,6 @@
     resources :like_emplois
     resources :commentaire_emplois do 
       resources :reponse_emplois 
-        
-     resources :like_emplois
-    resources :commentaire_emplois do 
-      resources :reponse_emplois 
-       
       end
     end
  
@@ -34,9 +29,6 @@
     resources :commentaire_academiques do 
       resources :reponse_academiques   
       end 
-    resources :commentaire_academiques do
-      resources :reponse_academiques  
-    end
   end
 
     resources :places

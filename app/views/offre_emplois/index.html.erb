@@ -16,10 +16,10 @@
                 <div class="service-icon">
                   <i class="fa fa-ravelry" aria-hidden="true"></i>
                 </div>
-                <div class="service-title"><b>Nom de l'entreprise</b>
+                <div class="service-title"><b><%=oe.description%></b>
                 </div>
               <div class="service-desc">
-            <%= oe.description %> <br>
+            <%= oe.description %><br>
             <%=link_to "Voir plus>>",offre_emploi_path(oe.id), class:"FA-bout-voir"%>          </div>
 
         </div>
@@ -90,6 +90,9 @@
   <span class="dot" onclick="currentSlide(3)"></span> 
 </div>
 </div>
+</div>
+<div id="FA-bout-offre">	
+		<%= link_to "Proposer un emploi >>>", new_offre_emploi_path, class:"FA-bout"%>
 </div>
 
 <script>
