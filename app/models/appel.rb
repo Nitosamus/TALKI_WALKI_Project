@@ -1,2 +1,0 @@
-class Appel < ApplicationRecord
-end
