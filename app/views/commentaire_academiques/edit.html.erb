@@ -1,5 +1,0 @@
-<h2>Editer commentaire</h2>
-<%= form_tag  formation_academique_commentaire_academique_path(@commentaire.formation_academique_id,@commentaire.id),controller: "commentaire_academiques", method: "put" do %>
-<%= text_area_tag :contenu %>
-<%= submit_tag :envoyer%>
-<% end %>

@@ -12,9 +12,15 @@
 //
 //= require rails-ujs
 //= require activestorage
-//= require jquery3
-//= require popper
-//= require bootstrap-sprockets
+//= require turbolinks
 //= require_tree .
-//= require rooms.js
-//= require cable.js
+//= require "assets/js/jquery-2.1.1.min.js"	
+//= require "assets/js/bootstrap.min.js"
+//= require "assets/js/wow.min.js"
+//= require "assets/js/fancybox/jquery.fancybox.pack.js"
+//= require "assets/js/jquery.easing.1.3.js"
+//= require "assets/js/jquery.bxslider.min.js"
+//= require "assets/js/jquery.prettyPhoto.js"
+//= require "assets/js/jquery.isotope.min.js"
+//= require "assets/js/functions.js"
+	

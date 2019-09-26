@@ -1,28 +1,20 @@
+<h2>Log in</h2>
 
-
-    <div class="sign-container">
-            <h1 >Log in</h1>
-        <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-        <div class="field">
-              <%= f.label :email, class:"lab" %><br/>
-              <%= f.email_field :email, autofocus: true, autocomplete: "email", class:"inpts" %>
-
-              <%= f.label :password, class:"lab" %><br />
-              <%= f.password_field :password, autocomplete: "current-password", class:"inpts" %>
-
-            <% if devise_mapping.rememberable? %>
-                <p><%= f.check_box :remember_me %>
-                <%= f.label :remember_me, class:"lab" %><p>
-            <% end %>
-
-            <div>
-              <%= f.submit "Log in", class:"btn btn-info logs", id: "lg"%>
-            </div>
-            <% end %>
-            <small><%= render "devise/shared/links"%></small>
-           
-        </div>
+<%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+  <div class="form-inputs">
+    <%= f.input :email,
+                required: false,
+                autofocus: true,
+                input_html: { autocomplete: "email" } %>
+    <%= f.input :password,
+                required: false,
+                input_html: { autocomplete: "current-password" } %>
+    <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
   </div>
-  <hr>
-  <small> <%= render "../views/layouts/footer"%> </small>
- 
+
+  <div class="form-actions">
+    <%= f.button :submit, "Log in" %>
+  </div>
+<% end %>
+
+<%= render "devise/shared/links" %>

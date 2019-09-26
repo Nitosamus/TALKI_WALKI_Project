@@ -1,5 +1,0 @@
-<h2>Editer commentaire</h2>
-<%= form_tag  professional_formation_commentaire_professionel_path(@commentaire.professional_formation_id,@commentaire.id),controller: "commentaire_professionels", method: "put" do %>
-<%= text_area_tag :contenu %>
-<%= submit_tag :envoyer%>
-<% end %>

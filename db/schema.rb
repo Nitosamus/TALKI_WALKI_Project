@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_09_18_144350) do
+ActiveRecord::Schema.define(version: 2019_09_26_044401) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -36,6 +36,13 @@ ActiveRecord::Schema.define(version: 2019_09_18_144350) do
     t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
   end
 
+  create_table "afs", force: :cascade do |t|
+    t.string "object"
+    t.text "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "aides", force: :cascade do |t|
     t.text "login"
     t.text "sign_up"
@@ -44,69 +51,128 @@ ActiveRecord::Schema.define(version: 2019_09_18_144350) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "appels", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "commentaires", force: :cascade do |t|
-    t.text "contenu"
+  create_table "answers", force: :cascade do |t|
+    t.text "body"
+    t.string "title"
+    t.bigint "mf_id"
+    t.bigint "ff_id"
+    t.bigint "commnent_id"
     t.bigint "user_id"
-    t.bigint "formation_academique_id"
-    t.bigint "professional_formation_id"
-    t.bigint "offre_emploi_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["formation_academique_id"], name: "index_commentaires_on_formation_academique_id"
-    t.index ["offre_emploi_id"], name: "index_commentaires_on_offre_emploi_id"
-    t.index ["professional_formation_id"], name: "index_commentaires_on_professional_formation_id"
-    t.index ["user_id"], name: "index_commentaires_on_user_id"
+    t.index ["commnent_id"], name: "index_answers_on_commnent_id"
+    t.index ["ff_id"], name: "index_answers_on_ff_id"
+    t.index ["mf_id"], name: "index_answers_on_mf_id"
+    t.index ["user_id"], name: "index_answers_on_user_id"
   end
 
-  create_table "domaines", force: :cascade do |t|
-    t.string "titre"
+  create_table "cities", force: :cascade do |t|
+    t.string "name"
+    t.integer "zip_code"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "formation_academiques", force: :cascade do |t|
-    t.string "titre"
-    t.string "contact"
-    t.string "mail"
-    t.string "lieu"
+  create_table "comments", force: :cascade do |t|
+    t.text "body"
+    t.string "title"
+    t.bigint "mf_id"
+    t.bigint "ff_id"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["ff_id"], name: "index_comments_on_ff_id"
+    t.index ["mf_id"], name: "index_comments_on_mf_id"
+    t.index ["user_id"], name: "index_comments_on_user_id"
+  end
+
+  create_table "ffs", force: :cascade do |t|
+    t.string "title"
     t.text "description"
-    t.bigint "user_id"
+    t.string "contact"
+    t.string "email"
+    t.decimal "price"
+    t.string "image_url"
+    t.string "video_url"
+    t.integer "duration"
+    t.bigint "field_id"
+    t.bigint "city_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_formation_academiques_on_user_id"
+    t.index ["city_id"], name: "index_ffs_on_city_id"
+    t.index ["field_id"], name: "index_ffs_on_field_id"
+  end
+
+  create_table "fields", force: :cascade do |t|
+    t.string "title"
+    t.text "description"
+    t.bigint "pf_id"
+    t.bigint "af_id"
+    t.bigint "job_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["af_id"], name: "index_fields_on_af_id"
+    t.index ["job_id"], name: "index_fields_on_job_id"
+    t.index ["pf_id"], name: "index_fields_on_pf_id"
+  end
+
+  create_table "jobs", force: :cascade do |t|
+    t.string "object"
+    t.text "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "likes", force: :cascade do |t|
+    t.bigint "comment_id"
+    t.bigint "answer_id"
+    t.bigint "mf_id"
+    t.bigint "ff_id"
     t.bigint "user_id"
-    t.bigint "commentaire_id"
-    t.bigint "reponse_id"
-    t.bigint "formation_academique_id"
-    t.bigint "professional_formation_id"
-    t.bigint "offre_emploi_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["commentaire_id"], name: "index_likes_on_commentaire_id"
-    t.index ["formation_academique_id"], name: "index_likes_on_formation_academique_id"
-    t.index ["offre_emploi_id"], name: "index_likes_on_offre_emploi_id"
-    t.index ["professional_formation_id"], name: "index_likes_on_professional_formation_id"
-    t.index ["reponse_id"], name: "index_likes_on_reponse_id"
+    t.index ["answer_id"], name: "index_likes_on_answer_id"
+    t.index ["comment_id"], name: "index_likes_on_comment_id"
+    t.index ["ff_id"], name: "index_likes_on_ff_id"
+    t.index ["mf_id"], name: "index_likes_on_mf_id"
     t.index ["user_id"], name: "index_likes_on_user_id"
   end
 
-  create_table "offre_emplois", force: :cascade do |t|
-    t.string "description"
-    t.string "lieu"
-    t.string "salaire"
-    t.string "mail"
-    t.bigint "user_id"
+  create_table "mfs", force: :cascade do |t|
+    t.string "title"
+    t.text "description"
+    t.string "contact"
+    t.string "email"
+    t.decimal "price"
+    t.string "image_url"
+    t.string "video_url"
+    t.integer "duration"
+    t.bigint "field_id"
+    t.bigint "city_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_offre_emplois_on_user_id"
+    t.index ["city_id"], name: "index_mfs_on_city_id"
+    t.index ["field_id"], name: "index_mfs_on_field_id"
+  end
+
+  create_table "orders", force: :cascade do |t|
+    t.datetime "date"
+    t.text "description"
+    t.bigint "user_id"
+    t.bigint "mf_id"
+    t.bigint "ff_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["ff_id"], name: "index_orders_on_ff_id"
+    t.index ["mf_id"], name: "index_orders_on_mf_id"
+    t.index ["user_id"], name: "index_orders_on_user_id"
+  end
+
+  create_table "pfs", force: :cascade do |t|
+    t.string "object"
+    t.text "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "places", force: :cascade do |t|
@@ -117,69 +183,23 @@ ActiveRecord::Schema.define(version: 2019_09_18_144350) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "professional_formations", force: :cascade do |t|
-    t.string "objet"
-    t.string "titre"
-    t.string "lieu"
-    t.string "contacte"
-    t.string "mail"
-    t.string "description"
-    t.bigint "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_professional_formations_on_user_id"
-  end
-
-  create_table "reponses", force: :cascade do |t|
-    t.text "contenu"
-    t.bigint "user_id"
-    t.bigint "commentaire_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["commentaire_id"], name: "index_reponses_on_commentaire_id"
-    t.index ["user_id"], name: "index_reponses_on_user_id"
-  end
-
-  create_table "room_messages", force: :cascade do |t|
-    t.bigint "room_id"
-    t.bigint "user_id"
-    t.text "message"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["room_id"], name: "index_room_messages_on_room_id"
-    t.index ["user_id"], name: "index_room_messages_on_user_id"
-  end
-
-  create_table "rooms", force: :cascade do |t|
-    t.string "name"
-    t.bigint "user_id"
-    t.index ["name"], name: "index_rooms_on_name", unique: true
-    t.index ["user_id"], name: "index_rooms_on_user_id"
-  end
-
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.bigint "room_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "first_name"
     t.string "last_name"
-    t.string "city"
-    t.integer "zip_code"
-    t.text "description"
-    t.string "function"
     t.string "phone_number"
-    t.string "role"
+    t.integer "age"
+    t.bigint "city_id"
+    t.index ["city_id"], name: "index_users_on_city_id"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
-    t.index ["room_id"], name: "index_users_on_room_id"
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
-  add_foreign_key "room_messages", "rooms"
-  add_foreign_key "room_messages", "users"
 end

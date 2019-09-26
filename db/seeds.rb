@@ -6,12 +6,18 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-
+system("clear")
 Place.destroy_all
-ProfessionalFormation.destroy_all
 User.destroy_all
-OffreEmploi.destroy_all
-FormationAcademique.destroy_all
+City.destroy_all
+Pf.destroy_all
+Job.destroy_all
+Af.destroy_all
+Mf.destroy_all
+Ff.destroy_all
+Field.destroy_all
+
+
 
 Place.create!([
 { "name": "Toliara", "latitude": "-23.35", "longitude": "43.666667"},
@@ -22,40 +28,70 @@ Place.create!([
 { "name": "Tananarive", "latitude": "-18.91368","longitude": "47.53613"},
 ])
 
-User.destroy_all
-10.times do
-u= User.create(email: Faker::Internet.free_email, password: "123456", password_confirmation: "123456")
+10.times do 
+	City.create(name: Faker::Nation.capital_city, zip_code: Faker::Address.zip_code)
 end
 
-u=User.all
+c = City.all
 
-
-10.times do
-FormationAcademique.create!(description: Faker::Lorem.paragraphs, contact: Faker::IDNumber.unique.valid, mail: Faker::Internet.free_email, titre: 
-Faker::University.name,lieu: Faker::WorldCup.team, user:u[rand(10)] )
+10.times do 
+	User.create(first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, 
+	email: Faker::Internet.email, age: rand(10..90), city: c[rand(0..9)])
 end
 
-
-
-10.times do
-	ProfessionalFormation.create(
-		objet:Faker::Commerce.department,titre:Faker::Commerce.product_name,lieu:Faker::Address.street_address,
-		contacte:Faker::PhoneNumber.phone_number,
-		mail:Faker::Internet.email,
-		description:Faker::Job.title, 
-		user:u[rand(10)])
-
-end
-tp ProfessionalFormation.all
+u = User.all
 
 10.times do
-	OffreEmploi.create(
-		salaire:Faker::Commerce.department,
-		lieu:Faker::Address.street_address,
-		mail:Faker::Internet.email,
-		description:Faker::Job.title, 
-		user:u[rand(10)]
-		)
+Af.create(	description: Faker::Hipster.paragraph(sentence_count: 9, supplemental: true, random_sentences_to_add: 4),
+object: Faker::Hipster.sentence(word_count: 3, supplemental: true, random_words_to_add:2))
 end
-tp User.all
-tp OffreEmploi.all
+
+af = Af.all
+
+10.times do
+Job.create(	description: Faker::Hipster.paragraph(sentence_count: 9, supplemental: true, random_sentences_to_add: 4),
+object: Faker::Hipster.sentence(word_count: 3, supplemental: true, random_words_to_add:2))
+end
+job = Job.all
+
+10.times do
+Pf.create(	description: Faker::Hipster.paragraph(sentence_count: 9, supplemental: true, random_sentences_to_add: 4),
+object: Faker::Hipster.sentence(word_count: 3, supplemental: true, random_words_to_add:2))
+end
+
+pf = Pf.all
+
+10.times do
+	Field.create(
+		title:Faker::Hipster.sentence(word_count: 3, supplemental: true, random_words_to_add:2),
+		description:Faker::Hipster.paragraph(sentence_count: 9, supplemental: true, random_sentences_to_add:5), 
+		af: af[rand(10)], pf: pf[rand(10)], job: job[rand(10)])
+end
+
+f = Field.all
+
+10.times do
+	Mf.create(
+		title:Faker::Hipster.sentence(word_count: 3, supplemental: true, random_words_to_add:2),
+		description:Faker::Hipster.paragraph(sentence_count: 9, supplemental: true, random_sentences_to_add:5), 
+		field: f[rand(10)], city: c[rand(0..9)])
+end
+
+mf = Mf.all
+10.times do
+	Ff.create(
+		title:Faker::Hipster.sentence(word_count: 3, supplemental: true, random_words_to_add: 2),
+		description:Faker::Hipster.paragraph(sentence_count: 9, supplemental: true, random_sentences_to_add: 5), 
+		field: f[rand(10)], city: c[rand(0..9)])
+end
+ff = Ff.all
+
+
+tp c
+tp u
+tp f
+tp af
+tp job
+tp pf
+tp mf
+tp ff

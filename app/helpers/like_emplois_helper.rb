@@ -1,2 +1,0 @@
-module LikeEmploisHelper
-end

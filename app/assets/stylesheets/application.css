@@ -12,17 +12,12 @@
  *
  *= require_tree .
  *= require_self
- *= require users.css
- *= require admin.css
- *= require sign_up.css
- *= require sign_in.css
- *= require index_Formations.css
- *= require show_formations.css
- *= require show_users.css
- *= require aide.css
- *= require contacte.css
- *= require apropos.css
- *= require formations_form.css
- *= require show_FP.css
- *= require show_OE.css
+ *= require "assets/css/bootstrap.min"
+ *= require "assets/css/font-awesome.min"
+ *= require "assets/css/jquery.bxslider"
+ *= require "assets/css/isotope" 
+ *= require "assets/css/animate"
+ *= require "assets/css/jquery.fancybox"
+ *= require "assets/css/prettyPhoto"
+ *= require "assets/css/style"
  */
