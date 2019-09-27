@@ -6,7 +6,7 @@ class User < ApplicationRecord
 
 # jointure pour user
 # ETQ index
- belongs_to :city
+ belongs_to :city, optional: true
 #ETQ attributs
 has_many :comments
 has_many :answers

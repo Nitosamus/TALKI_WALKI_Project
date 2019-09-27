@@ -1,3 +1,14 @@
+
+<%if current_user%>
+	<p>
+		<%=link_to "logout", destroy_user_session_path, method: :delete %><br><br>
+		Je suis connecté(e)
+	</p>	
+<%else%>
+	<%=link_to "login", new_user_session_path%><br>
+	<%=link_to "sign up", new_user_registration_path %><br>
+<%end%>
+
 	
 	<div class="slider">
 		<div class="img-responsive">

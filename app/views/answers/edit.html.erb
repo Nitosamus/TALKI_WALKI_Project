@@ -1,2 +1,6 @@
-<h1>Answers#edit</h1>
-<p>Find me in app/views/answers/edit.html.erb</p>
+<div>
+	<%=form_with url: mf_comment_answer_path(params[:mf_id], params[:comment_id], params[:id]), action:"update", method: :patch, local: true do |f|%>
+	<%=f.text_area :body, value: "#{@answer.body}"%>
+	<%=f.submit "Modifier"%>
+	<%end%>
+</div> 

@@ -56,11 +56,11 @@ ActiveRecord::Schema.define(version: 2019_09_27_060132) do
     t.string "title"
     t.bigint "mf_id"
     t.bigint "ff_id"
-    t.bigint "commnent_id"
+    t.bigint "comment_id"
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["commnent_id"], name: "index_answers_on_commnent_id"
+    t.index ["comment_id"], name: "index_answers_on_comment_id"
     t.index ["ff_id"], name: "index_answers_on_ff_id"
     t.index ["mf_id"], name: "index_answers_on_mf_id"
     t.index ["user_id"], name: "index_answers_on_user_id"

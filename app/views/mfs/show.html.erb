@@ -24,28 +24,32 @@
 </div>
 <!--ici les commentaires-->
 <div>
-		<p>Laisser des commantaires</p>
+		<p>Laisser des commentaires(<small><%=@mf.comments.length%> , <%=@mf.answers.length%> réponses </small>)</p>
 		<%=form_with url: mf_comments_path(@mf.id), action:"create", method: :post, local: true do |f|%>
 		<%=f.text_area :body, placeholder:"Votre commentaire ici ..."%>
 		<%=f.submit "Envoyer"%>
 		<%end%>
 		<%@mf.comments.each do |comment|%>
-		<p>	
-			<%=comment.body%>
-		</p>
-		<small>
-			<%=link_to "Répondre à ce commentaire", new_mf_comment_answer_path(@mf.id, comment.id)%>
-		</small>
-		<!--liste des réponses-->
-		<%comment.answers.each do |answer|%>
-			<ul>
-				<li>
-					<%=answer.body%>
-					<small>
-						Réponse de <%=answer.user.first_name%>
-					</small>
-				</li>
-			</ul>
+			<p>	
+				<%=comment.body%> <small>(<%=comment.answers.length%> réponse(s))</small>
+			</p>
+			<small>
+				<%=link_to "Répondre à ce commentaire", new_mf_comment_answer_path(@mf.id, comment.id)%>
+			</small>
+			<!--liste des réponses-->
+			<%comment.answers.each do |answer|%>
+				<ul>
+					<li>
+						<%=answer.body%> 
+						<small>
+							<i>Réponse de <%=answer.user.first_name%></i><br>
+							<%=link_to "Editer", edit_mf_comment_answer_path(@mf.id, comment.id, answer.id)%>
+							<%=link_to "suprimer",  mf_comment_answer_path(@mf.id, comment.id, answer.id), method: :delete, data: { confirm: 'Are you sure?' } %>
+							<%=link_to "J'aime(#{answer.likes.length} likes)", mf_comment_answer_likes_path(@mf.id, comment.id, answer.id), action: "create", method: :post%>
+						</small>
+					</li>
+				</ul>
+			<%end%>
 		<%end%>		
 </div>
 

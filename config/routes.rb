@@ -15,16 +15,19 @@
   
   resources :mfs, only: [:index, :show] do
     resources :comments, only: [:create] do
-      resources :answers, only: [:new, :create] 
+      resources :answers, except: [:index, :show] do
+        resources :likes, only: [:create] 
+      end
     end
   end
   resources :ffs, only: [:index, :show] do
     resources :comments, only: [:create] do
-      resources :answers, only: [:new, :create]
+      resources :answers, except: [:index, :show] do
+        resources :likes, only: [:create]
+      end
     end
   end
   resources :orders, only: [:create]
-  resources :likes, only: [:create]
   resources :users, only: [:create]
   resources :images, only:[:show]
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
