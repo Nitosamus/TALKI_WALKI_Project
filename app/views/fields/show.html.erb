@@ -1,2 +1,28 @@
-<h1>Fields#show</h1>
-<p>Find me in app/views/fields/show.html.erb</p>
+<div>
+	<h1><%=@field.title%></h1><br>
+	<p><%=@field.description%></p>
+	<ul>
+		<li>
+			<%=link_to "Les formations continues"%>
+			<p>Petite description préliminaire sur les formations continues</p><br>
+			<ul>
+				<%@ffs.each do |ff|%>
+				<li>
+					<%=link_to ff.title, ff_path(ff.id)%>
+				</li>
+				<%end%>
+			</ul>
+		</li>
+		<li>
+			<%=link_to "Les formations modulaires"%>
+			<p>Petite description préliminaire sur les formations modulaires</p><br>
+			<ul>
+				<%@mfs.each do |mf|%>
+				<li>
+					<%=link_to mf.title, mf_path(mf.id)%>
+				</li>
+				<%end%>
+			</ul>
+		</li>
+	</ul>
+</div>

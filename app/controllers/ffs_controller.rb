@@ -3,6 +3,7 @@ class FfsController < ApplicationController
   end
 
   def show
+    @ff = Ff.find(params[:id])
   end
 
   def new

@@ -3,6 +3,6 @@ class Field < ApplicationRecord
 	belongs_to :af
 	belongs_to :job
 #for each field
-	has_many :mf
-	has_many :ff
+	has_many :mfs
+	has_many :ffs
 end

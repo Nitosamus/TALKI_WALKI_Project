@@ -1,2 +1,24 @@
-<h1>Mfs#show</h1>
-<p>Find me in app/views/mfs/show.html.erb</p>
+<div>
+	<h1><%=@mf.title%></h1><br>
+	<p><%=@mf.description%></p><br>
+	<ul>
+		<li>
+			Contact: <%=@mf.contact%>
+		</li>
+		<li>
+			e-mail: <%=@mf.email%>
+		</li>
+		<li>
+			Durée de formation: <%=@mf.duration%>
+		</li>
+		<li>
+			Prix de formation: <%=@mf.price%>
+		</li>
+	</ul>
+<!--video et image sur cette formation-->
+	<ul>
+		<li>
+			Videos
+		</li>		
+	</ul>
+</div>

@@ -1,2 +1,25 @@
-<h1>Ffs#show</h1>
-<p>Find me in app/views/ffs/show.html.erb</p>
+<div>
+	
+	<h1><%=@ff.title%></h1><br>
+	<p><%=@ff.description%></p><br>
+	<ul>
+		<li>
+			Contact: <%=@ff.contact%>
+		</li>
+		<li>
+			e-mail: <%=@ff.email%>
+		</li>
+		<li>
+			Durée de formation: <%=@ff.duration%>
+		</li>
+		<li>
+			Prix de formation: <%=@ff.price%>
+		</li>
+	</ul>
+<!--video et image sur cette formation-->
+	<ul>
+		<li>
+			Videos
+		</li>		
+	</ul>
+</div>

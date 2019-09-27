@@ -1,2 +1,14 @@
-<h1>Pfs#index</h1>
-<p>Find me in app/views/pfs/index.html.erb</p>
+
+<div>
+	<h1>Formation académique</h1>
+	<p><%=@pf.description%></p>
+		<ul>
+			<%@pfs.each do |field|%>
+			<li>
+				<h2>
+					<%=link_to field.title, af_field_path(1, field.id)%>				
+				</h2>
+			</li>
+			<%end%>
+		</ul>
+</div>

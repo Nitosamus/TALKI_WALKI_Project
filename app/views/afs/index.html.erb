@@ -1,2 +1,13 @@
-<h1>Afs#index</h1>
-<p>Find me in app/views/afs/index.html.erb</p>
+<div>
+	<h1>Formation académique</h1>
+	<p><%=@af.description%></p>
+		<ul>
+			<%@afs.each do |field|%>
+			<li>
+				<h2>
+					<%=link_to field.title, af_field_path(1, field.id)%>				
+				</h2>
+			</li>
+			<%end%>
+		</ul>
+</div>

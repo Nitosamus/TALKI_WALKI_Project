@@ -36,7 +36,7 @@ c = City.all
 
 10.times do 
 	User.create(first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, 
-	email: Faker::Internet.email, age: rand(10..90), city: c[rand(0..9)])
+	email: Faker::Internet.email, password: "dev1234", age: rand(10..90), city: c[rand(0..9)])
 end
 
 u = User.all

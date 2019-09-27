@@ -3,6 +3,7 @@ class MfsController < ApplicationController
   end
 
   def show
+     @mf = Mf.find(params[:id])
   end
 
   def new
