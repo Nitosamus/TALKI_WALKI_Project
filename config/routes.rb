@@ -1,7 +1,6 @@
 
   Rails.application.routes.draw do
-  root to: "admins#index"
-  get root to: "homes#index"
+  root to: "homes#index"
 
   devise_for :users
   resources :afs, only: [:index, :show] do
@@ -14,10 +13,16 @@
     resources :fields, only: [:show]
   end
   
-  resources :mfs, only: [:index, :show]
-  resources :ffs, only: [:index, :show]
-  resources :comments, only: [:create]
-  resources :answers, only: [:create]
+  resources :mfs, only: [:index, :show] do
+    resources :comments, only: [:create] do
+      resources :answers, only: [:new, :create] 
+    end
+  end
+  resources :ffs, only: [:index, :show] do
+    resources :comments, only: [:create] do
+      resources :answers, only: [:new, :create]
+    end
+  end
   resources :orders, only: [:create]
   resources :likes, only: [:create]
   resources :users, only: [:create]

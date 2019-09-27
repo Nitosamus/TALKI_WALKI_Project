@@ -1,2 +1,7 @@
-<h1>Answers#new</h1>
-<p>Find me in app/views/answers/new.html.erb</p>
+<!--ici les réponses à ce commentaire-->
+	<div>
+		<%=form_with url: mf_comment_answers_path(params[:mf_id], params[:comment_id]), action:"create", method: :post, local: true do |f|%>
+		<%=f.text_area :body, placeholder:"Votre réponse ici ..."%>
+		<%=f.submit "Envoyer"%>
+		<%end%>
+	</div>
