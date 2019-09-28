@@ -1,7 +1,6 @@
 
   Rails.application.routes.draw do
-  root to: "admins#index"
-  get root to: "homes#index"
+  root to: "homes#index"
 
   devise_for :users
   resources :afs, only: [:index, :show] do

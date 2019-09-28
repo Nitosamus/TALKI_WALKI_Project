@@ -19,5 +19,6 @@
  *= require "assets/css/animate"
  *= require "assets/css/jquery.fancybox"
  *= require "assets/css/prettyPhoto"
- * require "assets/css/style"
+ *= require "assets/css/style"
+ *= require "assets/css/font-awesome" 
  */
