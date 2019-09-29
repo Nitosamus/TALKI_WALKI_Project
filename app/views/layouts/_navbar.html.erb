@@ -12,35 +12,26 @@
             </button>
             <div class="navbar-brand">
               <div class="logo">
-            <a href="/"><h2 class="logo-text"><i><b><span style="    text-decoration-color:rgb(255, 255, 255)">Talki</span></b><sub style="text-decoration: overline; text-decoration-color: rgb(63, 181, 168);"><i class="fa fa-volume-control-phone" aria-hidden="true"></i>Walki</sub></i></h2></a>
+            <a href="<%=root_path%>"><h2 class="logo-text"><i><b><span style="    text-decoration-color:rgb(255, 255, 255)">Talki</span></b><sub style="text-decoration: overline; text-decoration-color: rgb(63, 181, 168);"><i class="fa fa-volume-control-phone" aria-hidden="true"></i>Walki</sub></i></h2></a>
             </div>
             </div>
             <div class="navbar-collapse collapse">              
               <div class="menu">
                 <ul class="nav nav-tabs" role="tablist">
-                  <li role="presentation"><a href="<%=root_path%>" class="active">Home</a></li>
+                  <li role="presentation"><a href="<%=root_path%>" class="active">Accueil</a></li>
                   <li role="presentation"><a href="<%=afs_path%>">Formations académiques</a></li>
                   <li role="presentation"><a href="<%=pfs_path%>">Formations professionelles</a></li>
-                  <li role="presentation"><a href="<%=fields_path%>">Offres d'emploi</a></li>
-                  <li role="presentation"><a href="contact.html">Contact</a></li>           
-                </ul>
-              </div>
-            </div>            
-          </div>
-          
-          <div class="navbar-collapse collapse">              
-            <div class="menu">
-              <ul class="nav nav-tabs" role="tablist">
-                <li role="presentation"><a href="<%=root_path%>" class="active">Acceuil</a></li>
-                <li role="presentation"><a href="<%=jobs_path%>">Offre d'Emplois</a></li>
-                <li role="presentation"><a href="<%=afs_path%>">Formation Académique</a></li>
-                <li role="presentation"><a href="<%=pfs_path%>">Formation Professionnelle</a></li>
-                
+                  <li role="presentation"><a href="<%=fields_path%>">Offres d'emploi</a></li>     
                 <li role="presentation" class="dropdown"><a class="dropbtn">Profil</a>
                   <ul class="dropdown-content">
-                    <li><a href="/users/sign_in"> Connexion</a></li>
-                    <li><a href="/users/sign_up"> Inscription</a></li>
-                    <li><a href="/users/sign_out"> Déconnexion</a></li>
+
+                    <%if current_user%>
+                      <li><a href="/users/sign_out"> Déconnexion</a></li>
+                    <%else%>
+                      <li><a href="/users/sign_in"> Connexion</a></li>
+                      <li><a href="/users/sign_up"> Inscription</a></li>
+                    <%end%>
+                    
                   </ul>
                 </li>         
               </ul>
