@@ -31,7 +31,13 @@
 		<%end%>
 		<%@mf.comments.each do |comment|%>
 			<p>	
-				<%=comment.body%> <small>(<%=comment.answers.length%> réponse(s))</small>
+				<%=comment.body%> <small>(<%=comment.answers.length%> réponse(s))</small><br>
+				<small>
+					<i><%=comment.user.first_name%> le <%=comment.created_at%></i><br>
+					<%=link_to "Editer", edit_mf_comment_path(@mf.id, comment.id)%>
+					<%=link_to "suprimer",  mf_comment_path(@mf.id, comment.id), method: :delete, data: { confirm: 'Are you sure?' } %>
+					<%=link_to "J'aime(#{comment.likes.length} likes)", mf_comment_lcs_path(@mf.id, comment.id), action: "create", method: :post%>
+				</small>
 			</p>
 			<small>
 				<%=link_to "Répondre à ce commentaire", new_mf_comment_answer_path(@mf.id, comment.id)%>

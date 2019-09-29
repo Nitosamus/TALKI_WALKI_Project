@@ -1,0 +1,7 @@
+	<div>
+		<%=form_with url: ff_ffcom_path(params[:ff_id], params[:id]), action:"create", method: :patch, local: true do |f|%>
+			<%=f.text_area :body,  value: "#{@comment.body}"%>
+			<%=f.submit "Modifier"%>
+		<%end%>
+	</div>	
+		

@@ -28,7 +28,7 @@ Place.create!([
 { "name": "Tananarive", "latitude": "-18.91368","longitude": "47.53613"},
 ])
 
-10.times do 
+20.times do 
 	City.create(name: Faker::Nation.capital_city, zip_code: Faker::Address.zip_code)
 end
 
@@ -45,14 +45,7 @@ u = User.all
 Af.create(	description: Faker::Hipster.paragraph(sentence_count: 9, supplemental: true, random_sentences_to_add: 4),
 object: Faker::Hipster.sentence(word_count: 3, supplemental: true, random_words_to_add:2))
 end
-
 af = Af.all
-
-10.times do
-Job.create(	description: Faker::Hipster.paragraph(sentence_count: 9, supplemental: true, random_sentences_to_add: 4),
-object: Faker::Hipster.sentence(word_count: 3, supplemental: true, random_words_to_add:2))
-end
-job = Job.all
 
 10.times do
 Pf.create(	description: Faker::Hipster.paragraph(sentence_count: 9, supplemental: true, random_sentences_to_add: 4),
@@ -61,14 +54,22 @@ end
 
 pf = Pf.all
 
-10.times do
+25.times do
 	Field.create(
 		title:Faker::Hipster.sentence(word_count: 3, supplemental: true, random_words_to_add:2),
-		description:Faker::Hipster.paragraph(sentence_count: 9, supplemental: true, random_sentences_to_add:5), 
-		af: af[rand(10)], pf: pf[rand(10)], job: job[rand(10)])
+		description:Faker::Hipster.paragraph(sentence_count: 20, supplemental: true, random_sentences_to_add:5), 
+		af: af[rand(10)], pf: pf[rand(10)])
 end
 
 f = Field.all
+
+150.times do
+contracts = ["CDI", "CDD", "Alternance", "Interim", "Stage", "Indépendant/franchisé"]
+Job.create(	description: Faker::Hipster.paragraph(sentence_count: 20, supplemental: true, random_sentences_to_add: 10),
+name: Faker::Job.title, contract: contracts[rand(contracts.length)], buisness: Faker::Company.name, city: c[rand(0..9)], field: f[rand(10)])
+end
+
+job = Job.all
 
 10.times do
 	Mf.create(

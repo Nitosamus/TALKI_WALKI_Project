@@ -5,7 +5,6 @@ class CreateFields < ActiveRecord::Migration[5.2]
       t.text :description
       t.belongs_to :pf, index: true
       t.belongs_to :af, index: true
-      t.belongs_to :job, index: true
       t.timestamps
     end
   end

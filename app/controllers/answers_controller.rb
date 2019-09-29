@@ -40,6 +40,10 @@ class AnswersController < ApplicationController
   def destroy
   	@answer = Answer.find(params[:id])
   	@answer.destroy
+    mf = Mf.find(params[:mf_id])
+   # mf.answers.each do |answer|
+    #  Answer.delete(answer.id)
+   # end
   	redirect_back fallback_location: "/", allow_other_host:false
   end
 end

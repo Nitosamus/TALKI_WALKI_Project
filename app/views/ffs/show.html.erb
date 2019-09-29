@@ -23,3 +23,39 @@
 		</li>		
 	</ul>
 </div>
+<!--ici les commentaires-->
+<div>
+		<p>Laisser des commentaires(<small><%=@ff.comments.length%> , <%=@ff.answers.length%> réponses </small>)</p>
+		<%=form_with url: ff_ffcoms_path(@ff.id), action:"create", method: :post, local: true do |f|%>
+		<%=f.text_area :body, placeholder:"Votre commentaire ici ..."%>
+		<%=f.submit "Envoyer"%>
+		<%end%>
+		<%@ff.comments.each do |comment|%>
+			<p>	
+				<%=comment.body%> <small>(<%=comment.answers.length%> réponse(s))</small><br>
+				<small>
+					<i><%=comment.user.first_name%> le <%=comment.created_at%></i><br>
+					<%=link_to "Editer", edit_ff_ffcom_path(@ff.id, comment.id)%>
+					<%=link_to "suprimer",   ff_ffcom_path(@ff.id, comment.id), method: :delete, data: { confirm: 'Are you sure?' } %>
+					<%=link_to "J'aime(#{comment.likes.length} likes)", ff_ffcom_ffcomlikes_path(@ff.id, comment.id), action: "create", method: :post%>
+				</small>
+			</p>
+			<small>
+				<%=link_to "Répondre à ce commentaire", new_ff_ffcom_ffan_path(@ff.id, comment.id)%>
+			</small>
+			<!--liste des réponses-->
+			<%comment.answers.each do |answer|%>
+				<ul>
+					<li>
+						<%=answer.body%> 
+						<small>
+							<i>Réponse de <%=answer.user.first_name%></i><br>
+							<%=link_to "Editer", edit_ff_ffcom_ffan_path(@ff.id, comment.id, answer.id)%>
+							<%=link_to "suprimer",   ff_ffcom_ffan_path(@ff.id, comment.id, answer.id), method: :delete, data: { confirm: 'Are you sure?' } %>
+							<%=link_to "J'aime(#{answer.likes.length} likes)",  ff_ffcom_ffan_ffanslikes_path(@ff.id, comment.id, answer.id), action: "create", method: :post%>
+						</small>
+					</li>
+				</ul>
+			<%end%>
+		<%end%>		
+</div>

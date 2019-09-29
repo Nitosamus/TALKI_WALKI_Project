@@ -1,0 +1,7 @@
+<!--ici les réponses à ce commentaire-->
+	<div>
+		<%=form_with url: field_job_jobcom_jobans_path(params[:field_id], params[:job_id], params[:jobcom_id]), action:"create", method: :post, local: true do |f|%>
+		<%=f.text_area :body, placeholder:"Votre réponse ici ..."%>
+		<%=f.submit "Envoyer"%>
+		<%end%>
+	</div>

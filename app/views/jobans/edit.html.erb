@@ -1,0 +1,6 @@
+<div>
+	<%=form_with url: field_job_jobcom_joban_path(params[:field_id], params[:job_id], params[:jobcom_id], params[:id]), action:"update", method: :patch, local: true do |f|%>
+	<%=f.text_area :body, value: "#{@answer.body}"%>
+	<%=f.submit "Modifier"%>
+	<%end%>
+</div>

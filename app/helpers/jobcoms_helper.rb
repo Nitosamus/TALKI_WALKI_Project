@@ -1,0 +1,2 @@
+module JobcomsHelper
+end

@@ -1,0 +1,2 @@
+module FfcomsHelper
+end

@@ -1,0 +1,7 @@
+<!--ici les réponses à ce commentaire-->
+	<div>
+		<%=form_with url: ff_ffcom_ffans_path(params[:ff_id], params[:ffcom_id]), action:"create", method: :post, local: true do |f|%>
+		<%=f.text_area :body, placeholder:"Votre réponse ici ..."%>
+		<%=f.submit "Envoyer"%>
+		<%end%>
+	</div>

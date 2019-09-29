@@ -1,2 +1,44 @@
-<h1>Fields#index</h1>
-<p>Find me in app/views/fields/index.html.erb</p>
+
+<div>
+	<h1>Offre d'emploi</h1>
+	<div>
+		<h2> Les emplois par domaine</h2>
+		<ul>
+			<%jobs.each do |field|%>
+			<li>
+				<h2>
+					<%=link_to "Emplois sur #{field.title}", field_jobs_path(field.id)%>				
+				</h2>
+				<p><%=field.description%></p>
+			</li>
+			<%end%>
+		</ul>
+	</div> <br><br>
+		
+	<div>
+		<h2> Les emplois par entreprise </h2>
+		<ul>
+			<%buisness.each do |buisness|%>
+			<li>
+				<h2>
+					<%=link_to " Emplois chez #{buisness}"%>				
+				</h2>
+			</li>
+			<%end%>
+		</ul>
+	</div> <br><br>
+
+	<div>
+		<h2> Les emplois par Ville </h2>
+		<ul>
+			<%city_jobs.each do |city|%>
+			<li>
+				<h2>
+					<%=link_to "Emplois à #{city.name}"%>				
+				</h2>
+			</li>
+			<%end%>
+		</ul>
+	</div>
+
+</div>

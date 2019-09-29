@@ -1,0 +1,2 @@
+module LcsHelper
+end

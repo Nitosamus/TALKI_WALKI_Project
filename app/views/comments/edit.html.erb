@@ -1,2 +1,7 @@
-<h1>Comments#edit</h1>
-<p>Find me in app/views/comments/edit.html.erb</p>
+	<div>
+		<%=form_with url: mf_comment_path(params[:mf_id], params[:comment_id]), action:"create", method: :post, local: true do |f|%>
+			<%=f.text_area :body, value: "#{@comment.body}"%>
+			<%=f.submit "Envoyer"%>
+		<%end%>
+	</div>	
+		

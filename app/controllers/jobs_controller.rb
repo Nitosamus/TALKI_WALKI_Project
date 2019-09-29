@@ -1,6 +1,8 @@
 class JobsController < ApplicationController
   def index
-  	@jobs = Pf.first.fields
-  	@job = Job.all[rand(0..9)]
+  	@field = Field.find(params[:field_id])
+  end
+  def show
+  	@job = Job.find(params[:id])
   end
 end

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_09_27_060132) do
+ActiveRecord::Schema.define(version: 2019_09_29_123208) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -60,8 +60,10 @@ ActiveRecord::Schema.define(version: 2019_09_27_060132) do
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "job_id"
     t.index ["comment_id"], name: "index_answers_on_comment_id"
     t.index ["ff_id"], name: "index_answers_on_ff_id"
+    t.index ["job_id"], name: "index_answers_on_job_id"
     t.index ["mf_id"], name: "index_answers_on_mf_id"
     t.index ["user_id"], name: "index_answers_on_user_id"
   end
@@ -81,7 +83,9 @@ ActiveRecord::Schema.define(version: 2019_09_27_060132) do
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "job_id"
     t.index ["ff_id"], name: "index_comments_on_ff_id"
+    t.index ["job_id"], name: "index_comments_on_job_id"
     t.index ["mf_id"], name: "index_comments_on_mf_id"
     t.index ["user_id"], name: "index_comments_on_user_id"
   end
@@ -108,19 +112,24 @@ ActiveRecord::Schema.define(version: 2019_09_27_060132) do
     t.text "description"
     t.bigint "pf_id"
     t.bigint "af_id"
-    t.bigint "job_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["af_id"], name: "index_fields_on_af_id"
-    t.index ["job_id"], name: "index_fields_on_job_id"
     t.index ["pf_id"], name: "index_fields_on_pf_id"
   end
 
   create_table "jobs", force: :cascade do |t|
-    t.string "object"
+    t.string "name"
     t.text "description"
+    t.bigint "city_id"
+    t.bigint "field_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "contract"
+    t.string "buisness"
+    t.string "contact"
+    t.index ["city_id"], name: "index_jobs_on_city_id"
+    t.index ["field_id"], name: "index_jobs_on_field_id"
   end
 
   create_table "likes", force: :cascade do |t|
@@ -131,9 +140,11 @@ ActiveRecord::Schema.define(version: 2019_09_27_060132) do
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "job_id"
     t.index ["answer_id"], name: "index_likes_on_answer_id"
     t.index ["comment_id"], name: "index_likes_on_comment_id"
     t.index ["ff_id"], name: "index_likes_on_ff_id"
+    t.index ["job_id"], name: "index_likes_on_job_id"
     t.index ["mf_id"], name: "index_likes_on_mf_id"
     t.index ["user_id"], name: "index_likes_on_user_id"
   end

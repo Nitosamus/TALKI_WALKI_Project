@@ -1,0 +1,64 @@
+
+<div>
+	<h1><%=@job.name%></h1><br>
+	<p><%=@job.description%></p><br><br>
+	<hr>
+	<ul>
+		<li>
+			<b>Entreprise recruteur: </b><%=@job.buisness%>
+		</li>
+		<li>
+			<b>Type de contrat: </b><%=@job.contract%>
+		</li>
+		<li>
+			<b>contact rapide: </b><%=@job.contact%>
+		</li>
+		<li>
+			<b>Lieu d'emploi(ville): </b><%=@job.city.name%>, <%=@job.city.zip_code%>
+		</li>
+		<li>
+			<b>Profil exigé: </b> <%=link_to "Détail ici >>"%>
+		</li>
+	</ul>
+	<hr><br>
+	<h2>
+		<%=link_to "Je suis intéressé(e)(Déposer un CV)"%>	
+	</h2>
+	<br><br>
+
+	<div>
+		<p><h2> Vos avis en commentaire</h2>(<small><%=@job.comments.length%> , <%=@job.answers.length%> réponses </small>)</p>
+		<%=form_with url: field_job_jobcoms_path(params[:field_id], @job.id), action:"create", method: :post, local: true do |f|%>
+		<%=f.text_area :body, placeholder:"Votre commentaire ici ..."%>
+		<%=f.submit "Envoyer"%>
+		<%end%>
+		<%@job.comments.each do |comment|%>
+			<p>	
+				<%=comment.body%> <small>(<%=comment.answers.length%> réponse(s))</small><br>
+				<small>
+					<i><%=comment.user.first_name%> le <%=comment.created_at%></i><br>
+					<%=link_to "Editer", edit_field_job_jobcom_path(params[:field_id], @job.id, comment.id)%>
+					<%=link_to "suprimer",  field_job_jobcom_path(params[:field_id], @job.id, comment.id), method: :delete, data: { confirm: 'Are you sure?' } %>
+					<%=link_to "J'aime(#{comment.likes.length} like(s)", job_jobcom_jobcomlikes_path( @job.id, comment.id), action: "create", method: :post%>
+				</small>
+			</p>
+			<small>
+				<%=link_to "Répondre à ce commentaire",  new_field_job_jobcom_joban_path(params[:field_id], @job.id, comment.id)%>
+			</small>
+			<!--liste des réponses-->
+			<%comment.answers.each do |answer|%>
+				<ul>
+					<li>
+						<%=answer.body%> 
+						<small>
+							<i>Réponse de <%=answer.user.first_name%></i><br>
+							<%=link_to "Editer", edit_field_job_jobcom_joban_path(params[:field_id], @job.id, comment.id, answer.id)%>
+							<%=link_to "suprimer",  field_job_jobcom_joban_path(params[:field_id], @job.id, comment.id, answer.id), method: :delete, data: { confirm: 'Are you sure?' } %>
+							<%=link_to "J'aime(#{answer.likes.length} likes)", job_joban_jobanslikes_path( @job.id, answer.id), action: "create", method: :post%>
+						</small>
+					</li>
+				</ul>
+			<%end%>
+		<%end%>		
+	</div>
+</div>

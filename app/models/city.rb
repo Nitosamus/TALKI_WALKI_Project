@@ -1,5 +1,6 @@
 class City < ApplicationRecord
 	has_many :users
-	has_many :mf
-	has_many :ff
+	has_many :mfs
+	has_many :ffs
+	has_many :jobs
 end
