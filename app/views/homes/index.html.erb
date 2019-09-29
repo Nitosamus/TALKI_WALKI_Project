@@ -9,13 +9,13 @@
 	<%=link_to "sign up", new_user_registration_path %><br>
 <%end%>
 
-	
 	<div class="slider">
 		<div class="img-responsive">
-			<ul class="bxslider">				
-				<li><%=image_tag"slider/1", alt: "" %></li>								
-				<li><%=image_tag"slider/2", alt: "" %></li>	
-				<li><%=image_tag"slider/3", alt: "" %></li>	
+			<ul class="bxslider">
+
+				<li><%=image_tag"feutre.jpg" ,alt:""%> </li>
+				<!--<li><%=image_tag "3.jpg" ,alt:""%></li>
+				<li><%=image_tag "2.jpg" ,alt:""%></li>-->			
 			</ul>
 		</div>	
     </div>
@@ -23,10 +23,10 @@
 	<div class="container">
 		<div class="text-center">
 			<div class="wow bounceInDown" data-wow-offset="0" data-wow-delay="0.3s">
-				<h3>Providing Our Clients</h3>
+				<h3>Petit guide pour obtenir facilement des informations sur les bonnes formations ou sur les job suite à la formation...</h3>
 			</div>
 			<div class="wow bounceInDown" data-wow-offset="0" data-wow-delay="0.6s">
-				<h2>Best & Creative Solutions</h2>
+				<h2>Le diplôme, c’est dans la poche <br> L'emploi, dépend de moi</h2>
 			</div>
 		</div>
 	</div>
@@ -35,25 +35,25 @@
 			<div class="wow fadeInLeft" data-wow-offset="0" data-wow-delay="0.4s">
 				<div class="col-sm-3">
 					<i class="fa fa-cogs fa-3x"></i>
-					<h4>Creative Solutions</h4>
+					<h4>Recrutement</h4>
 				</div>
 			</div>
 			<div class="wow fadeInLeft" data-wow-offset="0" data-wow-delay="0.8s">
 				<div class="col-sm-3">
 					<i class="fa fa-leaf fa-3x"></i>
-					<h4>Creative Solutions</h4>
+					<h4>Diplôme</h4>
 				</div>
 			</div>
 			<div class="wow fadeInRight" data-wow-offset="0" data-wow-delay="1.2s">
 				<div class="col-sm-3">
 					<i class="fa fa-heart-o fa-3x"></i>
-					<h4>Creative Solutions</h4>
+					<h4>Média</h4>
 				</div>
 			</div>
 			<div class="wow fadeInRight" data-wow-offset="0" data-wow-delay="1.6s">
 				<div class="col-sm-3">
 					<i class="fa fa-laptop fa-3x"></i>
-					<h4>Creative Solutions</h4>
+					<h4>Documentation</h4>
 				</div>
 			</div>
 		</div>
@@ -62,12 +62,11 @@
 		<div class="container">
 			<div class="text-center">
 				<div class="wow bounceInDown" data-wow-offset="0" data-wow-delay="0.3s">
-					<h2>Main Features</h2>
+					<h2>Vos avantages?</h2>
 				</div>
 				<div class="wow bounceInDown" data-wow-offset="0" data-wow-delay="0.6s">
-					<p>Bras urna felis accumsan at ultrde cesid posuere masa socis nautoque<br>
-					penat bus maecenas ultrices sed ipsum lorem
-					dolor sit amet sed ipsum consectetur<br></p>
+					<p>L'avenir de votre enfant est entre des bonnes mains:<br>
+					des formations reconnues à l'internationale pour les jeunes, des emplois stables pour tous<br></p>
 				</div>
 			</div>
 		</div>
@@ -75,11 +74,12 @@
 	
 	<div class="container">
 		<div class="col-lg-6 wow fadeInRight" data-wow-offset="0" data-wow-delay="0.5s">
-			<img src="images/6.jpg" class="img-responsive" >
+			<%=image_tag"mam.jpg" ,alt:"", class:"img-responsive" %>
+
 		</div>
 		
 		<div class="col-lg-6 wow fadeInLeft" data-wow-offset="0" data-wow-delay="0.5s">
-			<img src="images/5.jpg" class="img-responsive" >
+			<%=image_tag"colas.jpg" ,alt:"", class:"img-responsive" %>
 		</div>
 	</div>
 	
@@ -92,8 +92,8 @@
 					</div>
 					
 					<div class="media-body">
-						<h4 class="media-heading">SEO Optimized</h4>
-						<p>Cras urna felis accumsan at ultricesid posuere masa um socisd natoque penatibus magnisd Lorem ipsum dolor sit ame onsectea dipe.</p>
+						<h4 class="media-heading">Diversité de filières</h4>
+						<p>Economie, Comptabilité, Droit, Informatique, Paramedicaux, Polytechnique,  Communication, Philosophie...</p>
 					</div>
 				</div>
 			</div>
@@ -105,8 +105,8 @@
 					</div>
 					
 					<div class="media-body">
-						<h4 class="media-heading">Easy to Install</h4>
-						<p>Cras urna felis accumsan at ultricesid posuere masa um socisd natoque penatibus magnisd Lorem ipsum dolor sit ame onsectea dipe.</p>
+						<h4 class="media-heading">Minimisation de coût</h4>
+						<p>Minimun de dépenses, Efficacité optimale, Efficience de méthode, Apprendre à toute liberté...</p>
 					</div>
 				</div>
 			</div>
@@ -118,8 +118,8 @@
 					</div>
 					
 					<div class="media-body">
-						<h4 class="media-heading">Unlimited Possibilities</h4>
-						<p>Cras urna felis accumsan at ultricesid posuere masa um socisd natoque penatibus magnisd Lorem ipsum dolor sit ame onsectea dipe.</p>
+						<h4 class="media-heading">Facilité d'accès</h4>
+						<p>Site ouvert à tout le monde, Site repond aux besoins de la société actuelle, Réponse rapide...</p>
 					</div>
 				</div>
 			</div>
@@ -127,61 +127,68 @@
 		
 		<div class="text-center">
 			<div class="wow bounceInDown" data-wow-offset="0" data-wow-delay="0.3s">
-				<h2>Easily Customizable & Unlimited Support </h2>
+				<h2>Voulez-vous commencez? </h2>
 			</div>
 			<div class="wow bounceInUp" data-wow-offset="0" data-wow-delay="0.6s">
-				<p>Integer orci enim varius vel accumsan vel porttitor tellus. Vivamus odio. Donec metus libero semper</p>
+				<p>Pour accéder Talki-Walki, il faut d'abord vous connecter ou vous inscrire</p>
 			</div>
 			
-			<button type="button" class="btn btn-default">Purchase Now</button>
-			<button type="button" class="btn btn-default">learn More</button>
+			<a href="/users/sign_up"><button type="button" class="btn btn-default"> S'inscrire maintenant </button></a>
+			<a href="/users/sign_in"> <button type="button" class="btn btn-default"> Connecter à mon compte</button></a>
 		</div>	
 		
 	</div>
 	
 	<div class="about-us">
-		<div class="container">
+		<div class="containero">
 			<div class="text-center">
 				<div class="wow bounceInDown" data-wow-offset="0" data-wow-delay="0.3s">
-					<h3>What People Are</h3>
+					<h3>Talki-Walki pour les jeunes</h3>
 				</div>
 				<div class="wow bounceInDown" data-wow-offset="0" data-wow-delay="0.6s">
-					<h2>Saying About Us</h2>
+					<h2>N'hésite pas à visiter</h2>
 				</div>
+				<div class="containero">
+
+					<a href="<%=pfs_path%>" class="button">
 				<div class="wow fadeInRight" data-wow-offset="0" data-wow-delay="0.3s">
 					<div class="col-md-3">
-						<img src="images/about/man4.jpg" alt="" >
-						<h3>John Doe</h3>
-						<p>Lorem ipsum dolor sit amet consectetur adipisicing eil sed deiusmod tempor</p>
+						 <div class="cardo">
+						<%=image_tag"prof.jpg" ,alt:""%>
+						<h3 style="color: rgb(59, 181, 163);">Formation professionnelle</h3>
+						<p>Choisir la formation professionnelle c'est de vous offrir la possibilité de progresser sur le marché de travail une carrière qui peut mener loin.</p>
 					</div>
 				</div>
-				
-				<div class="wow fadeInRight" data-wow-offset="0" data-wow-delay="0.6s">
+				</div>
+				</a>
+
+				<a href="<%=afs_path%>" class="button">
+				<div class="wow fadeInLeft" data-wow-offset="0" data-wow-delay="0.5s">
 					<div class="col-md-3">
-						<img src="images/about/man2.jpg" alt="" >
-						<h3>John Doe</h3>
-						<p>Lorem ipsum dolor sit amet consectetur adipisicing eil sed deiusmod tempor</p>
+						<div class="cardo">
+						<%=image_tag "form.jpg" ,alt:""%>
+						<h3 style="color: rgb(59, 181, 163);">Formation Academique</h3>
+						<p>Vous souhaitez intégrer dans une Université reconnue?Talki-Walki vous met en relation avec les meilleurs formations existantes à Madagascar.</p>
 					</div>
 				</div>
-				
-				<div class="wow fadeInLeft" data-wow-offset="0" data-wow-delay="0.3s">
+				</div></a>
+
+				<a href="<%=jobs_path%>" class="button">
+				<div class="wow fadeInLeft" data-wow-offset="0" data-wow-delay="0.9s">
 					<div class="col-md-3">
-						<img src="images/about/man3.jpg" alt="" >
-						<h3>John Doe</h3>
-						<p>Lorem ipsum dolor sit amet consectetur adipisicing eil sed deiusmod tempor</p>
+						<div class="cardo">
+						<%=image_tag"offre.jpg" ,alt:""%>
+						<h3 style="color: rgb(59, 181, 163);">Offre d'emploi</h3>
+						<p>>Tout pour trouver un emlpoi à Madagascar: consulter les offres d'emploi et envoyer votre Curriculum Vitae gratuitement.</p>
 					</div>
 				</div>
+				</div>
+				</a>
 				
-				<div class="wow fadeInLeft" data-wow-offset="0" data-wow-delay="0.6s">
-					<div class="col-md-3">
-						<img src="images/about/man4.jpg" alt="" >
-						<h3>John Doe</h3>
-						<p>Lorem ipsum dolor sit amet consectetur adipisicing eil sed deiusmod tempor</p>
-					</div>
-				</div>
-			</div>	
 		</div>
 	</div>
+</div>
+</div>
 	<script>
 	wow = new WOW(
 	 {	
