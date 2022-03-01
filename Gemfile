@@ -68,7 +68,7 @@ gem "letter_opener"
 gem "jquery-rails"
 gem "dotenv-rails"
 gem "mailjet", :git => 'https://github.com/mailjet/mailjet-gem.git'
-gem 'image_processing', '~> 1.2'
+gem 'image_processing', '~> 1.12'
 gem "better_errors"
 gem "sendgrid-ruby"
 gem "omniauth-facebook"
